@@ -9,9 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        cpCream: '#F5F5F5',
+        cpCream: '#FFFEF3',
         cpOrange: '#FA7E39',
         cpPink: '#F1A0C5',
       },

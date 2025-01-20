@@ -1,7 +1,8 @@
-import About from './components/About/About';
-import Announcement from './components/Announcement/Announcement';
-import BrandSection from './components/BrandSection/BrandSection';
-import HeroSection from './components/HeroSection/HeroSection';
+import About from "./components/About/About";
+import Announcement from "./components/Announcement/Announcement";
+import BrandSection from "./components/BrandSection/BrandSection";
+import CoursesSection from "./components/CoursesSection/CoursesSection";
+import HeroSection from "./components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <BrandSection />
       <About />
+      <CoursesSection />
     </div>
   );
 }

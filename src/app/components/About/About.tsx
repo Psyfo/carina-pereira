@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -41,7 +41,7 @@ const About: React.FC = () => {
           owning and operating her own make-up school.
         </p>
 
-        <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[20px] py-[8px] mb-[80px] border border-black rounded-full'>
+        <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full'>
           view services
         </button>
       </div>

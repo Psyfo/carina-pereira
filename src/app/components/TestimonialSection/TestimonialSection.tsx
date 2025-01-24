@@ -7,7 +7,7 @@ import TestimonialBanner from './components/TestimonialBanner';
 
 const TestimonialSection: React.FC = () => {
   return (
-    <section className='relative flex flex-col items-center justify-center py-[64px] px-[25px] lg:px-[80px]'>
+    <section className='relative flex flex-col items-center justify-center py-[64px] px-[25px] lg:px-[80px] overflow-hidden'>
       <TestimonialBanner />
 
       <div className='flex flex-col bg-white items-center justify-center lg:justify-around mx-[25px] w-full px-[2rem] py-[180px] md:pt-8 md:pb-[100px] border border-black'>

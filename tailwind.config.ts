@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss';
 
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 export default {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,5 +21,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 } satisfies Config;

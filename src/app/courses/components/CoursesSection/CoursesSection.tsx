@@ -34,7 +34,7 @@ const CoursesSection: React.FC = () => {
             4 months part-time
           </p>
 
-          <a href='#' target='_blank' rel='noopener noreferrer'>
+          <a href='/courses/pro-makeup'>
             <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mx-4 border border-black rounded-full mt-4'>
               explore
             </button>
@@ -66,7 +66,7 @@ const CoursesSection: React.FC = () => {
             in-person
           </p>
 
-          <a href='#' target='_blank' rel='noopener noreferrer'>
+          <a href='/courses/express-makeup'>
             <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mx-4 border border-black rounded-full mt-4'>
               explore
             </button>
@@ -98,7 +98,7 @@ const CoursesSection: React.FC = () => {
             online
           </p>
 
-          <a href='#' target='_blank' rel='noopener noreferrer'>
+          <a href='/courses/express-online'>
             <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mx-4 border border-black rounded-full mt-4'>
               explore
             </button>
@@ -130,7 +130,7 @@ const CoursesSection: React.FC = () => {
             in-person
           </p>
 
-          <a href='#' target='_blank' rel='noopener noreferrer'>
+          <a href='/courses/hairstyling'>
             <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mx-4 border border-black rounded-full mt-4'>
               explore
             </button>

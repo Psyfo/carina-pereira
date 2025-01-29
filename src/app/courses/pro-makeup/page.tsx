@@ -1,10 +1,14 @@
+import AboutSection from './components/AboutSection/AboutSection';
+import HeroSection from './components/HeroSection/HeroSection';
+import LearningSection from './components/LearningSection/LearningSection';
 import React from 'react';
 
 const ProMakeupPage: React.FC = () => {
   return (
     <div>
-      <h1>Pro Makeup Courses</h1>
-      <p>Welcome to the Pro Makeup Courses page!</p>
+      <HeroSection />
+      <AboutSection />
+      <LearningSection />
     </div>
   );
 };

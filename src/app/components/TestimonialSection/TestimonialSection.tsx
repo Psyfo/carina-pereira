@@ -85,7 +85,7 @@ const TestimonialSection: React.FC = () => {
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
-            <div className='flex flex-col bg-white items-center justify-center lg:justify-around  w-full h-[696px] md:h-[378px] px-[2rem] py-[180px] md:pt-8 md:pb-[100px] border border-black'>
+            <div className='flex flex-col bg-white items-center justify-center lg:justify-around w-full md:w-[934px] h-[696px] md:h-[378px] px-[2rem] py-[180px] md:pt-8 md:pb-[100px] border border-black mx-auto'>
               <div className='w-[101px]'>
                 <Image
                   src={testimonial.image}

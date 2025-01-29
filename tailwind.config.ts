@@ -20,6 +20,9 @@ export default {
         inter: ['Inter', 'sans-serif'],
         'tan-ashford': ['Tan Ashford', 'sans-serif'],
       },
+      fontSize: {
+        base: '16px', // Change the base font size to 18px
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

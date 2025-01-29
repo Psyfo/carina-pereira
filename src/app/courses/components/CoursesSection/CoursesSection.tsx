@@ -3,14 +3,14 @@ import React from 'react';
 
 const CoursesSection: React.FC = () => {
   return (
-    <div className='px-[36px] py-[25px]'>
+    <div className='px-[36px] md:px-[132px] py-[25px] md:py-[142px] md:border-b border-black'>
       <h2 className='font-tan-ashford text-[19px] tracking-wider mb-4'>
         courses
       </h2>
       {/* Course Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[25px]'>
+      <div className='grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(323px,1fr))] gap-[25px]'>
         {/* Course Card 1 */}
-        <div className='bg-white rounded-2xl p-[14px] border border-black min-w-[323px]'>
+        <div className='bg-white rounded-2xl p-[14px] border border-black'>
           <Image
             src='/images/courses/courses/courses_pro-makeup.png'
             alt='Course Image'
@@ -42,7 +42,7 @@ const CoursesSection: React.FC = () => {
         </div>
 
         {/* Course Card 2 */}
-        <div className='bg-white rounded-2xl p-[14px] border border-black min-w-[323px]'>
+        <div className='bg-white rounded-2xl p-[14px] border border-black'>
           <Image
             src='/images/courses/courses/courses_express-makeup.png'
             alt='Course Image'
@@ -74,7 +74,7 @@ const CoursesSection: React.FC = () => {
         </div>
 
         {/* Course Card 3 */}
-        <div className='bg-white rounded-2xl p-[14px] border border-black min-w-[323px]'>
+        <div className='bg-white rounded-2xl p-[14px] border border-black'>
           <Image
             src='/images/courses/courses/courses_express-makeup-online.png'
             alt='Course Image'
@@ -106,7 +106,7 @@ const CoursesSection: React.FC = () => {
         </div>
 
         {/* Course Card 4 */}
-        <div className='bg-white rounded-2xl p-[14px] border border-black min-w-[323px]'>
+        <div className='bg-white rounded-2xl p-[14px] border border-black'>
           <Image
             src='/images/courses/courses/courses_hairstyling.png'
             alt='Course Image'

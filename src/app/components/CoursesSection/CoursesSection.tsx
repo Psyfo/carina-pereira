@@ -5,8 +5,21 @@ import React from 'react';
 const CoursesSection: React.FC = () => {
   return (
     <section className='flex flex-col lg:flex-row bg-cpCream border-b-2 border-black'>
-      {/* Course Video */}
-      <div className='w-full h-[734px] bg-[#C4C4C4] lg:hidden'></div>
+      <div className='w-full  bg-[#C4C4C4] lg:hidden flex justify-center items-center'>
+        <iframe
+          width='100%'
+          height='100%'
+          src='https://www.youtube.com/embed/ywcT6KwFTho'
+          title='YouTube video player'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+          className='w-full h-full aspect-[9/16] object-cover'
+          style={{
+            maxWidth: '100%', // Adjust this to match the video's width
+            maxHeight: '100%', // Adjust this to match the video's height
+          }}
+        ></iframe>
+      </div>
 
       {/* Course List */}
       <div className='lg:w-3/5'>
@@ -85,7 +98,21 @@ const CoursesSection: React.FC = () => {
       </div>
 
       {/* Course Video */}
-      <div className='w-2/5 bg-[#C4C4C4] hidden lg:block border-l-2 border-black'></div>
+      <div className='w-2/5 bg-[#C4C4C4] hidden lg:block border-l-2 border-black'>
+        <iframe
+          width='100%'
+          height='100%'
+          src='https://www.youtube.com/embed/ywcT6KwFTho'
+          title='YouTube video player'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+          className='w-full h-full aspect-[9/16] object-cover'
+          style={{
+            maxWidth: '100%', // Adjust this to match the video's width
+            maxHeight: '100%', // Adjust this to match the video's height
+          }}
+        ></iframe>
+      </div>
     </section>
   );
 };

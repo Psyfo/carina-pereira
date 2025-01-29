@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
   return (
     <div className='hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/landing/hero/hero.png")] md:bg-[url("/images/landing/hero/hero-md.png")] bg-cover bg-no-repeat bg-center'>
       <Image
-        src='/images/landing/hero/logo.png'
+        src='/images/hero/logo.png'
         alt='Hero Image'
         width={100}
         height={100}

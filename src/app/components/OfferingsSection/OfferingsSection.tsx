@@ -13,7 +13,7 @@ const OfferingsSection: React.FC = () => {
         <div className='flex flex-col items-center gap-[20px]'>
           <div className='flex items-center justify-center w-[150px] lg:h-[150px]'>
             <Image
-              src='/images/offerings/offering1.png'
+              src='/images/landing/offerings/offering1.png'
               alt='Description of image'
               width={150}
               height={150}
@@ -31,7 +31,7 @@ const OfferingsSection: React.FC = () => {
         <div className='flex flex-col items-center gap-[20px]'>
           <div className='flex items-center justify-center w-[150px] lg:h-[150px]'>
             <Image
-              src='/images/offerings/offering2.png'
+              src='/images/landing/offerings/offering2.png'
               alt='Description of image'
               width={150}
               height={150}
@@ -49,7 +49,7 @@ const OfferingsSection: React.FC = () => {
         <div className='flex flex-col items-center gap-[20px]'>
           <div className='flex items-center justify-center w-[150px] lg:h-[150px]'>
             <Image
-              src='/images/offerings/offering3.png'
+              src='/images/landing/offerings/offering3.png'
               alt='Description of image'
               width={150}
               height={150}
@@ -63,10 +63,10 @@ const OfferingsSection: React.FC = () => {
         </div>
 
         {/* Offering 4 */}
-        <div className='flex flex-col items-center items-center gap-[20px]'>
+        <div className='flex flex-col items-center gap-[20px]'>
           <div className='flex items-center justify-center w-[150px] lg:h-[150px]'>
             <Image
-              src='/images/offerings/offering4.png'
+              src='/images/landing/offerings/offering4.png'
               alt='Description of image'
               width={150}
               height={150}

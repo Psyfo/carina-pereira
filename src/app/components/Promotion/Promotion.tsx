@@ -5,7 +5,7 @@ import React from 'react';
 const Promotion: React.FC = () => {
   return (
     <section className='h-[150vh] md:h-[100vh] md:flex'>
-      <div className='h-[50%] md:h-[100%] md:w-[50%] bg-[url("/images/promotion/promo.png")] md:bg-[url("/images/promotion/promo-md.png")] bg-center bg-cover'></div>
+      <div className='h-[50%] md:h-[100%] md:w-[50%] bg-[url("/images/landing/promotion/promo.png")] md:bg-[url("/images/landing/promotion/promo-md.png")] bg-center bg-cover'></div>
       <div className='h-[50%] md:h-[100%] md:w-[50%] bg-cpOrange px-[30px] md:px-[100px] py-[75px] md:py-[155px] md:border-l-2 border-black'>
         <div className='font-tan-ashford font-bold text-[19px] md:text-[35px] tracking-wider mt-auto'>
           why enrol at Carina's International Makeup Academy?

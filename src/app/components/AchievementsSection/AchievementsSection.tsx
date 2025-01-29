@@ -21,7 +21,7 @@ const AchievementsSection: React.FC = () => {
         </div>
 
         <Image
-          src='/images/achievements/heart.png'
+          src='/images/landing/achievements/heart.png'
           alt='Achievement Image'
           width={500}
           height={300}
@@ -34,7 +34,7 @@ const AchievementsSection: React.FC = () => {
         </div>
 
         <Image
-          src='/images/achievements/heart.png'
+          src='/images/landing/achievements/heart.png'
           alt='Achievement Image'
           width={500}
           height={300}

@@ -6,7 +6,7 @@ const ImageFeed: React.FC = () => {
     <section className='w-[100vw] h-[269px] overflow-x-auto scrollbar-none'>
       <div className='flex items-start w-[2400px]'>
         <Image
-          src='/images/imagefeed/imagefeed-long.png'
+          src='/images/landing/imagefeed/imagefeed-long.png'
           alt='Long scrolling image'
           unoptimized
           height={269}
@@ -14,7 +14,7 @@ const ImageFeed: React.FC = () => {
           className='h-full w-[799px] flex items-start'
         />
         <Image
-          src='/images/imagefeed/imagefeed-long.png'
+          src='/images/landing/imagefeed/imagefeed-long.png'
           alt='Long scrolling image'
           unoptimized
           height={269}
@@ -22,7 +22,7 @@ const ImageFeed: React.FC = () => {
           className='h-full w-[799px] flex items-start'
         />
         <Image
-          src='/images/imagefeed/imagefeed-long.png'
+          src='/images/landing/imagefeed/imagefeed-long.png'
           alt='Long scrolling image'
           unoptimized
           height={269}

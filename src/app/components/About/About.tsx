@@ -6,7 +6,7 @@ const About: React.FC = () => {
   return (
     <section className='flex flex-col lg:flex-row items-center lg:gap-[60px] bg-cpCream lg:border-t-2 lg:border-b-2 lg:border-black'>
       <div
-        className="w-[100vw] h-[80vh] lg:h-[100vh] bg-[url('/images/about/about.png')] lg:bg-[url('/images/about/about-lg.png')] bg-center
+        className="w-[100vw] h-[80vh] lg:h-[100vh] bg-[url('/images/landing/about/about.png')] lg:bg-[url('/images/landing/about/about-lg.png')] bg-center
         bg-cover bg-cpCream lg:border-r-2 border-black"
       ></div>
       <div className='px-[26px] lg:px-0 lg:pr-[200px] pt-[73px] lg:pt-[100px] pb-[80px] '>

@@ -1,4 +1,5 @@
 import './globals.css';
+import Announcement from '@/components/Announcement/Announcement';
 import Footer from './Footer/Footer';
 import Navigation from '@/components/Navigation/Navigation';
 import type { Metadata } from 'next';
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navigation />
+        <Announcement />
         {children}
         <Footer />
       </body>

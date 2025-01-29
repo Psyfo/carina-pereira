@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <section className='px-[30px] md:px-[60px] py-[50px] md:flex'>
+    <section id='contact' className='px-[30px] md:px-[60px] py-[50px] md:flex'>
       <div className='md:w-[50%]'>
         <h1 className='font-tan-ashford font-bold text-[19px]'>get in touch</h1>
       </div>

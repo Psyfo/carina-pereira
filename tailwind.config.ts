@@ -16,8 +16,9 @@ export default {
         cpPink: '#F1A0C5',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
         inclusive: ['Inclusive Sans', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        'tan-ashford': ['Tan Ashford', 'sans-serif'],
       },
     },
   },

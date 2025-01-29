@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -10,7 +10,7 @@ const About: React.FC = () => {
         bg-cover bg-cpCream lg:border-r-2 border-black"
       ></div>
       <div className='px-[26px] lg:px-0 lg:pr-[200px] pt-[73px] lg:pt-[100px] pb-[80px] '>
-        <h1 className='font-bold text-[19px] tracking-[4%] lowercase mb-[54]'>
+        <h1 className='font-tan-ashford font-bold text-[19px] tracking-[0.04rem] lowercase mb-[54]'>
           about carina
         </h1>
 

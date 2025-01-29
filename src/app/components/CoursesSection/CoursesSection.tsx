@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -11,10 +11,10 @@ const CoursesSection: React.FC = () => {
       {/* Course List */}
       <div className='lg:w-3/5'>
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px] border-b-2 border-black'>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
             pro makeup
           </h1>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
             course
           </h1>
 
@@ -34,10 +34,10 @@ const CoursesSection: React.FC = () => {
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px] border-b-2 border-black'>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
             express makeup
           </h1>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
             course
           </h1>
 
@@ -61,10 +61,10 @@ const CoursesSection: React.FC = () => {
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px]'>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
             pro makeup
           </h1>
-          <h1 className='font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
+          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
             course
           </h1>
 

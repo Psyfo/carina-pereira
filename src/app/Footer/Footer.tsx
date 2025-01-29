@@ -5,7 +5,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer className='bg-cpPink'>
-      <div className='flex flex-col md:flex-row h-full'>
+      <div className='flex flex-col md:flex-row h-full md:border-t-2 border-black'>
         {/* Section 1 */}
         <div className='flex-1 border-b md:border-r md:border-b-0 border-black pt-[50px] pl-[60px] pb-12'>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider lowercase'>
@@ -94,13 +94,13 @@ const Footer: React.FC = () => {
           </h1>
 
           <Link
-            href='https://www.facebook.com/carinapereirainternational/'
+            href='/courses'
             className='font-inclusive text-[15px] underline lowercase mt-4'
           >
             courses
           </Link>
           <Link
-            href='https://www.facebook.com/carinapereirainternational/'
+            href='/services'
             className='font-inclusive text-[15px] underline lowercase'
           >
             services

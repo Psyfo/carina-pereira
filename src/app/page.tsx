@@ -1,3 +1,4 @@
+'use client';
 import About from './components/About/About';
 import AchievementsSection from './components/AchievementsSection/AchievementsSection';
 import Announcement from './components/Announcement/Announcement';

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
@@ -13,7 +14,6 @@ const About: React.FC = () => {
         <h1 className='font-tan-ashford font-bold text-[19px] tracking-[0.04rem] lowercase mb-[54]'>
           about carina
         </h1>
-
         <p className='font-inclusive text-[15px] leading-[1.5] mb-[30px]'>
           After extensive studies, The founder & owner, Carina Pereira joined
           the ranks of top artists at MAC Cosmetics. This was a dream
@@ -41,9 +41,11 @@ const About: React.FC = () => {
           owning and operating her own make-up school.
         </p>
 
-        <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full'>
-          view services
-        </button>
+        <Link href='/services'>
+          <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full'>
+            view services
+          </button>
+        </Link>
       </div>
     </section>
   );

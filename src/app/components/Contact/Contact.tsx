@@ -2,13 +2,13 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <section id='contact' className='px-[30px] md:px-[60px] py-[50px] md:flex'>
-      <div className='md:w-[50%]'>
+    <section id='contact' className='px-[30px] md:px-[60px] py-[50px] lg:flex'>
+      <div className='lg:w-[50%]'>
         <h1 className='font-tan-ashford font-bold text-[19px]'>get in touch</h1>
       </div>
-      <form className='md:w-[50%]'>
-        <div className='md:w-full md:flex gap-8'>
-          <div className='form-group flex mt-8 md:mt-0 flex-col flex-grow'>
+      <form className='lg:w-[50%]'>
+        <div className='lg:w-full lg:flex gap-8'>
+          <div className='form-group flex mt-8 lg:mt-0 flex-col flex-grow'>
             <label className='font-inclusive text-[1rem]' htmlFor='firstName'>
               First Name:
             </label>

@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
         />
       </Link>
       <div className='absolute left-[40px] bottom-[70px] font-tan-ashford text-[40px] md:text-[47px] text-white tracking-wider lowercase'>
-        Courses
+        pro make-up <br /> course
       </div>
     </div>
   );

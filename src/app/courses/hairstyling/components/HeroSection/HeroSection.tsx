@@ -4,7 +4,7 @@ import React from 'react';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className='relative hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/courses/hairstyling/hero.png")] md:bg-[url("/images/courses/hairstyling/hero-md.png")] bg-cover bg-no-repeat bg-center'>
+    <div className='relative hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/courses/hairstyling/hero-md.png")] md:bg-[url("/images/courses/hairstyling/hero-md.png")] bg-cover bg-no-repeat bg-center'>
       <Link href='/'>
         <Image
           src='/images/courses/hero/logo.png'

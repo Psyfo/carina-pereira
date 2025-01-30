@@ -11,7 +11,7 @@ const LearningSection: React.FC = () => {
 
       <div className='flex flex-col lg:flex-row items-center justify-center gap-[30px] mt-[30px]'>
         <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpPink'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               skincare
             </h1>
@@ -22,7 +22,7 @@ const LearningSection: React.FC = () => {
             <p className=''>Guide to make-up brushes</p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpOrange'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               back to basics
             </h1>
@@ -37,7 +37,7 @@ const LearningSection: React.FC = () => {
             <p className=''>Winged eyeliner</p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpPink'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               make-up looks
             </h1>
@@ -52,7 +52,7 @@ const LearningSection: React.FC = () => {
         </div>
 
         <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpOrange'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               colour correction
             </h1>
@@ -64,7 +64,7 @@ const LearningSection: React.FC = () => {
             <p className=''>Face shapes and how to enhance them</p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpPink'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               eye looks
             </h1>
@@ -77,7 +77,7 @@ const LearningSection: React.FC = () => {
             <p className=''>Winged shaped shadow</p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpOrange'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               advanced make-up
             </h1>

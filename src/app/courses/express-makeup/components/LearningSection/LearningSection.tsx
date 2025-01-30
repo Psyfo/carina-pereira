@@ -11,7 +11,7 @@ const LearningSection: React.FC = () => {
 
       <div className='flex flex-col lg:flex-row items-center justify-center gap-[30px] mt-[30px]'>
         <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpPink'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               Introduction of make-up artistry
             </h1>
@@ -21,7 +21,7 @@ const LearningSection: React.FC = () => {
             <p className=''>Correct product choice</p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpOrange'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               understanding skin types, skin care and primers
             </h1>
@@ -34,7 +34,7 @@ const LearningSection: React.FC = () => {
         </div>
 
         <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpPink lg:bg-cpOrange'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink lg:bg-cpOrange'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               basic full make-up application
             </h1>
@@ -47,7 +47,7 @@ const LearningSection: React.FC = () => {
             </p>
           </div>
 
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] bg-cpOrange lg:bg-cpPink'>
+          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange lg:bg-cpPink'>
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               make-up transition from day wear to evening
             </h1>

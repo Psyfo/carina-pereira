@@ -4,7 +4,7 @@ import React from 'react';
 
 const LearningSection: React.FC = () => {
   return (
-    <section className='px-[25px] lg:px-[10%] py-[33px]'>
+    <section className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[90px]'>
       <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
         what you'll learn
       </h1>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
@@ -32,18 +33,19 @@ const CoursesSection: React.FC = () => {
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>
-            Why choose this course?
+            why choose this course?
           </p>
           <p className='font-inclusive text-[15px] leading-[1.5] mb-[30px]'>
-            why choose this course?Gain an internationally-recognized
-            certificate, hands-on work experience, and job placement assistance.
-            You'll also have the chance to assist Carina on brand shoots and
-            weddings.
+            Gain an internationally-recognized certificate, hands-on work
+            experience, and job placement assistance. You'll also have the
+            chance to assist Carina on brand shoots and weddings.
           </p>
 
-          <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-            explore
-          </button>
+          <Link href='/courses/pro-makeup'>
+            <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
+              explore
+            </button>
+          </Link>
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px] border-b-2 border-black'>
@@ -55,45 +57,48 @@ const CoursesSection: React.FC = () => {
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>
-            earn an internationally recognized certificate and master the basics
+            Earn an internationally recognized certificate and master the basics
             of makeup artistry.
           </p>
           <p className='font-inclusive text-[15px] leading-[1.5]'>
             why choose this course?
           </p>
           <p className='font-inclusive text-[15px] leading-[1.5] mb-[30px]'>
-            perfect for beginners or those short on time, this course covers
+            Perfect for beginners or those short on time, this course covers
             essential techniques for matric dances, bridal looks, photo shoots,
             and more. Gain confidence in makeup application with expert
             guidance.
           </p>
 
-          <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-            explore
-          </button>
+          <Link href='/courses/express-makeup'>
+            <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
+              explore
+            </button>
+          </Link>
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px]'>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
-            pro makeup
+            online express make-up course
           </h1>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
             course
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>
-            Why choose this course?
+            why choose this course?
           </p>
           <p className='font-inclusive text-[15px] leading-[1.5] mb-[30px]'>
-            why choose this course?Gain an internationally-recognized
-            certificate, hands-on work experience, and job placement assistance.
-            You'll also have the chance to assist Carina on brand shoots and
-            weddings.
+            Gain an internationally-recognized certificate, hands-on work
+            experience, and job placement assistance. You'll also have the
+            chance to assist Carina on brand shoots and weddings.
           </p>
 
-          <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-            explore
-          </button>
+          <Link href='/courses/express-online'>
+            <button className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
+              explore
+            </button>
+          </Link>
         </div>
       </div>
 

@@ -1,60 +1,105 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+      document.body.style.overflow = ''; // Re-enable scrolling
+    }
+
+    return () => {
+      document.body.style.overflow = ''; // Cleanup when component unmounts
+    };
+  }, [isOpen]);
 
   return (
-    <nav className='absolute top-[3rem] right-[1.5rem] z-20'>
-      {/* Hamburger Icon (Visible Only on Mobile) */}
-      <div className='md:hidden cursor-pointer z-30' onClick={toggleMenu}>
-        <svg
-          className='w-6 h-6 text-white'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M4 6h16M4 12h16m-7 6h7'
-          />
-        </svg>
-      </div>
-
-      {/* Navigation Links */}
-      <ul
-        className={`flex flex-col gap-6 font-inter font-bold text-white text-[16px] p-4 mt-4 transition-opacity duration-300 ease-in-out 
-        md:flex-row md:relative  md:p-0 md:opacity-100 md:pointer-events-auto
-        absolute top-0 right-0 ${
-          isOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none md:opacity-100'
-        }`}
-      >
+    <nav className='fixed top-0 left-0 w-full bg-transparent z-30 flex items-center justify-between lg:px-12 py-6'>
+      {/* Navigation Links (Visible on lg: and up) */}
+      <ul className='hidden fixed top-[3rem] right-[1.5rem] lg:flex space-x-12 font-tan-ashford text-[17px] text-white lowercase tracking-wider'>
         <li>
-          <Link href='/courses' onClick={() => setIsOpen(false)}>
+          <Link href='/courses' className='drop-shadow-lg'>
             Courses
           </Link>
         </li>
         <li>
-          <Link href='/services' onClick={() => setIsOpen(false)}>
+          <Link href='/services' className='drop-shadow-lg'>
             Services
           </Link>
         </li>
         <li>
-          <Link href='/#contact' onClick={() => setIsOpen(false)}>
+          <Link href='/#contact' className='drop-shadow-lg'>
             Contact
           </Link>
         </li>
       </ul>
+
+      {/* Hamburger Icon (Hidden on lg:) */}
+      <Image
+        src='/images/nav/hamburger.tif.svg'
+        alt='Open Menu'
+        width={30}
+        height={30}
+        unoptimized
+        className='fixed top-[3rem] right-[1.5rem] z-20 cursor-pointer drop-shadow-lg lg:hidden'
+        onClick={() => setIsOpen(true)}
+      />
+
+      {/* Full-Screen Navigation Overlay (Mobile) */}
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-cpPink z-20 pt-[130px] pl-[40px] transition-opacity duration-300 ${
+          isOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        } lg:hidden`}
+      >
+        {/* Logo */}
+        <Link href='/'>
+          <Image
+            src='/images/nav/logo.png'
+            alt='Logo'
+            width={190}
+            height={100}
+            unoptimized
+            className='w-[190px] lg:w-[284px] lg:hidden absolute top-12 left-[1.5rem] z-30'
+          />
+        </Link>
+
+        {/* Close (Cross) Icon */}
+        <Image
+          src='/images/nav/cross.svg'
+          alt='Close Menu'
+          width={30}
+          height={30}
+          unoptimized
+          className='fixed top-[3rem] right-[1.5rem] z-30 cursor-pointer drop-shadow-lg'
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Mobile Navigation Links */}
+        <ul className='font-tan-ashford text-[17px] text-white lowercase tracking-wider'>
+          <li className='mb-8'>
+            <Link href='/courses' onClick={() => setIsOpen(false)}>
+              Courses
+            </Link>
+          </li>
+          <li className='mt-8'>
+            <Link href='/services' onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
+          </li>
+          <li className='mt-8'>
+            <Link href='/#contact' onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

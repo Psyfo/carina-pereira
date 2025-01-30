@@ -30,7 +30,7 @@ const AboutSection: React.FC = () => {
         </p>
       </div>
 
-      <div className='mx-auto lg:w-[45s0px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] mt-[84px] lg:mt-0'>
+      <div className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20] py-[30] mt-[84px] lg:mt-0'>
         <p className=''>Cost: R15 000</p>
         <p className=' mt-8'>
           Duration of this course: 2 months Full time & 4 months Part time

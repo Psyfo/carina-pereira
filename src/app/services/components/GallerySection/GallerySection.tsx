@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
+/* eslint-disable react/no-unescaped-entities */
+
 const images = [
   '/images/services/gallery/TEMPLE_14 1.png',
   '/images/services/gallery/TEMPLE_14 2.png',
@@ -50,20 +52,27 @@ const images = [
 
 const GallerySection: React.FC = () => {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 gap-0'>
-      {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image}
-          alt={`Gallery image ${index + 1}`}
-          className='w-full h-auto aspect-[3/4]'
-          layout='responsive'
-          width={500}
-          height={750}
-          unoptimized
-        />
-      ))}
-    </div>
+    <section className=''>
+      <div className='px-[38px] py-[45px]'>
+        <h1 className='font-tan-ashford font-bold text-[19px]'>
+          carina's work
+        </h1>
+      </div>
+      <div className='grid grid-cols-2 md:grid-cols-4 gap-0'>
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            src={image}
+            alt={`Gallery image ${index + 1}`}
+            className='w-full h-auto aspect-[3/4]'
+            layout='responsive'
+            width={500}
+            height={750}
+            unoptimized
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -1,10 +1,14 @@
+import AboutSection from './components/AboutSection/AboutSection';
+import HeroSection from './components/HeroSection/HeroSection';
+import LearningSection from './components/LearningSection/LearningSection';
 import React from 'react';
 
 const ExpressMakeupPage: React.FC = () => {
   return (
     <div>
-      <h1>Express Makeup Course</h1>
-      <p>Welcome to the Express Makeup Course page!</p>
+      <HeroSection />
+      <AboutSection />
+      <LearningSection />
     </div>
   );
 };

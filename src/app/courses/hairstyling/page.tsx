@@ -1,13 +1,14 @@
+import AboutSection from './components/AboutSection/AboutSection';
+import HeroSection from './components/HeroSection/HeroSection';
+import LearningSection from './components/LearningSection/LearningSection';
 import React from 'react';
 
 const HairstylingPage: React.FC = () => {
   return (
     <div>
-      <h1>Hairstyling Courses</h1>
-      <p>
-        Welcome to the hairstyling courses page. Here you will find various
-        courses to enhance your hairstyling skills.
-      </p>
+      <HeroSection />
+      <AboutSection />
+      <LearningSection />
     </div>
   );
 };

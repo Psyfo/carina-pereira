@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Variants, motion } from 'framer-motion';
 
@@ -60,6 +61,13 @@ const AboutSection: React.FC = () => {
           professional makeup artist, with insights into leveraging social
           media, invoicing clients, and managing your time for wedding bookings.
         </motion.p>
+        <motion.div variants={fadeInUpVariants} className='mt-8'>
+          <Link href='/courses'>
+            <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
+              enroll now
+            </button>
+          </Link>
+        </motion.div>
       </motion.div>
 
       {/* Right Column */}

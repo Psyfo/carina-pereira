@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Variants, motion } from 'framer-motion';
 
@@ -87,6 +88,13 @@ const AboutSection: React.FC = () => {
             aftercare instruction techniques
           </motion.li>
         </motion.ul>
+        <motion.div variants={fadeInUpVariants} className='mt-8'>
+          <Link href='/courses'>
+            <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
+              enroll now
+            </button>
+          </Link>
+        </motion.div>
       </motion.div>
 
       {/* Right Column */}

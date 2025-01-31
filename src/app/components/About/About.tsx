@@ -20,7 +20,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className='font-tan-ashford font-bold text-[19px] tracking-[0.04rem] lowercase mb-[54]'
+          className='font-tan-ashford font-bold text-[19px] tracking-[0.04rem] lowercase mb-[54px]'
         >
           about carina
         </motion.h1>

@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import React from 'react';
 import TestimonialBanner from './components/TestimonialBanner';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const TestimonialSection: React.FC = () => {
@@ -76,12 +76,19 @@ const TestimonialSection: React.FC = () => {
       <TestimonialBanner />
 
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={50}
         slidesPerView={1}
         className='w-full'
         dir='rtl'
         style={{ zIndex: 1 }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          stopOnLastSlide: false,
+          reverseDirection: false,
+        }}
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>

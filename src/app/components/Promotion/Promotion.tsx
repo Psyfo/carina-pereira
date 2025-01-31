@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
@@ -36,9 +37,11 @@ const Promotion: React.FC = () => {
           </ul>
         </div>
 
-        <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'>
-          enroll now
-        </button>
+        <Link href='/courses'>
+          <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'>
+            enroll now
+          </button>
+        </Link>
       </div>
     </section>
   );

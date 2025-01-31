@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
         width={30}
         height={30}
         unoptimized
-        className='fixed top-[3rem] right-[1.5rem] z-20 cursor-pointer drop-shadow-lg lg:hidden'
+        className='w-[30] h-[30] fixed top-[3rem] right-[1.5rem] z-20 cursor-pointer drop-shadow-lg lg:hidden'
         onClick={() => setIsOpen(true)}
       />
 
@@ -77,7 +77,7 @@ const Navigation: React.FC = () => {
           width={30}
           height={30}
           unoptimized
-          className='fixed top-[3rem] right-[1.5rem] z-30 cursor-pointer drop-shadow-lg'
+          className='w-[30] h-[30] fixed top-[3rem] right-[1.5rem] z-30 cursor-pointer drop-shadow-lg'
           onClick={() => setIsOpen(false)}
         />
 

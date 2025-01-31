@@ -1,67 +1,113 @@
 import React from 'react';
+import { Variants, motion } from 'framer-motion';
 
 /* eslint-disable react/no-unescaped-entities */
 
 const LearningSection: React.FC = () => {
+  // Animation variants for fading in upwards
+  const fadeInUpVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
   return (
-    <section className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[353px]'>
-      <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.3 }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+      className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[353px]'
+    >
+      <motion.h1
+        variants={fadeInUpVariants}
+        className='font-tan-ashford font-bold text-[19px] tracking-wider'
+      >
         what you'll learn
-      </h1>
+      </motion.h1>
 
       <div className='flex flex-col lg:flex-row items-center justify-center gap-[30px] mt-[30px]'>
-        <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              Introduction of make-up artistry
-            </h1>
-
-            <p className='mt-[40px]'></p>
-            <p className=''>Guide to make-up brushes</p>
-            <p className=''>Correct product choice</p>
-          </div>
-
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              understanding skin types, skin care and primers
-            </h1>
-
-            <p className='mt-[40px]'>Colour correcting</p>
-            <p className=''>Brow shaping</p>
-            <p className=''>Correct concealing</p>
-            <p className=''>Foundation matching</p>
-          </div>
+        <div className='w-full flex flex-col gap-[30px]'>
+          {[
+            {
+              title: 'Introduction of make-up artistry',
+              bg: 'bg-cpPink',
+              points: ['Guide to make-up brushes', 'Correct product choice'],
+            },
+            {
+              title: 'understanding skin types, skin care and primers',
+              bg: 'bg-cpOrange',
+              points: [
+                'Colour correcting',
+                'Brow shaping',
+                'Correct concealing',
+                'Foundation matching',
+              ],
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUpVariants}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bg}`}
+            >
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+                {item.title}
+              </h1>
+              <div className='mt-[40px]'>
+                {item.points.map((point, idx) => (
+                  <p key={idx}>{point}</p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink lg:bg-cpOrange'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              basic full make-up application
-            </h1>
-
-            <p className='mt-[40px]'>Bronzing - Brows</p>
-            <p className=''>Blush application</p>
-            <p className=''>Highlight placement</p>
-            <p className=''>
-              Dewy make-up, flawless skin and bronzed glowy eye
-            </p>
-          </div>
-
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange lg:bg-cpPink'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              make-up transition from day wear to evening
-            </h1>
-
-            <p className='mt-[40px]'>Carbon smokey eye</p>
-            <p className=''>Fuller lips application</p>
-            <p className=''>
-              Glam make-up, full contour, strong highlight with light shading
-            </p>
-            <p className=''>False lash application</p>
-          </div>
+        <div className='w-full flex flex-col gap-[30px]'>
+          {[
+            {
+              title: 'basic full make-up application',
+              bg: 'bg-cpPink lg:bg-cpOrange',
+              points: [
+                'Bronzing - Brows',
+                'Blush application',
+                'Highlight placement',
+                'Dewy make-up, flawless skin and bronzed glowy eye',
+              ],
+            },
+            {
+              title: 'make-up transition from day wear to evening',
+              bg: 'bg-cpOrange lg:bg-cpPink',
+              points: [
+                'Carbon smokey eye',
+                'Fuller lips application',
+                'Glam make-up, full contour, strong highlight with light shading',
+                'False lash application',
+              ],
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUpVariants}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bg}`}
+            >
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+                {item.title}
+              </h1>
+              <div className='mt-[40px]'>
+                {item.points.map((point, idx) => (
+                  <p key={idx}>{point}</p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

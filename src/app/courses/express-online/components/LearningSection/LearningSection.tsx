@@ -1,67 +1,138 @@
 import React from 'react';
+import { Variants, motion } from 'framer-motion';
 
 /* eslint-disable react/no-unescaped-entities */
 
 const LearningSection: React.FC = () => {
+  // Animation variants for fading in upwards
+  const fadeInUpVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
   return (
-    <section className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[353px]'>
-      <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.3 }} // Trigger at 30% visibility
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.3, // Stagger the children animations
+          },
+        },
+      }}
+      className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[90px]'
+    >
+      {/* Heading */}
+      <motion.h1
+        variants={fadeInUpVariants}
+        className='font-tan-ashford font-bold text-[19px] tracking-wider'
+      >
         what you'll learn
-      </h1>
+      </motion.h1>
 
-      <div className='flex flex-col lg:flex-row items-center justify-center gap-[30px] mt-[30px]'>
-        <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              Introduction of make-up artistry
-            </h1>
+      {/* Content Grid */}
+      <motion.div
+        variants={fadeInUpVariants}
+        className='flex flex-col lg:flex-row items-center justify-center gap-[30px] mt-[30px]'
+      >
+        {/* Left Column */}
+        <motion.div
+          variants={fadeInUpVariants}
+          className='w-full flex flex-col gap-[30px]'
+        >
+          {[
+            {
+              title: 'Introduction of make-up artistry',
+              details: ['Guide to make-up brushes', 'Correct product choice'],
+              bgColor: 'bg-cpPink',
+            },
+            {
+              title: 'Understanding skin types, skin care and primers',
+              details: [
+                'Colour correcting',
+                'Brow shaping',
+                'Correct concealing',
+                'Foundation matching',
+              ],
+              bgColor: 'bg-cpOrange',
+            },
+            {
+              title: 'Basic full make-up application',
+              details: [
+                'Bronzing - Brows',
+                'Blush application',
+                'Highlight placement',
+                'Dewy make-up, flawless skin and bronzed glowy eye',
+              ],
+              bgColor: 'bg-cpPink',
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUpVariants}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bgColor}`}
+            >
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+                {item.title}
+              </h1>
+              <div className='mt-[40px]'>
+                {item.details.map((detail, i) => (
+                  <p key={i}>{detail}</p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-            <p className='mt-[40px]'></p>
-            <p className=''>Guide to make-up brushes</p>
-            <p className=''>Correct product choice</p>
-          </div>
-
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              understanding skin types, skin care and primers
-            </h1>
-
-            <p className='mt-[40px]'>Colour correcting</p>
-            <p className=''>Brow shaping</p>
-            <p className=''>Correct concealing</p>
-            <p className=''>Foundation matching</p>
-          </div>
-        </div>
-
-        <div className='w-full  flex flex-col gap-[30px]'>
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink lg:bg-cpOrange'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              basic full make-up application
-            </h1>
-
-            <p className='mt-[40px]'>Bronzing - Brows</p>
-            <p className=''>Blush application</p>
-            <p className=''>Highlight placement</p>
-            <p className=''>
-              Dewy make-up, flawless skin and bronzed glowy eye
-            </p>
-          </div>
-
-          <div className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange lg:bg-cpPink'>
-            <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
-              make-up transition from day wear to evening
-            </h1>
-
-            <p className='mt-[40px]'>Carbon smokey eye</p>
-            <p className=''>Fuller lips application</p>
-            <p className=''>
-              Glam make-up, full contour, strong highlight with light shading
-            </p>
-            <p className=''>False lash application</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        {/* Right Column */}
+        <motion.div
+          variants={fadeInUpVariants}
+          className='w-full flex flex-col gap-[30px]'
+        >
+          {[
+            {
+              title: 'Make-up transition from day wear to evening',
+              details: [
+                'Carbon smokey eye',
+                'Fuller lips application',
+                'Glam make-up, full contour, strong highlight with light shading',
+                'False lash application',
+              ],
+              bgColor: 'bg-cpOrange',
+            },
+            {
+              title: 'Advanced make-up techniques',
+              details: [
+                'Ethnic skin make-up',
+                'False eyelash application',
+                'Male grooming',
+                'Creative (art) make-up',
+                'SFX make-up',
+                'Current make-up trends',
+              ],
+              bgColor: 'bg-cpPink',
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUpVariants}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bgColor}`}
+            >
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+                {item.title}
+              </h1>
+              <div className='mt-[40px]'>
+                {item.details.map((detail, i) => (
+                  <p key={i}>{detail}</p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 

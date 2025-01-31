@@ -1,3 +1,4 @@
+'use client';
 import GallerySection from './components/GallerySection/GallerySection';
 import HeroSection from './components/HeroSection/HeroSection';
 import React from 'react';

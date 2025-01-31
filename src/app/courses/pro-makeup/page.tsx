@@ -1,3 +1,4 @@
+'use client';
 import AboutSection from './components/AboutSection/AboutSection';
 import HeroSection from './components/HeroSection/HeroSection';
 import LearningSection from './components/LearningSection/LearningSection';

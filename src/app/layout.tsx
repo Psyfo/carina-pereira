@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Carina Pereira',
   description: 'Personal website of Carina Pereira',
+  icons: '/images/favicon.svg',
 };
 
 export default function RootLayout({

@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
+import { Variants, motion } from 'framer-motion';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -51,25 +53,59 @@ const images = [
 ];
 
 const GallerySection: React.FC = () => {
+  // Animation variants for the heading
+  const headingVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  // Animation variants for the images
+  const imageVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: index * 0.2, // Stagger delay based on index
+      },
+    }),
+  };
+
   return (
     <section className=''>
       <div className='px-[38px] py-[45px]'>
-        <h1 className='font-tan-ashford font-bold text-[19px]'>
+        {/* Animated Heading */}
+        <motion.h1
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.5 }} // Trigger at 50% visibility
+          variants={headingVariants}
+          className='font-tan-ashford font-bold text-[19px]'
+        >
           carina's work
-        </h1>
+        </motion.h1>
       </div>
       <div className='grid grid-cols-2 md:grid-cols-4 gap-0'>
         {images.map((image, index) => (
-          <Image
+          <motion.div
             key={index}
-            src={image}
-            alt={`Gallery image ${index + 1}`}
-            className='min-h-full min-w-full object-cover'
-            layout='responsive'
-            width={500}
-            height={750}
-            unoptimized
-          />
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.5 }} // Trigger at 50% visibility
+            variants={imageVariants}
+            custom={index} // Pass the index to stagger the animations
+          >
+            <Image
+              src={image}
+              alt={`Gallery image ${index + 1}`}
+              className='min-h-full min-w-full object-cover'
+              layout='responsive'
+              width={500}
+              height={750}
+              unoptimized
+            />
+          </motion.div>
         ))}
       </div>
     </section>

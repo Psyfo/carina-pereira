@@ -25,11 +25,8 @@ const CoursesSection: React.FC = () => {
       {/* Course List */}
       <div className='lg:w-3/5'>
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px] border-b-2 border-black'>
-          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
-            pro makeup
-          </h1>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
-            course
+            pro make-up <br /> course
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>
@@ -49,11 +46,8 @@ const CoursesSection: React.FC = () => {
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px] border-b-2 border-black'>
-          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
-            express makeup
-          </h1>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
-            course
+            express make-up <br /> course
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>
@@ -78,11 +72,8 @@ const CoursesSection: React.FC = () => {
         </div>
 
         <div className='py-[50px] px-[30px] lg:px-0 lg:pl-[50px] lg:pr-[300px]'>
-          <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase'>
-            online express make-up course
-          </h1>
           <h1 className='font-tan-ashford font-bold text-[19px] tracking-[4%] lowercase mb-[35px]'>
-            course
+            online express make-up <br /> course
           </h1>
 
           <p className='font-inclusive text-[15px] leading-[1.5]'>

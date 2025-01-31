@@ -1,12 +1,37 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Contact: React.FC = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
+    }
+  }, [inView, controls]);
+
   return (
-    <section id='contact' className='px-[30px] md:px-[60px] py-[50px] lg:flex'>
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      id='contact'
+      className='px-[30px] md:px-[60px] py-[50px] lg:flex'
+    >
       <div className='lg:w-[50%]'>
         <h1 className='font-tan-ashford font-bold text-[19px]'>get in touch</h1>
       </div>
-      <form className='lg:w-[50%]'>
+      <motion.form
+        initial={{ opacity: 0, y: 30 }}
+        animate={controls}
+        className='lg:w-[50%]'
+      >
         <div className='lg:w-full lg:flex gap-8'>
           <div className='form-group flex mt-8 lg:mt-0 flex-col flex-grow'>
             <label className='font-inclusive text-[1rem]' htmlFor='firstName'>
@@ -56,14 +81,16 @@ const Contact: React.FC = () => {
             required
           ></textarea>
         </div>
-        <button
+        <motion.button
           type='submit'
-          className=' bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'
+          className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           submit
-        </button>
-      </form>
-    </section>
+        </motion.button>
+      </motion.form>
+    </motion.section>
   );
 };
 

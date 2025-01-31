@@ -10,7 +10,7 @@ const HeroSection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }} // Start slightly below and invisible
       animate={{ opacity: 1, y: 0 }} // Fade in and move up to original position
       transition={{ duration: 1.5 }} // Animation duration
-      className='relative hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/courses/express-online/hero-md.png")] md:bg-[url("/images/courses/express-online/hero-md.png")] bg-cover bg-no-repeat bg-center'
+      className='relative hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/courses/express-online/hero.png")] md:bg-[url("/images/courses/express-online/hero-md.png")] bg-cover bg-no-repeat bg-center'
     >
       <Link href='/'>
         <motion.div

@@ -64,7 +64,7 @@ const GallerySection: React.FC = () => {
             key={index}
             src={image}
             alt={`Gallery image ${index + 1}`}
-            className='w-full h-auto aspect-[3/4]'
+            className='min-h-full min-w-full object-cover'
             layout='responsive'
             width={500}
             height={750}

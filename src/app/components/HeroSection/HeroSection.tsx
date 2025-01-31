@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5 }}
-      className='hero-section w-full h-[80vh] md:h-[100vh] bg-[url("/images/landing/hero/hero.png")] md:bg-[url("/images/landing/hero/hero-md.png")] bg-cover bg-no-repeat bg-center'
+      className='hero-section w-full h-[85vh] md:h-[100vh] bg-[url("/images/landing/hero/hero.png")] md:bg-[url("/images/landing/hero/hero-md.png")] bg-cover bg-no-repeat bg-center'
     >
       <Link href='/'>
         <motion.div

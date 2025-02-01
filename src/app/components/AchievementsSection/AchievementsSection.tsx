@@ -28,7 +28,7 @@ const AchievementsSection: React.FC = () => {
         our achievements
       </h1>
 
-      <p className='font-inclusive text-[15px] lowercase mx-[45px] leading-[1.5] mb-[70px]'>
+      <p className='font-inclusive text-[15px] text-center lowercase mx-[45px] leading-[1.5] mb-[70px] max-w-[627px]'>
         After extensive studies, The founder & owner, Carina Pereira joined the
         ranks of top artists at MAC Cosmetics. This was a dream opportunity
       </p>

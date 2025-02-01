@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Image
-            src='/images/courses/hero/logo.png'
+            src='/images/courses/hero/logo.svg'
             alt='Hero Image'
             width={100}
             height={100}

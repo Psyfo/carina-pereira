@@ -79,15 +79,9 @@ const AboutSection: React.FC = () => {
         variants={fadeInUpVariants}
         className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] mt-[84px] lg:mt-0'
       >
-        <motion.p variants={fadeInUpVariants}>Cost: R15 000</motion.p>
+        <motion.p variants={fadeInUpVariants}>Cost: R4800</motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
-          Duration of this course: 2 months Full time & 4 months Part time
-        </motion.p>
-        <motion.p variants={fadeInUpVariants} className='mt-8'>
-          Full time course: Tuesday to Friday 10:00am - 13:00pm
-        </motion.p>
-        <motion.p variants={fadeInUpVariants}>
-          Part time course: Tuesday evenings 18:00pm - 21:00pm
+          Duration of this course: Online, at your own pace.
         </motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
           Certificate & qualification: An internationally recognised certificate

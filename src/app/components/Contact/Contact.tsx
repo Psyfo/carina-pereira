@@ -1,7 +1,9 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 const Contact: React.FC = () => {
   const controls = useAnimation();
@@ -10,11 +12,58 @@ const Contact: React.FC = () => {
     triggerOnce: true,
   });
 
+  const [submissionStatus, setSubmissionStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
+
   useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
     }
   }, [inView, controls]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const form = event.currentTarget; // Get the form element
+
+    // Gather form data
+    const formData = new FormData(form);
+    const formValues = {
+      firstName: formData.get('firstName') as string,
+      lastName: formData.get('lastName') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      // Send the form data to the API route
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmissionStatus({ success: true, message: result.message });
+      } else {
+        setSubmissionStatus({ success: false, message: result.message });
+      }
+    } catch (error) {
+      setSubmissionStatus({
+        success: false,
+        message: 'An error occurred. Please try again later.',
+      });
+    }
+
+    // Reset the form after submission
+    form.reset();
+  };
 
   return (
     <motion.section
@@ -31,6 +80,7 @@ const Contact: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={controls}
         className='lg:w-[50%]'
+        onSubmit={handleSubmit}
       >
         <div className='lg:w-full lg:flex gap-8'>
           <div className='form-group flex mt-8 lg:mt-0 flex-col flex-grow'>
@@ -89,6 +139,19 @@ const Contact: React.FC = () => {
         >
           submit
         </motion.button>
+
+        {/* Display submission message */}
+        {submissionStatus && (
+          <div
+            className={`mt-4 p-4 rounded-md ${
+              submissionStatus.success
+                ? 'bg-green-100 text-green-800'
+                : 'bg-red-100 text-red-800'
+            }`}
+          >
+            {submissionStatus.message}
+          </div>
+        )}
       </motion.form>
     </motion.section>
   );

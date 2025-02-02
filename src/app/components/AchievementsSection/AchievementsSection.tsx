@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import NumberAnimation from '@/components/NumberAnimation/NumberAnimation';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -10,10 +11,12 @@ const AchievementsSection: React.FC = () => {
     threshold: 0.5, // Trigger halfway into the section
     triggerOnce: true,
   });
+  const [startAnimation, setStartAnimation] = useState(false); // State to control number animation
 
   useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
+      setStartAnimation(true); // Start the number animation
     }
   }, [inView, controls]);
 
@@ -39,7 +42,15 @@ const AchievementsSection: React.FC = () => {
           animate={controls}
           className='flex flex-col items-center'
         >
-          <p className='font-tan-ashford font-bold text-[29px]'>+120</p>
+          <div className='flex font-tan-ashford font-bold text-[29px]'>
+            +
+            <NumberAnimation
+              target={120}
+              duration={4000}
+              start={startAnimation}
+            />{' '}
+            {/* Pass the start state */}
+          </div>
           <p className='font-inclusive text-[22px]'>students</p>
         </motion.div>
 
@@ -56,7 +67,15 @@ const AchievementsSection: React.FC = () => {
           animate={controls}
           className='flex flex-col items-center'
         >
-          <p className='font-tan-ashford font-bold text-[29px]'>4</p>
+          <div className='flex font-tan-ashford font-bold text-[29px]'>
+            +
+            <NumberAnimation
+              target={4}
+              duration={4000}
+              start={startAnimation}
+            />{' '}
+            {/* Pass the start state */}
+          </div>
           <p className='font-inclusive text-[22px]'>courses</p>
         </motion.div>
 
@@ -73,7 +92,15 @@ const AchievementsSection: React.FC = () => {
           animate={controls}
           className='flex flex-col items-center'
         >
-          <p className='font-tan-ashford font-bold text-[29px]'>13</p>
+          <div className='flex font-tan-ashford font-bold text-[29px]'>
+            +
+            <NumberAnimation
+              target={13}
+              duration={4000}
+              start={startAnimation}
+            />{' '}
+            {/* Pass the start state */}
+          </div>
           <p className='font-inclusive text-[22px]'>years experience</p>
         </motion.div>
       </div>

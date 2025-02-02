@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface NumberAnimationProps {
   target: number;
@@ -32,7 +32,7 @@ const NumberAnimation: React.FC<NumberAnimationProps> = ({
   }, [target, duration, start]); // Run when target, duration, or start changes
 
   return (
-    <div className='font-serif font-bold text-[29px] leading-none'>{value}</div> // Display the animated number
+    <div className='font-tan-ashford font-bold text-[29px]'>{value}</div> // Display the animated number
   );
 };
 

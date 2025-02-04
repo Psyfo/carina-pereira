@@ -17,6 +17,8 @@ const Contact: React.FC = () => {
     message: string;
   } | null>(null);
 
+  const [isSubmitting, setIsSubmitting] = useState(false); // Track form submission state
+
   useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
@@ -25,6 +27,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent the default form submission behavior
+    setIsSubmitting(true); // Disable the submit button while processing
 
     const form = event.currentTarget; // Get the form element
 
@@ -39,7 +42,7 @@ const Contact: React.FC = () => {
 
     try {
       // Send the form data to the API route
-      const response = await fetch('/api/submit-form', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,6 +62,8 @@ const Contact: React.FC = () => {
         success: false,
         message: 'An error occurred. Please try again later.',
       });
+    } finally {
+      setIsSubmitting(false); // Re-enable the submit button
     }
 
     // Reset the form after submission
@@ -136,8 +141,9 @@ const Contact: React.FC = () => {
           className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          disabled={isSubmitting} // Disable button while submitting
         >
-          submit
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </motion.button>
 
         {/* Display submission message */}

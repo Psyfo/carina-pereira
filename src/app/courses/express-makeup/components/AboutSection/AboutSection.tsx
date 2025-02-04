@@ -58,7 +58,11 @@ const AboutSection: React.FC = () => {
         </motion.p>
 
         <motion.div variants={fadeInUpVariants} className='mt-8'>
-          <Link href='/courses'>
+          <Link
+            href='/https://academy.carinapereira.com/product/express-make-up-course/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
               enroll now
             </button>

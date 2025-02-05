@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { Variants, motion } from 'framer-motion';
 
@@ -31,53 +30,58 @@ const AboutSection: React.FC = () => {
         className='lg:w-[600px] flex flex-col items-start'
       >
         <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
-          about this course:
+          turn your passion into a thriving make-up career
         </h1>
+
+        <h4 className='font-inclusive text-[20px] leading-[1.5] mt-8'>
+          From Beginner to Fully-Booked: The Path to Becoming a Recognised
+          Makeup Artist
+        </h4>
 
         <motion.p
           variants={fadeInUpVariants}
           className='font-inclusive text-[15px] leading-[1.5] mt-8'
         >
-          This course is the gold-standard if becoming a professional make-up
-          artist is the end goal. All techniques and insider secrets are exposed
-          and taught in detail.
+          You have the talent and the passion for makeup, but you don’t know
+          where to start. You dream of seeing your name recognized in the
+          industry, of building a client base that keeps you fully booked, but
+          without the right training, credentials, and connections, it feels
+          overwhelming. That’s where this course comes in.
         </motion.p>
         <motion.p
           variants={fadeInUpVariants}
           className='font-inclusive text-[15px] leading-[1.5] mt-8'
         >
-          Each student will be provided with a set of Swiitchbeauty makeup
-          brushes, a customized tote bag, a notebook, and a detailed, inclusive
-          makeup training manual.
+          We provide the skills, mentorship, and hands-on experience you need to
+          transform your passion into a profitable career. Whether you want to
+          master bridal makeup, fashion editorials, or celebrity styling, this
+          is the gold-standard course to get you there. With an internationally
+          recognised certification, real-world industry exposure, and expert-led
+          training, you’ll be fully equipped to make your mark in the world of
+          professional makeup artistry.
         </motion.p>
         <motion.p
           variants={fadeInUpVariants}
           className='font-inclusive text-[15px] leading-[1.5] mt-8'
         >
-          This course offers a comprehensive introduction to makeup artistry,
-          covering everything from makeup brushes to selecting the right
-          products. You'll explore every aspect of the makeup world.
-          Additionally, the course offers guidance on branding yourself as a
-          professional makeup artist, with insights into leveraging social
-          media, invoicing clients, and managing your time for wedding bookings.
+          Why learn from us? <br />
+          This isn’t just another makeup course—it’s a launchpad for your
+          career. Your mentor, Carina Pereira, has trained with industry-leading
+          brands and built a name for herself at MAC Cosmetics, working on
+          fashion weeks, music videos, and high-profile celebrity shoots. As an
+          elite artist on MAC’s events team, she honed not only her makeup
+          skills but also her ability to teach and shape the next generation of
+          makeup professionals. Her passion for education led her to establish
+          this course, ensuring aspiring artists like you receive top-tier
+          training, insider techniques, and hands-on experience in real industry
+          settings.
         </motion.p>
-        <motion.div variants={fadeInUpVariants} className='mt-8'>
-          <Link
-            href='https://academy.carinapereira.com/product/pro-makeup-course/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-              enroll now
-            </button>
-          </Link>
-        </motion.div>
       </motion.div>
 
       {/* Right Column */}
       <motion.div
         variants={fadeInUpVariants}
-        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] mt-[84px] lg:mt-0'
+        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] lg:px-[45px] py-[30px] mt-[84px] lg:mt-0'
       >
         <motion.p variants={fadeInUpVariants}>Cost: R15 000</motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
@@ -95,6 +99,19 @@ const AboutSection: React.FC = () => {
           the opportunity to assist Carina on brand shoots & weddings to gain
           experience.
         </motion.p>
+        <motion.p variants={fadeInUpVariants} className='mt-8'>
+          What you'll get
+        </motion.p>
+        <motion.ul variants={fadeInUpVariants} className='list-disc pl-[20px]'>
+          {' '}
+          <li>A premium set of Swiitchbeauty makeup brushes</li>
+          <li>A customized tote bag</li>
+          <li>A professional-grade make-up training manual</li>
+          <li>
+            A detailed, hands-on learning experience with expert mentorship
+          </li>
+          <li>The opportunity to assist Carina on brand shoots and weddings</li>{' '}
+        </motion.ul>
       </motion.div>
     </motion.section>
   );

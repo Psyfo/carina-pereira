@@ -24,7 +24,7 @@ const CTA: React.FC = () => {
     >
       <motion.div
         variants={fadeInUpVariants}
-        className='flex flex-col gap-8 items-center justify-center bg-cpPink rounded-[35] px-4 py-[60px] lg:py-[70px]'
+        className='flex flex-col gap-8 items-center justify-center bg-cpPink rounded-[35px] px-4 py-[60px] lg:py-[70px]'
       >
         <h2 className='font-tan-ashford font-bold text-4]'>
           ready to take the first step?

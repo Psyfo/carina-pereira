@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
-import { Variants, motion } from 'framer-motion';
+import React from "react";
+import { Variants, motion } from "framer-motion";
+
+/* eslint-disable react/no-unescaped-entities */
 
 const AboutSection: React.FC = () => {
   // Animation variants for fading in upwards
@@ -28,91 +29,63 @@ const AboutSection: React.FC = () => {
         variants={fadeInUpVariants}
         className='lg:w-[600px] flex flex-col items-start'
       >
-        {/* Heading */}
-        <motion.h1
-          variants={fadeInUpVariants}
-          className='font-tan-ashford font-bold text-[19px] tracking-wider'
-        >
-          about this course:
-        </motion.h1>
+        <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
+          learn to style like a pro in a few weeks
+        </h1>
 
-        {/* Paragraph */}
+        <h4 className='font-inclusive text-[20px] leading-[1.5] mt-8'>
+          No More YouTube Fails. Just Real, Usable Techniques.
+        </h4>
+
         <motion.p
           variants={fadeInUpVariants}
           className='font-inclusive text-[15px] leading-[1.5] mt-8'
         >
-          A comprehensive course giving you the inside tips of industry relevant
-          hairstyling techniques so you can be an all in one artist who can
-          offer hairstyling as well.
+          Struggling to curl your hair without looking like you got caught in a
+          wind tunnel? Frustrated that your updos never last past the first
+          hour? We get it—hairstyling can feel like a magic trick only
+          professionals know how to pull off. But here’s the secret: it’s all
+          about technique, and we’re here to teach you every step of the way.
+        </motion.p>
+        <motion.p
+          variants={fadeInUpVariants}
+          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+        >
+          This course is designed for anyone who wants to take the guesswork out
+          of hairstyling. Whether you're a total beginner tired of
+          trial-and-error or a makeup artist looking to add hairstyling to your
+          skillset, these lessons will give you the confidence to create
+          polished, professional styles with ease. We strip away the complicated
+          techniques and break hairstyling down into practical, repeatable steps
+          that actually work.
         </motion.p>
 
-        {/* List */}
-        <motion.ul
-          variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-[100px]'
-        >
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            hair texture identification
-          </motion.li>
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            basic styling and setting
-          </motion.li>
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            intermediate curling / waving techniques
-          </motion.li>
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            basic and intermediate up-styling techniques
-          </motion.li>
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            styling product tips and tricks
-          </motion.li>
-          <motion.li
-            variants={fadeInUpVariants}
-            className="relative pl-[10px] before:content-['-'] before:absolute before:left-0"
-          >
-            aftercare instruction techniques
-          </motion.li>
+        <motion.p variants={fadeInUpVariants} className='mt-8'>
+          Who is this course for?
+        </motion.p>
+        <motion.ul variants={fadeInUpVariants} className='list-disc pl-[20px]'>
+          {' '}
+          <li>Beginners who want to style hair with confidence</li>
+          <li>Makeup artists looking to offer hairstyling services</li>
+          <li>
+            Anyone tired of struggling with bad hair days and YouTube tutorials
+            that don’t work
+          </li>{' '}
         </motion.ul>
-        <motion.div variants={fadeInUpVariants} className='mt-8'>
-          <Link
-            href='https://academy.carinapereira.com/product/hairstyling-course/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-              enroll now
-            </button>
-          </Link>
-        </motion.div>
       </motion.div>
 
       {/* Right Column */}
       <motion.div
         variants={fadeInUpVariants}
-        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] mt-[84px] lg:mt-0'
+        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] lg:px-[45px] py-[30px] mt-[84px] lg:mt-0'
       >
-        <motion.p variants={fadeInUpVariants}>Cost: R3 000</motion.p>
+        <motion.p variants={fadeInUpVariants}>Cost: R3000</motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
-          Duration of this course: <br /> 4 modules once a week
+          Duration of this course: <br />4 Modules once a week
         </motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
           A comprehensive course giving you the inside tips of industry relevant
-          hairstyling techniques so you can be an all in one artist who can
+          hairstyling techniques so you can be an all-in-one artist who can
           offer hairstyling as well.
         </motion.p>
       </motion.div>

@@ -1,14 +1,16 @@
-'use client';
-import AboutSection from './components/AboutSection/AboutSection';
-import HeroSection from './components/HeroSection/HeroSection';
-import LearningSection from './components/LearningSection/LearningSection';
-import React from 'react';
+"use client";
+import AboutSection from "./components/AboutSection/AboutSection";
+import CTA from "./components/CTA/CTA";
+import HeroSection from "./components/HeroSection/HeroSection";
+import LearningSection from "./components/LearningSection/LearningSection";
+import React from "react";
 
 const ExpressOnlinePage: React.FC = () => {
   return (
     <div>
       <HeroSection />
       <AboutSection />
+      <CTA />
       <LearningSection />
     </div>
   );

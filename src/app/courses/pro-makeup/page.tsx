@@ -1,5 +1,6 @@
 'use client';
 import AboutSection from './components/AboutSection/AboutSection';
+import CTA from './components/CTA/CTA';
 import HeroSection from './components/HeroSection/HeroSection';
 import LearningSection from './components/LearningSection/LearningSection';
 import React from 'react';
@@ -9,6 +10,7 @@ const ProMakeupPage: React.FC = () => {
     <div>
       <HeroSection />
       <AboutSection />
+      <CTA />
       <LearningSection />
     </div>
   );

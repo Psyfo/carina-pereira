@@ -59,7 +59,7 @@ const AboutSection: React.FC = () => {
 
         <motion.div variants={fadeInUpVariants} className='mt-8'>
           <Link
-            href='/https://academy.carinapereira.com/product/express-make-up-course/'
+            href='https://academy.carinapereira.com/product/express-make-up-course/'
             target='_blank'
             rel='noopener noreferrer'
           >

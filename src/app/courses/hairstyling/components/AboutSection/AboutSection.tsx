@@ -90,7 +90,7 @@ const AboutSection: React.FC = () => {
         </motion.ul>
         <motion.div variants={fadeInUpVariants} className='mt-8'>
           <Link
-            href='/https://academy.carinapereira.com/product/hairstyling-course/'
+            href='https://academy.carinapereira.com/product/hairstyling-course/'
             target='_blank'
             rel='noopener noreferrer'
           >

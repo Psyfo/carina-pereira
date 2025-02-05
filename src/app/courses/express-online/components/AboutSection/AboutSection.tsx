@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import React from 'react';
-import { Variants, motion } from 'framer-motion';
+import React from "react";
+import { Variants, motion } from "framer-motion";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -31,68 +30,98 @@ const AboutSection: React.FC = () => {
         className='lg:w-[600px] flex flex-col items-start'
       >
         <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
-          about this course:
+          master make-up from home{' '}
         </h1>
 
-        <motion.p
-          variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
-        >
-          If you have always been interested in pursuing the amazing art of
-          make-up artistry, but just never found the time, this is the perfect
-          opportunity for you. Learn from home on your own time, and master the
-          art of make-up. This course will instill in you the confidence to take
-          on the make-up world with ease.
-        </motion.p>
-        <motion.p
-          variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
-        >
-          This course consists of 6 modules, each designed to cover essential
-          aspects of makeup artistry. Each student will be provided with a set
-          of Switchbeauty makeup brushes and a detailed, inclusive makeup
-          training manual.
-        </motion.p>
-        <motion.p
-          variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
-        >
-          You'll learn key techniques for colour correction, concealing
-          imperfections, and achieving a flawless foundation match. We'll
-          explore the importance of understanding different skin types, skincare
-          basics, and the role of primers in creating a smooth canvas. The
-          course will guide you through a full makeup application, including
-          bronzing, brow shaping, blush application, and highlighter techniques.
-        </motion.p>
+        <h4 className='font-inclusive text-[20px] leading-[1.5] mt-8'>
+          Learn makeup in your own time and start booking clients on the side
+        </h4>
 
-        <motion.div variants={fadeInUpVariants} className='mt-8'>
-          <Link
-            href='https://academy.carinapereira.com/courses/online-make-up-course/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-              enroll now
-            </button>
-          </Link>
-        </motion.div>
+        <motion.p
+          variants={fadeInUpVariants}
+          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+        >
+          You love makeup and want to master it—but life is busy, and finding
+          time for an in-person course just isn’t realistic. That’s why we
+          designed the Online Express Makeup Course: a flexible, comprehensive
+          program that lets you learn on your own schedule, from anywhere in the
+          world. Whether you're a beginner or looking to refine your skills,
+          this course gives you everything you need to feel confident and
+          capable in makeup artistry.
+        </motion.p>
+        <motion.p
+          variants={fadeInUpVariants}
+          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+        >
+          In just 6 expertly structured modules, we cut through the overwhelm
+          and focus on what really matters. No fluff, no guesswork—just
+          practical, easy-to-follow lessons that teach you the fundamentals of
+          professional makeup application. By the end of this course, you'll
+          have the knowledge, technique, and confidence to create flawless,
+          high-quality looks for any occasion.
+        </motion.p>
+        <motion.p
+          variants={fadeInUpVariants}
+          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+        >
+          Why learn from us? <br />
+          This isn’t just another makeup course—it’s a launchpad for your
+          career. Your mentor, Carina Pereira, has trained with industry-leading
+          brands and built a name for herself at MAC Cosmetics, working on
+          fashion weeks, music videos, and high-profile celebrity shoots. As an
+          elite artist on MAC’s events team, she honed not only her makeup
+          skills but also her ability to teach and shape the next generation of
+          makeup professionals. Her passion for education led her to establish
+          this course, ensuring aspiring artists like you receive top-tier
+          training, insider techniques, and hands-on experience in real industry
+          settings.
+        </motion.p>
+        <motion.p variants={fadeInUpVariants} className='mt-8'>
+          Who is this course for?
+        </motion.p>
+        <motion.ul variants={fadeInUpVariants} className='list-disc pl-[20px]'>
+          {' '}
+          <li>
+            Busy individuals who want a flexible, structured way to learn makeup
+          </li>
+          <li>Beginners looking to build confidence in their skills</li>
+          <li>
+            Anyone eager to master professional-quality makeup for personal or
+            career growth
+          </li>{' '}
+        </motion.ul>
       </motion.div>
 
       {/* Right Column */}
       <motion.div
         variants={fadeInUpVariants}
-        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] mt-[84px] lg:mt-0'
+        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] lg:px-[45px] py-[30px] mt-[84px] lg:mt-0'
       >
         <motion.p variants={fadeInUpVariants}>Cost: R4800</motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
-          Duration of this course: Online, at your own pace.
+          Duration of this course: 2 months Full time & 4 months Part time
         </motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
+          Modules are completed at students' own leisure, and add-on at own
+          discretion.
+        </motion.p>
+
+        <motion.p variants={fadeInUpVariants} className='mt-8'>
           Certificate & qualification: An internationally recognised certificate
-          as well as work experience and assistance in job placements, with the
-          opportunity to assist Carina on brand shoots & weddings to gain
+          as well as work experience and assistance in job placements as well as
+          the opportunity to assist Carina on brand shoots & weddings to gain
           experience.
         </motion.p>
+        <motion.p variants={fadeInUpVariants} className='mt-8'>
+          What you'll get
+        </motion.p>
+        <motion.ul variants={fadeInUpVariants} className='list-disc pl-[20px]'>
+          {' '}
+          <li>A premium set of Swiitchbeauty makeup brushes</li>
+          <li>A detailed, inclusive makeup training manual</li>
+          <li>Hands-on learning with expert mentorship</li>
+          <li>Practical techniques you can use immediately</li>{' '}
+        </motion.ul>
       </motion.div>
     </motion.section>
   );

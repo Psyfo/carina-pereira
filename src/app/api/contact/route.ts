@@ -14,14 +14,13 @@ export async function POST(req: Request) {
       );
     }
 
-    // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: 'smtp.zoho.com', // Zoho SMTP server
-      port: 465, // SSL port
-      secure: true, // Use SSL
+      host: 'mail.carinapereira.com', // xneelo mail server
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 

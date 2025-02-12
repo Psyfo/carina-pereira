@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer';
-import { NextResponse } from 'next/server';
+import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
@@ -28,7 +28,8 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: process.env.EMAIL_USER, // Sender address
       to: process.env.EMAIL_USER, // Your email address (where you want to receive the message)
-      subject: 'New Contact Form Submission', // Subject line
+      replyTo: email, // Reply to the sender's email address
+      subject: 'Carina Pereira Contact Form Submission', // Subject line
       text: `You have received a new contact form submission:\n\n
              First Name: ${firstName}\n
              Last Name: ${lastName}\n

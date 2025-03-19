@@ -1,9 +1,16 @@
-import './globals.css';
-import Announcement from '@/components/Announcement/Announcement';
-import Footer from './Footer/Footer';
-import Navigation from '@/components/Navigation/Navigation';
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+"use client";
+import "./globals.css";
+import Announcement from "@/components/Announcement/Announcement";
+import Footer from "./Footer/Footer";
+import Navigation from "@/components/Navigation/Navigation";
+import { Geist, Geist_Mono } from "next/font/google";
+import { useEffect } from "react";
+import { initAnalytics } from "../lib/analytics";
+import { useTrackPageView } from "./hooks/useTrackPageView";
+import { metadata } from "./metadata";
+
+// Re-export metadata
+export { metadata };
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -15,17 +22,19 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Carina Pereira',
-  description: 'Personal website of Carina Pereira',
-  icons: '/images/favicon.svg',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Initialize analytics on mount
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  // Track page views on route changes
+  useTrackPageView();
+
   return (
     <html lang='en'>
       <body

@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: 'mail.carinapereira.com', // xneelo mail server
+      host: process.env.EMAIL_HOST, // xneelo mail server
       port: 465,
       secure: true,
       auth: {

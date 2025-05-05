@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
               required
             />
           </div>
-          <div className='form-group flex flex-col mt-8 md:mt-0 flex-grow'>
+          <div className='form-group flex flex-col mt-8 lg:mt-0 flex-grow'>
             <label className='font-inclusive text-[1rem]' htmlFor='lastName'>
               Last Name:
             </label>

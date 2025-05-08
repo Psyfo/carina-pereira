@@ -45,32 +45,21 @@ const LearningSection: React.FC = () => {
           {/* Introduction of Make-up Artistry Card */}
           <motion.div
             variants={fadeInUpVariants}
-            className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'
+            className='h-[100px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink'
           >
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               hair texture identification
             </h1>
-            <p className='mt-[40px]'></p>
-            <p className=''>Introduction of make-up artistry</p>
-            <p className=''>Guide to make-up brushes</p>
-            <p className=''>Correct product choice</p>
           </motion.div>
 
           {/* Understanding Skin Types Card */}
           <motion.div
             variants={fadeInUpVariants}
-            className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'
+            className='min-h-[100px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange'
           >
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               intermediate curling & waving techniques
             </h1>
-            <p className='mt-[40px]'>Basic full make-up application</p>
-            <p className=''>Bronzing Brows</p>
-            <p className=''>Blush application</p>
-            <p className=''>Highlight placement</p>
-            <p className=''>
-              Dewy make-up, flawless skin and bronzed glowy eye
-            </p>
           </motion.div>
         </motion.div>
 
@@ -82,36 +71,21 @@ const LearningSection: React.FC = () => {
           {/* Basic Full Make-up Application Card */}
           <motion.div
             variants={fadeInUpVariants}
-            className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink lg:bg-cpOrange'
+            className='h-[100px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpPink lg:bg-cpOrange'
           >
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               basic styling and setting
             </h1>
-            <p className='mt-[40px]'>
-              Understanding skin types, skin care, and primers
-            </p>
-            <p className=''>Colour correcting</p>
-            <p className=''>Correct concealing</p>
-            <p className=''>Foundation matching</p>
           </motion.div>
 
           {/* Make-up Transition Card */}
           <motion.div
             variants={fadeInUpVariants}
-            className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange lg:bg-cpPink'
+            className='h-[100px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] bg-cpOrange lg:bg-cpPink'
           >
             <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
               basic & intermediate up-styling techniques
             </h1>
-            <p className='mt-[40px]'>
-              Make-up transition for day wear to evening
-            </p>
-            <p className=''>Carbon smokey eye</p>
-            <p className=''>Fuller lips application</p>
-            <p className=''>
-              Glam make-up, full contour, strong highlight with light shading
-            </p>
-            <p className=''>False lash application</p>
           </motion.div>
         </motion.div>
       </motion.div>

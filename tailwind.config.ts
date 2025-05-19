@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 /* eslint-disable @typescript-eslint/no-require-imports */
 
@@ -14,6 +14,7 @@ export default {
         cpCream: '#FFFEF3',
         cpOrange: '#FA7E39',
         cpPink: '#F1A0C5',
+        cpMagenta: '#E62E6B',
       },
       fontFamily: {
         inclusive: ['Inclusive Sans', 'sans-serif'],

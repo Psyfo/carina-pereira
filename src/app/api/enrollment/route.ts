@@ -14,6 +14,12 @@ export async function POST(req: Request) {
     paymentMethod,
   } = body;
   console.log('Received data:', body);
+  // log the environment variables
+  console.log('Environment variables:', {
+    EMAIL_HOST: process.env.EMAIL_HOST,
+    EMAIL_USER: process.env.EMAIL_USER,
+    EMAIL_PASS: process.env.EMAIL_PASS,
+  });
 
   if (
     !fullName ||

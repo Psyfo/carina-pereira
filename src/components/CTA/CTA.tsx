@@ -1,4 +1,4 @@
-import Link from "next/link";
+import EnrollmentButton from "../EnrollmentButton/EnrollmentButton";
 import React from "react";
 import { Variants, motion } from "framer-motion";
 
@@ -12,7 +12,7 @@ interface CTAProps {
   link: string;
 }
 
-const CTA: React.FC<CTAProps> = ({ link }) => {
+const CTA: React.FC<CTAProps> = () => {
   return (
     <motion.div
       variants={fadeInUpVariants}
@@ -26,11 +26,7 @@ const CTA: React.FC<CTAProps> = ({ link }) => {
         now and gain the skills, confidence, and industry connections to thrive
         in this exciting field.
       </p>
-      <Link href={link} target='_blank' rel='noopener noreferrer'>
-        <button className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] border border-black rounded-full'>
-          enroll now
-        </button>
-      </Link>
+      <EnrollmentButton />
     </motion.div>
   );
 };

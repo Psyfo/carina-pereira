@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
-import { Variants, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import Link from "next/link";
+import React from "react";
+import { Variants, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -47,9 +47,9 @@ const ServicesSection: React.FC = () => {
           'Occasional make-up',
           'Make-up workshops for parties',
           'Photoshoots/Editorial make-up',
-        ].map((service, index) => (
+        ].map((service) => (
           <motion.div
-            key={index}
+            key={service}
             variants={fadeInVariants}
             className='text-center font-inclusive text-[17.75px] leading-[1.5] px-[15px] py-[12px] border border-black rounded-full mt-4 md:mt-2'
           >
@@ -59,7 +59,7 @@ const ServicesSection: React.FC = () => {
 
         {/* Animated Button */}
         <motion.div variants={fadeInVariants}>
-          <Link href='#'>
+          <Link href='/#contact'>
             <button className='w-full bg-cpPink font-inclusive text-[17.75px] leading-[1.5] px-[35px] py-[12px] border border-black rounded-full mt-4 md:mt-2'>
               book carina
             </button>

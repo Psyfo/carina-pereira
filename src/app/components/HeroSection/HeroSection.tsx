@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5 }}
-      className='hero-section w-full h-[85vh] md:h-[100vh] bg-[url("/images/landing/hero/hero.png")] md:bg-[url("/images/landing/hero/hero-md.png")] bg-cover bg-no-repeat bg-center'
+      className='relative hero-section w-full h-[85vh] md:h-[100vh] bg-[url("/images/landing/hero/hero.png")] md:bg-[url("/images/landing/hero/hero-md.png")] bg-cover bg-no-repeat bg-center'
     >
       <Link href='/'>
         <motion.div
@@ -27,6 +27,26 @@ const HeroSection: React.FC = () => {
           />
         </motion.div>
       </Link>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }} // Start slightly below and invisible
+        animate={{ opacity: 1, y: 0 }} // Fade in and move up to original position
+        transition={{ duration: 1, delay: 1 }} // Animation duration with a delay
+        className='absolute left-[40px] bottom-[70px] font-tan-ashford text-[25px] md:text-[47px] text-white tracking-wider lowercase'
+      >
+        <p>
+          women&apos;s day <br /> make-up masterclass
+        </p>
+        <motion.button
+          onClick={() => (window.location.href = '/courses/masterclass')}
+          initial={{ opacity: 0, y: 20 }} // Start slightly below and invisible
+          animate={{ opacity: 1, y: 0 }} // Fade in and move up to original position
+          transition={{ duration: 1, delay: 1 }} // Animation duration with a delay
+          className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-4 text-black'
+        >
+          Book Now
+        </motion.button>
+      </motion.div>
     </motion.div>
   );
 };

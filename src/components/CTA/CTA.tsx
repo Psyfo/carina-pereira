@@ -1,6 +1,6 @@
-import EnrollmentButton from "../EnrollmentButton/EnrollmentButton";
-import React from "react";
-import { Variants, motion } from "framer-motion";
+import EnrollmentButton from '../EnrollmentButton/EnrollmentButton';
+import React from 'react';
+import { Variants, motion } from 'framer-motion';
 
 // Animation variants for fading in upwards
 const fadeInUpVariants: Variants = {
@@ -9,22 +9,25 @@ const fadeInUpVariants: Variants = {
 };
 
 interface CTAProps {
-  link: string;
+  link?: string;
+  heading?: string;
+  text?: string;
 }
 
-const CTA: React.FC<CTAProps> = () => {
+const CTA: React.FC<CTAProps> = ({
+  heading = 'ready to take the first step?',
+  text = 'Your dream career as a professional makeup artist starts here. Enroll now and gain the skills, confidence, and industry connections to thrive in this exciting field.',
+}) => {
   return (
     <motion.div
       variants={fadeInUpVariants}
+      initial='hidden'
+      animate='visible'
       className='flex flex-col gap-8 items-center justify-center bg-cpPink rounded-[35px] px-4 py-[60px] lg:py-[70px]'
     >
-      <h2 className='font-tan-ashford font-bold text-4'>
-        ready to take the first step?
-      </h2>
+      <h2 className='font-tan-ashford font-bold text-4'>{heading}</h2>
       <p className='font-inclusive text-[15px] text-center leading-[1.5] w-full max-w-[666px]'>
-        Your dream career as a professional makeup artist starts here. Enroll
-        now and gain the skills, confidence, and industry connections to thrive
-        in this exciting field.
+        {text}
       </p>
       <EnrollmentButton />
     </motion.div>

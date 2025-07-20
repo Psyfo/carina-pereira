@@ -17,7 +17,11 @@ const CTASection: React.FC = () => {
       }}
       className='px-[25px] lg:px-[10%] py-[60px] lg:py-[120px]'
     >
-      <CTA link='https://academy.carinapereira.com/product/pro-makeup-course/' />
+      <CTA
+        link='https://academy.carinapereira.com/product/pro-makeup-course/'
+        heading='ready to celebrate women’s day?'
+        text='Limited seats available. Get your tickets now.'
+      />
     </motion.section>
   );
 };

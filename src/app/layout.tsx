@@ -1,10 +1,10 @@
-import "./globals.css";
-import Announcement from "@/components/Announcement/Announcement";
-import ClientProviders from "@/components/ClientProviders";
-import Footer from "./Footer/Footer";
-import Navigation from "@/components/Navigation/Navigation";
-import { Geist, Geist_Mono } from "next/font/google";
-import { metadata } from "./metadata";
+import './globals.css';
+import Announcement from '@/components/Announcement/Announcement';
+import ClientProviders from '@/components/ClientProviders';
+import Footer from './Footer/Footer';
+import Navigation from '@/components/Navigation/Navigation';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { metadata } from './metadata';
 
 // Re-export metadata
 export { metadata };
@@ -28,8 +28,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ClientProviders /> {/* Client-side logic moved here */}
-        <Navigation />
         <Announcement />
+        <Navigation />
         {children}
         <Footer />
       </body>

@@ -21,6 +21,7 @@ const CTASection: React.FC = () => {
         link='https://academy.carinapereira.com/product/pro-makeup-course/'
         heading='ready to celebrate women’s day?'
         text='Limited seats available. Get your tickets now.'
+        buttonLabel='Book Now' // Pass the label to the button
       />
     </motion.section>
   );

@@ -22,6 +22,7 @@ const CTASection: React.FC = () => {
         heading='ready to celebrate women’s day?'
         text='Limited seats available. Get your tickets now.'
         buttonLabel='book now' // Pass the label to the button
+        formType='womensDay' // Specify the form type
       />
     </motion.section>
   );

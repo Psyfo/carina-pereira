@@ -1,15 +1,16 @@
 'use client';
 import EnrollmentFormModal from '@/components/EnrollmentFormModal/EnrollmentFormModal';
+import WomensDayFormModal from '../WomensDayFormModal/WomensDayFormModal';
 import { useState } from 'react';
-
-// EnrollmentButton.tsx
 
 interface EnrollmentButtonProps {
   label?: string;
+  formType?: 'regular' | 'womensDay';
 }
 
 export default function EnrollmentButton({
   label = 'enroll now',
+  formType = 'regular',
 }: EnrollmentButtonProps) {
   const [open, setOpen] = useState(false);
 
@@ -21,7 +22,11 @@ export default function EnrollmentButton({
       >
         {label}
       </button>
-      <EnrollmentFormModal isOpen={open} onClose={() => setOpen(false)} />
+      {formType === 'regular' ? (
+        <EnrollmentFormModal isOpen={open} onClose={() => setOpen(false)} />
+      ) : (
+        <WomensDayFormModal isOpen={open} onClose={() => setOpen(false)} />
+      )}
     </>
   );
 }

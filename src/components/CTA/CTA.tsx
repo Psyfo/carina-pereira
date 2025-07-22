@@ -2,8 +2,6 @@ import EnrollmentButton from '../EnrollmentButton/EnrollmentButton';
 import React from 'react';
 import { Variants, motion } from 'framer-motion';
 
-// CTA.tsx
-
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -13,13 +11,15 @@ interface CTAProps {
   link?: string;
   heading?: string;
   text?: string;
-  buttonLabel?: string; // ← New optional prop
+  buttonLabel?: string;
+  formType?: 'regular' | 'womensDay';
 }
 
 const CTA: React.FC<CTAProps> = ({
   heading = 'ready to take the first step?',
   text = 'Your dream career as a professional makeup artist starts here...',
-  buttonLabel, // ← Accept it
+  buttonLabel,
+  formType = 'regular',
 }) => {
   return (
     <motion.div
@@ -32,7 +32,7 @@ const CTA: React.FC<CTAProps> = ({
       <p className='font-inclusive text-[15px] text-center leading-[1.5] w-full max-w-[666px]'>
         {text}
       </p>
-      <EnrollmentButton label={buttonLabel} /> {/* ← Pass to button */}
+      <EnrollmentButton label={buttonLabel} formType={formType} />
     </motion.div>
   );
 };

@@ -1,5 +1,7 @@
-import React from "react";
-import { Variants, motion } from "framer-motion";
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+import React from 'react';
 
 /* eslint-disable react/no-unescaped-entities */
 

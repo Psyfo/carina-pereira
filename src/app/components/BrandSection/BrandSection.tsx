@@ -1,8 +1,10 @@
 'use client';
-import BrandSlider from './components/BrandSlider';
-import React, { useEffect } from 'react';
+
 import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+
+import BrandSlider from './components/BrandSlider';
 
 const BrandSection: React.FC = () => {
   const controls = useAnimation();

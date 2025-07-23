@@ -1,6 +1,9 @@
-import CTA from "@/components/CTA/CTA";
-import React from "react";
-import { motion } from "framer-motion";
+'use client';
+
+import { motion } from 'framer-motion';
+import React from 'react';
+
+import CTA from '@/components/CTA/CTA';
 
 const CTASection: React.FC = () => {
   return (

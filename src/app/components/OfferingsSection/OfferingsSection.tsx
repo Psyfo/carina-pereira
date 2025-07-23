@@ -1,7 +1,8 @@
 'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },

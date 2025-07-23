@@ -1,8 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
-import { motion } from 'framer-motion';
-
-/* eslint-disable react/no-unescaped-entities */
 
 const CoursesSection: React.FC = () => {
   return (
@@ -50,7 +50,7 @@ const CoursesSection: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
           >
             Gain an internationally-recognized certificate, hands-on work
-            experience, and job placement assistance. You'll also have the
+            experience, and job placement assistance. You&apos;ll also have the
             chance to assist Carina on brand shoots and weddings.
           </motion.p>
 
@@ -132,7 +132,7 @@ const CoursesSection: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
           >
             Gain an internationally-recognized certificate, hands-on work
-            experience, and job placement assistance. You'll also have the
+            experience, and job placement assistance. You&apos;ll also have the
             chance to assist Carina on brand shoots and weddings.
           </motion.p>
 

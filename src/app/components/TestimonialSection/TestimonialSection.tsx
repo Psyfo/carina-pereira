@@ -1,13 +1,17 @@
+'use client';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import TestimonialBanner from './components/TestimonialBanner';
-import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import TestimonialBanner from './components/TestimonialBanner';
 
 const TestimonialSection: React.FC = () => {
   const controls = useAnimation();

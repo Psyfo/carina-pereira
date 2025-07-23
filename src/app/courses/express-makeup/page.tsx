@@ -18,6 +18,13 @@ export const metadata = {
     'Makeup Techniques',
   ],
   authors: [{ name: 'Carina Pereira', url: 'https://carinapereira.com' }],
+  address: {
+    street: '13 Drama Street, Somerset West',
+    city: 'Cape Town',
+    state: 'Western Cape',
+    code: '7130',
+    country: 'South Africa',
+  },
   openGraph: {
     title: 'Carina Pereira | Express Makeup Course',
     description:

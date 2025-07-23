@@ -11,6 +11,13 @@ export const metadata = {
     'Join our Masterclass to elevate your makeup skills with expert guidance.',
   keywords: ['makeup', 'masterclass', 'Carina Pereira', 'makeup course'],
   authors: [{ name: 'Carina Pereira', url: 'https://carinapereira.com' }],
+  address: {
+    street: '13 Drama Street, Somerset West',
+    city: 'Cape Town',
+    state: 'Western Cape',
+    code: '7130',
+    country: 'South Africa',
+  },
   openGraph: {
     title: 'Carina Pereira | Masterclass',
     description: "Join our masterclass and celebrate Women's Day.",

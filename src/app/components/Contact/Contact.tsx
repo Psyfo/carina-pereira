@@ -1,11 +1,12 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+
 import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-const Contact: React.FC = () => {
+const ContactSection: React.FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -163,4 +164,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

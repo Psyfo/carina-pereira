@@ -4,10 +4,6 @@ import ClientProviders from '@/components/ClientProviders';
 import Footer from './Footer/Footer';
 import Navigation from '@/components/Navigation/Navigation';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { metadata } from './metadata';
-
-// Re-export metadata
-export { metadata };
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

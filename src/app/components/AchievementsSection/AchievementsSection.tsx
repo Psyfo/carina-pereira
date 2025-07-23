@@ -1,9 +1,11 @@
 'use client';
-import Image from 'next/image';
-import NumberAnimation from '@/components/NumberAnimation/NumberAnimation';
-import React, { useEffect, useState } from 'react';
+
 import { motion, useAnimation } from 'framer-motion';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+
+import NumberAnimation from '@/components/NumberAnimation/NumberAnimation';
 
 const AchievementsSection: React.FC = () => {
   const controls = useAnimation();

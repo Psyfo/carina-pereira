@@ -1,7 +1,8 @@
 'use client';
+
+import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const CoursesSection: React.FC = () => {

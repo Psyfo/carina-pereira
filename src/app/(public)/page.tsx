@@ -1,6 +1,6 @@
 import MailingListModal from '@/components/MailingListModal/MailingListModal';
 
-import Announcement from '../components/Announcement/Announcement';
+import Announcement from '../../components/Announcement/Announcement';
 import AboutSection from './components/AboutSection/AboutSection';
 import AchievementsSection from './components/AchievementsSection/AchievementsSection';
 import BrandSection from './components/BrandSection/BrandSection';

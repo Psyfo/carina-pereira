@@ -1,10 +1,10 @@
-import './globals.css';
+import '../globals.css';
 
 import Announcement from '@/components/Announcement/Announcement';
 import ClientProviders from '@/components/ClientProviders';
 import Navigation from '@/components/Navigation/Navigation';
 
-import Footer from './Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 export default function RootLayout({
   children,
@@ -22,7 +22,10 @@ export default function RootLayout({
               name: 'Carina Pereira',
               url: 'https://carinapereira.com',
               image: 'https://carinapereira.com/images/landing/hero/hero.png',
-              sameAs: ['https://www.instagram.com/carinapereirainternational/'],
+              sameAs: [
+                'https://www.instagram.com/carinapereirainternational/',
+                'https://www.facebook.com/carinapereirainternational/',
+              ],
               jobTitle: 'Makeup Artist & Beauty Educator',
               address: {
                 '@type': 'PostalAddress',

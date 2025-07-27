@@ -1,4 +1,4 @@
-import '../globals.css';
+import '@/styles/globals.css';
 
 import Announcement from '@/components/Announcement/Announcement';
 import ClientProviders from '@/components/ClientProviders';

@@ -26,7 +26,7 @@ export default function LoginPage() {
     if (res?.error) {
       setError('Invalid credentials');
     } else {
-      router.push('/admin/dashboard');
+      router.push('/dashboard');
     }
   }
 

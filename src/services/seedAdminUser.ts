@@ -10,5 +10,7 @@ export async function seedAdminUser() {
     const hashed = await bcrypt.hash(adminPassword, 10);
     await User.create({ email: adminEmail, password: hashed });
     console.log('Seeded default admin user');
+  } else {
+    console.log('Database already seeded: admin user exists');
   }
 }

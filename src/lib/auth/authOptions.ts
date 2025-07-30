@@ -1,8 +1,9 @@
-// src/lib/auth/authOptions.ts
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import type { NextAuthOptions } from 'next-auth';
+import { User } from '@/models/User';
+import { validateUser } from '@/services/authService';
 
+import type { NextAuthOptions } from 'next-auth';
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -13,12 +14,21 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         const { email, password } = credentials ?? {};
+        if (!email || !password) return null;
 
-        if (email === 'admin@example.com' && password === 'securepass') {
-          return { id: '1', name: 'Admin User', email };
-        }
+        // Use your service to validate user
+        const isValid = await validateUser(email, password);
+        if (!isValid) return null;
 
-        return null;
+        // Fetch user details for session
+        const user = await User.findOne({ email });
+        if (!user) return null;
+
+        return {
+          id: user._id.toString(),
+          name: user.email,
+          email: user.email,
+        };
       },
     }),
   ],

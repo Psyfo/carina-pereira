@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import { seedAdminUser } from '@/services/seedAdminUser';
+import logger from '../logger';
 
 // Select URI and DB name based on NODE_ENV
 let uri: string | undefined;
@@ -16,6 +16,8 @@ if (process.env.NODE_ENV === 'production') {
   dbName = process.env.MONGODB_DB_NAME;
 }
 
+logger.info(`Using MongoDB URI: ${uri}`);
+
 if (!uri || !dbName) {
   throw new Error('Please add your MongoDB URI and DB name to .env.local');
 }
@@ -25,13 +27,12 @@ let isConnected = false;
 export async function connectDB() {
   if (isConnected) return;
   try {
-    console.log(`Connecting to MongoDB at ${uri} with DB name ${dbName}`);
+    logger.info(`Connecting to MongoDB at ${uri} with DB name ${dbName}`);
     await mongoose.connect(uri as string, { dbName });
     isConnected = true;
-    console.log(`MongoDB connected to ${dbName}`);
-    await seedAdminUser(); // <-- Seed logic here
+    logger.info(`MongoDB connected to ${dbName}`);
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    logger.error('MongoDB connection error:', error);
     throw error;
   }
 }

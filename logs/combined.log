@@ -1,0 +1,25 @@
+2025-07-31T18:48:26.712Z [INFO]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T18:48:28.091Z [INFO]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T18:51:58.376Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T18:51:59.446Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:15:25.581Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:15:42.149Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:15:54.297Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:24:42.526Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:25:08.215Z [[32MINFO[39M]: Connecting to MongoDB at mongodb://127.0.0.1:27017/carinapereira_dev with DB name carinapereira_dev 
+2025-07-31T19:25:08.459Z [[32MINFO[39M]: MongoDB connected to carinapereira_dev 
+2025-07-31T19:26:29.293Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:27:04.557Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:27:05.714Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:27:12.355Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:27:30.689Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:32:15.937Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:32:16.277Z [[33MWARN[39M]: Invalid credentials for user admin@carinapereira.com 
+2025-07-31T19:32:17.099Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:32:27.343Z [[33MWARN[39M]: Invalid credentials for user admin@carinapereira.com 
+2025-07-31T19:32:28.188Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:32:29.700Z [[33MWARN[39M]: Invalid credentials for user admin@carinapereira.com 
+2025-07-31T19:32:30.493Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:33:05.143Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:33:06.227Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 
+2025-07-31T19:33:07.296Z [[32MINFO[39M]: Using MongoDB URI: mongodb://127.0.0.1:27017/carinapereira_dev 

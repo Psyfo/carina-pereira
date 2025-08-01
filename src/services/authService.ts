@@ -12,6 +12,7 @@ export async function registerUser(email: string, password: string) {
 }
 
 export async function validateUser(email: string, password: string) {
+  await connectDB();
   const user = await User.findOne({ email });
   if (!user) return false;
   const isMatch = await bcrypt.compare(password, user.password);

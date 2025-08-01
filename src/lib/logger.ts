@@ -5,8 +5,7 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.splat(),
+    winston.format.errors({ stack: true }), //
     winston.format.json(),
     winston.format.printf(
       ({ timestamp, level, message, ...meta }) =>

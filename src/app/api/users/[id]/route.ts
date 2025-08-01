@@ -1,7 +1,9 @@
+import { NextRequest } from 'next/server';
+
 import { deleteUser, getUserByEmail, updateUser } from '@/services/userService';
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const user = await getUserByEmail(params.id);
@@ -9,7 +11,7 @@ export async function GET(
 }
 
 export async function PUT(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const data = await req.json();
@@ -18,7 +20,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   await deleteUser(params.id);

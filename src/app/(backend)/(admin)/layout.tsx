@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import { redirect } from 'next/navigation';
 
+import { AdminBreadcrumbs } from '@/components/AdminBreadCrumbs/AdminBreadCrumbs';
 import { getAuthSession } from '@/lib/auth/auth';
 
 import { AdminFooter } from './dashboard/components/AdminFooter';
@@ -26,9 +27,17 @@ export default async function AdminDashboardLayout({
   return (
     <div className='min-h-screen flex flex-col'>
       <AdminHeader />
-      <div className='flex flex-1'>
-        <AdminSidebar />
-        <main className='flex-1 bg-gray-50 p-6'>{children}</main>
+      <div className='flex flex-1 flex-col'>
+        <div className='flex flex-1'>
+          <AdminSidebar />
+          <main className='flex-1 bg-gray-50 p-6'>
+            <div className='flex row pb-8 pt-4'>
+              {/* Breadcrumbs */}
+              <AdminBreadcrumbs />
+            </div>
+            {children}
+          </main>
+        </div>
       </div>
       <AdminFooter />
     </div>

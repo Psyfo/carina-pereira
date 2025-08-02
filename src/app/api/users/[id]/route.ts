@@ -1,22 +1,22 @@
 import { NextRequest } from 'next/server';
 
-import { deleteUser, getUserByEmail, updateUser } from '@/services/userService';
+import { deleteUserByEmail, getUser, updateUserByEmail } from '@/services/userService';
 
 export async function GET(req: NextRequest) {
   const id = req.nextUrl.pathname.split('/').pop()!;
-  const user = await getUserByEmail(id);
+  const user = await getUser(id);
   return Response.json(user);
 }
 
 export async function PUT(req: NextRequest) {
-  const id = req.nextUrl.pathname.split('/').pop()!;
+  const email = req.nextUrl.pathname.split('/').pop()!;
   const data = await req.json();
-  const user = await updateUser(id, data);
-  return Response.json(user);
+  const updatedUser = await updateUserByEmail(email, data);
+  return Response.json(updatedUser);
 }
 
 export async function DELETE(req: NextRequest) {
-  const id = req.nextUrl.pathname.split('/').pop()!;
-  await deleteUser(id);
+  const email = req.nextUrl.pathname.split('/').pop()!;
+  await deleteUserByEmail(email);
   return Response.json({ success: true });
 }

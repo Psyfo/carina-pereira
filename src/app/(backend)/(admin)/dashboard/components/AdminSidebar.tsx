@@ -17,10 +17,16 @@ export function AdminSidebar() {
           Users
         </Link>
         <Link
-          href='/dashboard/settings'
+          href='/dashboard/courses'
           className='block text-gray-700 hover:text-blue-600 font-medium'
         >
-          Settings
+          Courses
+        </Link>
+        <Link
+          href='/dashboard/special'
+          className='block text-gray-700 hover:text-blue-600 font-medium'
+        >
+          Special
         </Link>
       </nav>
     </aside>

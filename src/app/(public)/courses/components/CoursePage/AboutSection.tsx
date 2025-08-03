@@ -42,7 +42,7 @@ const AboutSection: React.FC<Props> = ({
         variants={fadeInUpVariants}
         className='lg:w-[600px] flex flex-col items-start'
       >
-        <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
+        <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider lowercase'>
           {heading}
         </h1>
 

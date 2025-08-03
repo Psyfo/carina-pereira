@@ -28,6 +28,7 @@ export interface CTASectionData {
 }
 
 export interface CoursePageProps {
+  slug: string;
   hero: HeroSectionData;
   about: AboutSectionData;
   cta: CTASectionData;

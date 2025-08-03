@@ -4,7 +4,7 @@
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
-import { AboutSectionData } from '@/types/CourseData';
+import { AboutSectionData } from '@/types/CoursePageProps';
 
 interface Props extends AboutSectionData {}
 

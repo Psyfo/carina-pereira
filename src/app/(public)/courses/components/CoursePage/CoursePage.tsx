@@ -15,8 +15,8 @@ export default function CoursePage({
     <>
       <HeroSection {...hero} />
       <AboutSection {...about} />
-      <LearningSection {...learning} />
       <CTASection {...cta} />
+      <LearningSection {...learning} />
       {/* Add more sections as needed */}
     </>
   );

@@ -1,6 +1,7 @@
-import EnrollmentButton from '../EnrollmentButton/EnrollmentButton';
+import { motion, Variants } from 'framer-motion';
 import React from 'react';
-import { Variants, motion } from 'framer-motion';
+
+import EnrollmentButton from '../EnrollmentButton/EnrollmentButton';
 
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -12,7 +13,7 @@ interface CTAProps {
   heading?: string;
   text?: string;
   buttonLabel?: string;
-  formType?: 'regular' | 'womensDay';
+  formType?: string;
 }
 
 const CTA: React.FC<CTAProps> = ({

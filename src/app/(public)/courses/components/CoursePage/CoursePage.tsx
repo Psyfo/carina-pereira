@@ -1,4 +1,4 @@
-import { CoursePageProps } from '@/types/CourseData';
+import { CoursePageProps } from '@/types/CoursePageProps';
 
 import AboutSection from './AboutSection';
 import CTASection from './CTASection';

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import { HeroSectionData } from '@/types/CourseData';
+import { HeroSectionData } from '@/types/CoursePageProps';
 
 interface Props extends HeroSectionData {}
 

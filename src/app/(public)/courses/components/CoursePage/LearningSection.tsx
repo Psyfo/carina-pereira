@@ -26,11 +26,11 @@ const LearningSection: React.FC<Props> = ({ block }) => {
           },
         },
       }}
-      className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[353px]'
+      className='px-[25px] lg:px-[10%] py-[33px] lg:pb-[53px]'
     >
       <motion.h1
         variants={fadeInUpVariants}
-        className='font-tan-ashford font-bold text-[19px] tracking-wider'
+        className='font-tan-ashford font-bold text-[19px] tracking-wider lowercase'
       >
         what you&apos;ll learn
       </motion.h1>
@@ -41,10 +41,9 @@ const LearningSection: React.FC<Props> = ({ block }) => {
             <motion.div
               key={idx}
               variants={fadeInUpVariants}
-              className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px]'
-              style={{ backgroundColor: item.bgColour }}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bgColour}`}
             >
-              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider lowercase'>
                 {item.heading}
               </h1>
               <div className='mt-[40px]'>
@@ -60,10 +59,9 @@ const LearningSection: React.FC<Props> = ({ block }) => {
             <motion.div
               key={idx}
               variants={fadeInUpVariants}
-              className='h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px]'
-              style={{ backgroundColor: item.bgColour }}
+              className={`h-[290px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] py-[30px] ${item.bgColour}`}
             >
-              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider'>
+              <h1 className='font-tan-ashford font-bold text-[15px] tracking-wider lowercase'>
                 {item.heading}
               </h1>
               <div className='mt-[40px]'>

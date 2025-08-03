@@ -1,11 +1,13 @@
 'use client';
-import EnrollmentFormModal from '@/components/EnrollmentFormModal/EnrollmentFormModal';
-import WomensDayFormModal from '../WomensDayFormModal/WomensDayFormModal';
 import { useState } from 'react';
+
+import EnrollmentFormModal from '@/components/EnrollmentFormModal/EnrollmentFormModal';
+
+import WomensDayFormModal from '../WomensDayFormModal/WomensDayFormModal';
 
 interface EnrollmentButtonProps {
   label?: string;
-  formType?: 'regular' | 'womensDay';
+  formType?: string;
 }
 
 export default function EnrollmentButton({

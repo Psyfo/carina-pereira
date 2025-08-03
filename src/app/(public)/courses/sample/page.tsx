@@ -38,17 +38,17 @@ const sampleCourseData = {
           'Understand the basics of the subject',
           'Familiarize yourself with key terminology',
         ],
-        bgColour: '#7c3aed', // purple
+        bgColour: 'bg-[#7c3aed]', // purple
       },
       {
         heading: 'Hands-on Projects',
         items: ['Work on real-world exercises', 'Build your own mini-projects'],
-        bgColour: '#f59e42', // orange
+        bgColour: 'bg-cpOrange', // orange
       },
       {
         heading: 'Best Practices',
         items: ['Learn industry standards', 'Avoid common mistakes'],
-        bgColour: '#10b981', // green
+        bgColour: 'bg-[#10b981]', // green
       },
       {
         heading: 'Continued Learning',
@@ -56,7 +56,7 @@ const sampleCourseData = {
           'Access resources for further study',
           'Join our learning community',
         ],
-        bgColour: '#3b82f6', // blue
+        bgColour: 'bg-[#3b82f6]', // blue
       },
       {
         heading: 'Collaboration',
@@ -64,7 +64,7 @@ const sampleCourseData = {
           'Participate in group activities',
           'Share knowledge with peers',
         ],
-        bgColour: '#f43f5e', // pink
+        bgColour: 'bg-[#f43f5e]', // pink
       },
       {
         heading: 'Personalized Feedback',
@@ -72,7 +72,7 @@ const sampleCourseData = {
           'Receive feedback from instructors',
           'Track your progress and achievements',
         ],
-        bgColour: '#fbbf24', // yellow
+        bgColour: 'bg-[#fbbf24]', // yellow
       },
     ],
   },

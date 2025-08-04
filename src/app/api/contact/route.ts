@@ -1,5 +1,7 @@
-import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+import logger from '@/lib/logger';
 
 export async function POST(req: Request) {
   try {
@@ -40,7 +42,7 @@ export async function POST(req: Request) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    console.log('Received form data:', { firstName, lastName, email, message });
+    logger.info('Received form data:', { firstName, lastName, email, message });
 
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully!' },

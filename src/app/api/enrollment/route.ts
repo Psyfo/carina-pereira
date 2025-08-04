@@ -1,5 +1,7 @@
-import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+import logger from '@/lib/logger';
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -13,13 +15,7 @@ export async function POST(req: Request) {
     program,
     paymentMethod,
   } = body;
-  console.log('Received data:', body);
-  // log the environment variables
-  console.log('Environment variables:', {
-    EMAIL_HOST: process.env.EMAIL_HOST,
-    EMAIL_USER: process.env.EMAIL_USER,
-    EMAIL_PASS: process.env.EMAIL_PASS,
-  });
+  logger.info('Received enrollment data:', body);
 
   if (
     !fullName ||

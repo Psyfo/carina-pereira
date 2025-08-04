@@ -1,6 +1,7 @@
 import CoursePage from '../components/CoursePage/CoursePage';
 
 const sampleCourseData = {
+  slug: 'sample',
   hero: {
     title: 'Sample Course',
     subtitle: 'Unlock Your Potential',
@@ -38,7 +39,7 @@ const sampleCourseData = {
           'Understand the basics of the subject',
           'Familiarize yourself with key terminology',
         ],
-        bgColour: 'bg-[#7c3aed]', // purple
+        bgColour: 'bg-[#7c3ef0]', // purple
       },
       {
         heading: 'Hands-on Projects',

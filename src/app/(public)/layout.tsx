@@ -1,6 +1,5 @@
 import '@/styles/globals.css';
 
-import Announcement from '@/components/Announcement/Announcement';
 import ClientProviders from '@/components/ClientProviders';
 import Navigation from '@/components/Navigation/Navigation';
 
@@ -56,7 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         <ClientProviders /> {/* Client-side logic moved here */}
-        <Announcement />
+        {/* <Announcement /> */}
         <Navigation />
         {children}
         <Footer />

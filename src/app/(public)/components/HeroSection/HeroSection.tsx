@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
         </motion.div>
       </Link>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }} // Start slightly below and invisible
         animate={{ opacity: 1, y: 0 }} // Fade in and move up to original position
         transition={{ duration: 1, delay: 1 }} // Animation duration with a delay
@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
         >
           Book Now
         </motion.button>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 };

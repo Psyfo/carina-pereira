@@ -1,17 +1,16 @@
 'use client';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 import {
   Listbox,
   ListboxButton,
-  ListboxOptions,
   ListboxOption,
+  ListboxOptions,
 } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 const programs = [
-  "Women's Day Makeup Masterclass (Limited Time)",
   'Pro Makeup Course',
   'Express Makeup Course',
   'Hairstyling Course',

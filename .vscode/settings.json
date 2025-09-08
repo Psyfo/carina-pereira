@@ -33,5 +33,25 @@
         "Womens",
         "xneelo"
     ],
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#f8cce0",
+        "activityBar.background": "#f8cce0",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#59a817",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#f8cce0",
+        "statusBar.background": "#f1a0c5",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#ea74aa",
+        "statusBarItem.remoteBackground": "#f1a0c5",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#f1a0c5",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#f1a0c599",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#F1A0C5"
 }

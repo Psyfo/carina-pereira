@@ -1,6 +1,7 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { isProMakeupPromotionActive } from '@/lib/promotions';
 
 import {
   Listbox,
@@ -10,12 +11,18 @@ import {
 } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-const programs = [
-  'Pro Makeup Course',
-  'Express Makeup Course',
-  'Hairstyling Course',
-  'Online Express Makeup Course',
-];
+// Programs list with pricing - dynamically updated with promotion
+const getPrograms = () => {
+  const showPromotion = isProMakeupPromotionActive();
+  return [
+    showPromotion
+      ? 'Pro Makeup Course - R7 500 (50% OFF)'
+      : 'Pro Makeup Course - R15 000',
+    'Express Makeup Course - R5 500',
+    'Hairstyling Course - R3 000',
+    'Online Express Makeup Course - R4 800',
+  ];
+};
 
 const paymentMethods = [
   'Full Amount Upfront',
@@ -30,6 +37,7 @@ export default function EnrollmentFormModal({
   isOpen: boolean;
   onClose: () => void;
 }>) {
+  const programs = getPrograms();
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
   const [selectedPayment, setSelectedPayment] = useState(paymentMethods[0]);
 
@@ -90,31 +98,31 @@ export default function EnrollmentFormModal({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4'
+          className='z-50 fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 p-4'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className='bg-cpMagenta w-full max-w-lg rounded-[23.12px] px-[28px] py-[36px] relative'
+            className='relative bg-cpMagenta px-[28px] py-[36px] rounded-[23.12px] w-full max-w-lg'
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
           >
             <button
               onClick={onClose}
-              className='absolute top-[1rem] right-[1rem] text-white text-[24px]'
+              className='top-[1rem] right-[1rem] absolute text-[24px] text-white'
             >
               &times;
             </button>
-            <h2 className='text-[18px] text-white font-tan-ashford font-bold mb-4 lowercase pb-[30px]'>
+            <h2 className='mb-4 pb-[30px] font-tan-ashford font-bold text-[18px] text-white lowercase'>
               Enrollment Form
             </h2>
             <form onSubmit={handleSubmit}>
               {/* Full Name */}
               <label
                 htmlFor='fullName'
-                className='block font-inclusive text-[12px] text-white ml-[10px]'
+                className='block ml-[10px] font-inclusive text-[12px] text-white'
               >
                 Full Name
               </label>
@@ -124,13 +132,13 @@ export default function EnrollmentFormModal({
                 type='text'
                 placeholder='Full Name'
                 required
-                className='w-full border px-4 py-2 mt-[7px] mb-[18px] rounded-[30.42px] font-inclusive text-[10px] text-black outline-cpPink placeholder:text-[#C5C5C5]'
+                className='mt-[7px] mb-[18px] px-4 py-2 border rounded-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black placeholder:text-[#C5C5C5]'
               />
 
               {/* Email */}
               <label
                 htmlFor='email'
-                className='block font-inclusive text-[12px] text-white ml-[10px]'
+                className='block ml-[10px] font-inclusive text-[12px] text-white'
               >
                 Email
               </label>
@@ -140,7 +148,7 @@ export default function EnrollmentFormModal({
                 type='email'
                 placeholder='Email'
                 required
-                className='w-full border px-4 py-2 mt-[7px] mb-[18px] rounded-[30.42px] font-inclusive text-[10px] text-black outline-cpPink placeholder:text-[#C5C5C5]'
+                className='mt-[7px] mb-[18px] px-4 py-2 border rounded-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black placeholder:text-[#C5C5C5]'
               />
 
               {/* Phone */}
@@ -148,7 +156,7 @@ export default function EnrollmentFormModal({
                 <div className='w-1/3'>
                   <label
                     htmlFor='countryCode'
-                    className='block font-inclusive text-[12px] text-white ml-[10px]'
+                    className='block ml-[10px] font-inclusive text-[12px] text-white'
                   >
                     Country Code
                   </label>
@@ -159,13 +167,13 @@ export default function EnrollmentFormModal({
                     value='+27'
                     readOnly
                     required
-                    className='w-full border px-4 py-2 mt-[7px] mb-[18px] rounded-l-[30.42px] font-inclusive text-[10px] text-black outline-cpPink'
+                    className='mt-[7px] mb-[18px] px-4 py-2 border rounded-l-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black'
                   />
                 </div>
                 <div className='w-2/3'>
                   <label
                     htmlFor='cellphone'
-                    className='block font-inclusive text-[12px] text-white ml-[10px]'
+                    className='block ml-[10px] font-inclusive text-[12px] text-white'
                   >
                     Cellphone
                   </label>
@@ -177,7 +185,7 @@ export default function EnrollmentFormModal({
                     inputMode='numeric'
                     maxLength={10}
                     required
-                    className='w-full border px-4 py-2 mt-[7px] mb-[18px] rounded-r-[30.42px] font-inclusive text-[10px] text-black outline-cpPink'
+                    className='mt-[7px] mb-[18px] px-4 py-2 border rounded-r-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black'
                     placeholder='Enter 10-digit number'
                     onKeyDown={(e) => {
                       if (
@@ -200,7 +208,7 @@ export default function EnrollmentFormModal({
               {/* Address */}
               <label
                 htmlFor='address'
-                className='block font-inclusive text-[12px] text-white ml-[10px]'
+                className='block ml-[10px] font-inclusive text-[12px] text-white'
               >
                 Address
               </label>
@@ -210,23 +218,23 @@ export default function EnrollmentFormModal({
                 type='text'
                 placeholder='Address'
                 required
-                className='w-full border px-4 py-2 mt-[7px] mb-[18px] rounded-[30.42px] font-inclusive text-[10px] text-black outline-cpPink placeholder:text-[#C5C5C5]'
+                className='mt-[7px] mb-[18px] px-4 py-2 border rounded-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black placeholder:text-[#C5C5C5]'
               />
 
               {/* Program Dropdown */}
               <label
                 htmlFor='program'
-                className='block font-inclusive text-[12px] text-white ml-[10px]'
+                className='block ml-[10px] font-inclusive text-[12px] text-white'
               >
                 Which program are you enrolling in?
               </label>
               <div className='relative mt-[7px] mb-[18px]'>
                 <Listbox value={selectedProgram} onChange={setSelectedProgram}>
-                  <ListboxButton className='w-full bg-white text-black rounded-[30.42px] py-2 px-4 text-[10px] font-inclusive flex justify-between items-center'>
+                  <ListboxButton className='flex justify-between items-center bg-white px-4 py-2 rounded-[30.42px] w-full font-inclusive text-[10px] text-black'>
                     {selectedProgram}
-                    <ChevronUpDownIcon className='h-4 w-4 ml-2' />
+                    <ChevronUpDownIcon className='ml-2 w-4 h-4' />
                   </ListboxButton>
-                  <ListboxOptions className='absolute z-10 mt-2 w-full bg-white text-black rounded-[20px] shadow-lg max-h-60 overflow-auto text-[10px] font-inclusive'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-lg mt-2 rounded-[20px] w-full max-h-60 overflow-auto font-inclusive text-[10px] text-black'>
                     {programs.map((program) => (
                       <ListboxOption
                         key={program}
@@ -243,7 +251,7 @@ export default function EnrollmentFormModal({
                               {program}
                             </span>
                             {selected && (
-                              <CheckIcon className='h-4 w-4 text-cpPink' />
+                              <CheckIcon className='w-4 h-4 text-cpPink' />
                             )}
                           </div>
                         )}
@@ -257,17 +265,17 @@ export default function EnrollmentFormModal({
               {/* Payment Dropdown */}
               <label
                 htmlFor='paymentMethod'
-                className='block font-inclusive text-[12px] text-white ml-[10px]'
+                className='block ml-[10px] font-inclusive text-[12px] text-white'
               >
                 How would you like to make payment?
               </label>
               <div className='relative mt-[7px] mb-[18px]'>
                 <Listbox value={selectedPayment} onChange={setSelectedPayment}>
-                  <ListboxButton className='w-full bg-white text-black rounded-[30.42px] py-2 px-4 text-[10px] font-inclusive flex justify-between items-center outline-cpPink'>
+                  <ListboxButton className='flex justify-between items-center bg-white px-4 py-2 rounded-[30.42px] outline-cpPink w-full font-inclusive text-[10px] text-black'>
                     {selectedPayment}
-                    <ChevronUpDownIcon className='h-4 w-4 ml-2' />
+                    <ChevronUpDownIcon className='ml-2 w-4 h-4' />
                   </ListboxButton>
-                  <ListboxOptions className='absolute z-10 mt-2 w-full bg-white text-black rounded-[20px] shadow-lg max-h-60 overflow-auto text-[10px] font-inclusive'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-lg mt-2 rounded-[20px] w-full max-h-60 overflow-auto font-inclusive text-[10px] text-black'>
                     {paymentMethods.map((method) => (
                       <ListboxOption
                         key={method}
@@ -284,7 +292,7 @@ export default function EnrollmentFormModal({
                               {method}
                             </span>
                             {selected && (
-                              <CheckIcon className='h-4 w-4 text-cpPink' />
+                              <CheckIcon className='w-4 h-4 text-cpPink' />
                             )}
                           </div>
                         )}
@@ -303,7 +311,7 @@ export default function EnrollmentFormModal({
               <button
                 type='submit'
                 disabled={isSubmitting}
-                className='flex items-center justify-center bg-cpPink font-tan-ashford font-bold text-[10.44px] text-white lowercase leading-[100%] px-[38px] py-[12px] rounded-[30.42px] hover:bg-opacity-80'
+                className='flex justify-center items-center bg-cpPink hover:bg-opacity-80 px-[38px] py-[12px] rounded-[30.42px] font-tan-ashford font-bold text-[10.44px] text-white lowercase leading-[100%]'
               >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>

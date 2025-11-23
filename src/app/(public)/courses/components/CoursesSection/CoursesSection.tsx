@@ -4,8 +4,10 @@ import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { isProMakeupPromotionActive } from '@/lib/promotions';
 
 const CoursesSection: React.FC = () => {
+  const showPromotion = isProMakeupPromotionActive();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -38,13 +40,13 @@ const CoursesSection: React.FC = () => {
       initial='hidden'
       animate={controls}
       variants={containerVariants}
-      className='px-[36px] md:px-[132px] py-[45px] md:py-[142px] md:border-b border-black'
+      className='px-[36px] md:px-[132px] py-[45px] md:py-[142px] border-black md:border-b'
     >
-      {/* <h2 className='font-tan-ashford text-[19px] tracking-wider mb-4'>
+      {/* <h2 className='mb-4 font-tan-ashford text-[19px] tracking-wider'>
         courses
       </h2> */}
       {/* Course Cards */}
-      <div className='grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(323px,1fr))] gap-[25px]'>
+      <div className='gap-[25px] grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(323px,1fr))]'>
         {[
           {
             title: 'pro makeup course',
@@ -74,48 +76,74 @@ const CoursesSection: React.FC = () => {
             image: '/images/courses/courses/courses_hairstyling.png',
             link: '/courses/hairstyling',
           },
-        ].map((course, index) => (
-          <motion.div
-            key={index}
-            className='bg-white rounded-2xl p-[14px] border border-black'
-            variants={cardVariants}
-          >
-            <Image
-              src={course.image}
-              alt='Course Image'
-              width={500}
-              height={300}
-              unoptimized
-              className='rounded-lg'
-            />
+        ].map((course, index) => {
+          const isProMakeup = course.title === 'pro makeup course';
+          const displayPrice =
+            isProMakeup && showPromotion
+              ? 'R7 500'
+              : course.price.replace('R', 'R ');
+          const originalPrice = isProMakeup && showPromotion ? 'R15 000' : null;
 
-            <h1 className='font-tan-ashford text-[21px] tracking-wider mt-4 mb-12 h-16'>
-              {course.title}
-            </h1>
+          return (
+            <motion.div
+              key={index}
+              className='relative bg-white p-[14px] border border-black rounded-2xl'
+              variants={cardVariants}
+            >
+              {isProMakeup && showPromotion && (
+                <div className='top-[20px] right-[20px] z-10 absolute bg-cpOrange px-[12px] py-[6px] rounded-full font-inter font-bold text-[10px] text-white'>
+                  LIMITED TIME
+                </div>
+              )}
+              <Image
+                src={course.image}
+                alt='Course Image'
+                width={500}
+                height={300}
+                unoptimized
+                className='rounded-lg'
+              />
 
-            <h5 className='font-inclusive text-[20px] leading-[1.5] mx-4'>
-              {course.price}
-            </h5>
-            {course.duration.map((line, i) => (
-              <p
-                key={i}
-                className='font-inclusive text-[16px] leading-[1.5] mx-4'
-              >
-                {line}
-              </p>
-            ))}
+              <h1 className='mt-4 mb-12 h-16 font-tan-ashford text-[21px] tracking-wider'>
+                {course.title}
+              </h1>
 
-            <a href={course.link}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className='inline-block bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mx-4 border border-black rounded-full mt-4'
-              >
-                explore
-              </motion.button>
-            </a>
-          </motion.div>
-        ))}
+              <div className='mx-4 font-inclusive'>
+                {originalPrice && (
+                  <div className='flex items-center gap-2'>
+                    <h5 className='text-[20px] text-gray-500 line-through'>
+                      {originalPrice}
+                    </h5>
+                    <h5 className='font-bold text-[20px] text-cpMagenta'>
+                      {displayPrice}
+                    </h5>
+                  </div>
+                )}
+                {!originalPrice && (
+                  <h5 className='text-[20px] leading-[1.5]'>{displayPrice}</h5>
+                )}
+              </div>
+              {course.duration.map((line, i) => (
+                <p
+                  key={i}
+                  className='mx-4 font-inclusive text-[16px] leading-[1.5]'
+                >
+                  {line}
+                </p>
+              ))}
+
+              <a href={course.link}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className='inline-block bg-cpPink mx-4 mt-4 px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'
+                >
+                  explore
+                </motion.button>
+              </a>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );

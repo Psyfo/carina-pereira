@@ -2,6 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
+import PromotionalPrice from '@/components/PromotionalPrice/PromotionalPrice';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -24,25 +25,25 @@ const AboutSection: React.FC = () => {
           },
         },
       }}
-      className='flex flex-col lg:flex-row md:items-center md:justify-between lg:gap-[125px] px-[25px] lg:px-[10%] py-[60px] lg:py-[120px]'
+      className='flex lg:flex-row flex-col md:justify-between md:items-center lg:gap-[125px] px-[25px] lg:px-[10%] py-[60px] lg:py-[120px]'
     >
       {/* Left Column */}
       <motion.div
         variants={fadeInUpVariants}
-        className='lg:w-[600px] flex flex-col items-start'
+        className='flex flex-col items-start lg:w-[600px]'
       >
         <h1 className='font-tan-ashford font-bold text-[19px] tracking-wider'>
           turn your passion into a thriving make-up career
         </h1>
 
-        <h4 className='font-inclusive text-[20px] leading-[1.5] mt-8'>
+        <h4 className='mt-8 font-inclusive text-[20px] leading-[1.5]'>
           From Beginner to Fully-Booked: The Path to Becoming a Recognised
           Makeup Artist
         </h4>
 
         <motion.p
           variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
         >
           You have the talent and the passion for makeup, but you don’t know
           where to start. You dream of seeing your name recognized in the
@@ -52,7 +53,7 @@ const AboutSection: React.FC = () => {
         </motion.p>
         <motion.p
           variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
         >
           We provide the skills, mentorship, and hands-on experience you need to
           transform your passion into a profitable career. Whether you want to
@@ -64,7 +65,7 @@ const AboutSection: React.FC = () => {
         </motion.p>
         <motion.p
           variants={fadeInUpVariants}
-          className='font-inclusive text-[15px] leading-[1.5] mt-8'
+          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
         >
           Why learn from us? <br />
           This isn’t just another makeup course—it’s a launchpad for your
@@ -83,9 +84,11 @@ const AboutSection: React.FC = () => {
       {/* Right Column */}
       <motion.div
         variants={fadeInUpVariants}
-        className='mx-auto lg:w-[450px] font-inclusive text-[15px] leading-[1.5] border border-black rounded-2xl px-[20px] lg:px-[45px] py-[30px] mt-[84px] lg:mt-0'
+        className='mx-auto mt-[84px] lg:mt-0 px-[20px] lg:px-[45px] py-[30px] border border-black rounded-2xl lg:w-[450px] font-inclusive text-[15px] leading-[1.5]'
       >
-        <motion.p variants={fadeInUpVariants}>Cost: R15 000</motion.p>
+        <motion.p variants={fadeInUpVariants}>
+          <PromotionalPrice priceSize='text-[15px]' />
+        </motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
           Duration of this course: 2 months Full time & 4 months Part time
         </motion.p>
@@ -104,7 +107,7 @@ const AboutSection: React.FC = () => {
         <motion.p variants={fadeInUpVariants} className='mt-8'>
           What you'll get
         </motion.p>
-        <motion.ul variants={fadeInUpVariants} className='list-disc pl-[20px]'>
+        <motion.ul variants={fadeInUpVariants} className='pl-[20px] list-disc'>
           {' '}
           <li>A premium set of Swiitchbeauty makeup brushes</li>
           <li>A customized tote bag</li>

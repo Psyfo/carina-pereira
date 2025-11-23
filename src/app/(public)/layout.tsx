@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import ClientProviders from '@/components/ClientProviders';
 import Navigation from '@/components/Navigation/Navigation';
+import Announcement from '@/components/Announcement/Announcement';
 
 import Footer from '../../components/Footer/Footer';
 
@@ -55,7 +56,7 @@ export default function RootLayout({
       </head>
       <body>
         <ClientProviders /> {/* Client-side logic moved here */}
-        {/* <Announcement /> */}
+        <Announcement />
         <Navigation />
         {children}
         <Footer />

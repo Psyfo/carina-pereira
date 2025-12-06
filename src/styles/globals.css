@@ -1,6 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+    /* Brand Colors */
+    --color-cpCream: #FFFEF3;
+    --color-cpOrange: #FA7E39;
+    --color-cpPink: #F1A0C5;
+    --color-cpMagenta: #E62E6B;
+
+    /* shadcn/ui Design Tokens */
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(240 10% 3.9%);
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(240 10% 3.9%);
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(240 10% 3.9%);
+    --color-primary: hsl(240 5.9% 10%);
+    --color-primary-foreground: hsl(0 0% 98%);
+    --color-secondary: hsl(240 4.8% 95.9%);
+    --color-secondary-foreground: hsl(240 5.9% 10%);
+    --color-muted: hsl(240 4.8% 95.9%);
+    --color-muted-foreground: hsl(240 3.8% 46.1%);
+    --color-accent: hsl(240 4.8% 95.9%);
+    --color-accent-foreground: hsl(240 5.9% 10%);
+    --color-destructive: hsl(0 84.2% 60.2%);
+    --color-destructive-foreground: hsl(0 0% 98%);
+    --color-border: hsl(240 5.9% 90%);
+    --color-input: hsl(240 5.9% 90%);
+    --color-ring: hsl(240 10% 3.9%);
+    --color-chart-1: hsl(12 76% 61%);
+    --color-chart-2: hsl(173 58% 39%);
+    --color-chart-3: hsl(197 37% 24%);
+    --color-chart-4: hsl(43 74% 66%);
+    --color-chart-5: hsl(27 87% 67%);
+
+    /* Font Families - Tailwind v4 (use --font-* not --font-family-*) */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-inclusive: 'Inclusive Sans', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-tan-ashford: 'Tan Ashford', serif;
+
+    /* Font Sizes */
+    --font-size-base: 16px;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    /* Default ring width (preserve v3 behavior) */
+    --default-ring-width: 3px;
+}
 
 body {
     background: #FFFEF3;
@@ -51,7 +103,24 @@ body {
 }
 
 @layer base {
-  :root {
+    html {
+        font-family: var(--font-sans);
+    }
+
+    body {
+        font-family: var(--font-inter);
+    }
+
+    /* Preserve v3 default border color */
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: hsl(240 5.9% 90%);
+    }
+
+    :root {
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
         --card: 0 0% 100%;
@@ -78,7 +147,8 @@ body {
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
     }
-  .dark {
+
+    .dark {
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
         --card: 240 10% 3.9%;
@@ -107,10 +177,62 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Custom Scrollbar Utilities (Tailwind v4) */
+@utility scrollbar-hidden {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+}
+
+@utility scrollbar-thin {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@utility scrollbar-track-transparent {
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+@utility scrollbar-thumb-gray-400 {
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(156 163 175);
+        border-radius: 4px;
+    }
+}
+
+/* Custom Font Utilities (Tailwind v4) */
+@utility font-inclusive {
+    font-family: var(--font-family-inclusive);
+}
+
+@utility font-inter {
+    font-family: var(--font-family-inter);
+}
+
+@utility font-tan-ashford {
+    font-family: var(--font-family-tan-ashford);
+}
+
+@utility scrollbar-thumb-gray-400 {
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(156 163 175);
+        border-radius: 4px;
     }
 }

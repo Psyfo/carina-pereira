@@ -28,12 +28,12 @@
 
    - Always read `docs/brand.md` before making design decisions
    - Don't guess brand colors, typography, or styling - verify against the brand guide
-   - Brand colors are defined in `tailwind.config.ts` - use these custom properties via Tailwind
+   - Brand colors are defined in `src/styles/globals.css` @theme block - use these custom properties via Tailwind
 
 2. **Brand Colors - Required**
 
    ```tsx
-   // Primary Brand Colors (from tailwind.config.ts)
+   // Primary Brand Colors (from src/styles/globals.css @theme block)
    className = 'bg-cpCream text-black';      // Cream background (#FFFEF3)
    className = 'bg-cpOrange text-white';     // Primary CTA, hero sections (#FA7E39)
    className = 'bg-cpPink text-white';       // Secondary highlights (#F1A0C5)
@@ -461,7 +461,9 @@
 
 ### ✅ Always Follow
 
-1. **Tailwind CSS First (v3.4)**
+1. **Tailwind CSS v4**
+
+   > **🎯 IMPORTANT**: This project uses **Tailwind CSS v4** with configuration in `src/styles/globals.css` using the `@theme` block. The old `tailwind.config.ts` file is no longer used.
 
    ```tsx
    // ✅ CORRECT: Tailwind utilities with brand colors
@@ -480,6 +482,49 @@
      padding: '24px',
      backgroundColor: '#FFFEF3'
    }}>
+   ```
+
+   **Adding Custom Theme Values (v4 Approach):**
+
+   ```css
+   /* In src/styles/globals.css */
+   @theme {
+     /* Add custom colors */
+     --color-brand-new: #123456;
+
+     /* Add custom spacing */
+     --spacing-custom: 2.5rem;
+
+     /* Add custom fonts */
+     --font-family-custom: 'Custom Font', sans-serif;
+   }
+   ```
+
+   **Creating Custom Utilities (v4 Approach):**
+
+   ```css
+   /* In src/styles/globals.css */
+   @utility custom-gradient {
+     background: linear-gradient(
+       to right,
+       var(--color-cpOrange),
+       var(--color-cpPink)
+     );
+   }
+
+   @utility scrollbar-hidden {
+     &::-webkit-scrollbar {
+       display: none;
+     }
+     scrollbar-width: none;
+   }
+   ```
+
+   ```tsx
+   // Usage in components
+   <div className='custom-gradient scrollbar-hidden'>
+     Content with custom gradient and hidden scrollbar
+   </div>
    ```
 
 2. **Navigation Bar Standards**
@@ -1211,7 +1256,7 @@
 2. **Font Loading Optimization**
 
    ```tsx
-   // ✅ CORRECT: Already configured in tailwind.config.ts
+   // ✅ CORRECT: Already configured in src/styles/globals.css @theme block
    // Fonts: Tan Ashford, Inclusive Sans, Inter
    // Use font-display: swap for better performance
 
@@ -2409,16 +2454,19 @@ const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 
 ### Current Project Stack
 
-- **Framework**: Next.js 15.3.2 (App Router)
+- **Framework**: Next.js 15.4.3 (App Router)
 - **React**: 19.0.0
 - **TypeScript**: 5.x
-- **Styling**: Tailwind CSS 3.4.1
+- **Styling**: Tailwind CSS 4.0.0 ⚠️ **v4 - Configuration in CSS using @theme**
+- **PostCSS**: @tailwindcss/postcss 4.0.0
 - **Icons**: Lucide React 0.525.0
-- **Animations**: Framer Motion 12.0.3
+- **Animations**: tw-animate-css 1.0.3 (Tailwind v4 compatible)
 - **Database**: Mongoose 8.16.5
 - **Auth**: NextAuth 4.24.11
 - **Carousel**: Swiper 11.2.1
 - **UI Components**: Radix UI (dialog, tabs, toast, etc.)
+
+> **📌 Note**: This project uses Tailwind CSS v4, which has significant architectural changes from v3. All configuration is now in `src/styles/globals.css` using the `@theme` block instead of `tailwind.config.ts`. See `docs/TAILWIND_V4_MIGRATION.md` for details.
 
 ### Navigation
 

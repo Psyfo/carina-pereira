@@ -22,10 +22,9 @@ const CTASection: React.FC = () => {
     >
       <CTA
         link='https://academy.carinapereira.com/product/pro-makeup-course/'
-        heading='ready to celebrate women’s day?'
-        text='Limited seats available. Get your tickets now.'
-        buttonLabel='book now' // Pass the label to the button
-        formType='womensDay' // Specify the form type
+        heading='ready to enroll?'
+        text='Limited seats available. Enroll now to secure your spot.'
+        buttonLabel='enroll now'
       />
     </motion.section>
   );

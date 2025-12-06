@@ -306,7 +306,6 @@ const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
 - `/api/contact` - Contact form submission
 - `/api/enrollment` - Course enrollment
 - `/api/subscribe` - Newsletter subscription
-- `/api/womensday` - Special promotion forms
 - `/api/instagram-feed` - Instagram integration
 - `/api/users` - User management
 

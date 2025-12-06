@@ -17,7 +17,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Carina Pereira | Masterclass',
-    description: "Join our masterclass and celebrate Women's Day.",
+    description: 'Join our Masterclass to elevate your makeup skills with expert guidance.',
     url: 'https://carinapereira.com/masterclass',
     images: [
       {

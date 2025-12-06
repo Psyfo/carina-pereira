@@ -3,16 +3,12 @@ import { useState } from 'react';
 
 import EnrollmentFormModal from '@/components/EnrollmentFormModal/EnrollmentFormModal';
 
-import WomensDayFormModal from '../WomensDayFormModal/WomensDayFormModal';
-
 interface EnrollmentButtonProps {
   label?: string;
-  formType?: string;
 }
 
 export default function EnrollmentButton({
   label = 'enroll now',
-  formType = 'regular',
 }: EnrollmentButtonProps) {
   const [open, setOpen] = useState(false);
 
@@ -24,11 +20,7 @@ export default function EnrollmentButton({
       >
         {label}
       </button>
-      {formType === 'regular' ? (
-        <EnrollmentFormModal isOpen={open} onClose={() => setOpen(false)} />
-      ) : (
-        <WomensDayFormModal isOpen={open} onClose={() => setOpen(false)} />
-      )}
+      <EnrollmentFormModal isOpen={open} onClose={() => setOpen(false)} />
     </>
   );
 }

@@ -19,9 +19,9 @@ const Navigation: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <nav className='fixed top-0 left-0 w-full bg-transparent z-30 flex items-center justify-between lg:px-12 py-6'>
+    <nav className='top-0 left-0 z-30 fixed flex justify-between items-center bg-transparent lg:px-12 py-6 w-full'>
       {/* Navigation Links (Visible on lg: and up) */}
-      <ul className='hidden fixed top-[3rem] right-[1.5rem] lg:flex space-x-12 font-tan-ashford text-[17px] text-white lowercase tracking-wider'>
+      <ul className='hidden top-12 right-6 fixed lg:flex space-x-12 font-tan-ashford text-[17px] text-white lowercase tracking-wider'>
         <li>
           <Link href='/courses' className='drop-shadow-lg'>
             Courses
@@ -46,13 +46,13 @@ const Navigation: React.FC = () => {
         width={30}
         height={30}
         unoptimized
-        className='w-[30] h-[30] fixed top-[3rem] right-[1.5rem] z-20 cursor-pointer drop-shadow-lg lg:hidden'
+        className='lg:hidden top-12 right-6 z-20 fixed drop-shadow-lg w-[30] h-[30] cursor-pointer'
         onClick={() => setIsOpen(true)}
       />
 
       {/* Full-Screen Navigation Overlay (Mobile) */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-cpPink z-20 pt-[130px] pl-[40px] transition-opacity duration-300 ${
+        className={`fixed top-0 left-0 w-full h-full bg-cpPink z-20 pt-[130px] pl-10 transition-opacity duration-300 ${
           isOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
@@ -66,7 +66,7 @@ const Navigation: React.FC = () => {
             width={190}
             height={100}
             unoptimized
-            className='w-[190px] lg:w-[284px] lg:hidden absolute top-12 left-[1.5rem] z-30'
+            className='lg:hidden top-12 left-6 z-30 absolute w-[190px] lg:w-[284px] h-auto'
           />
         </Link>
 
@@ -77,7 +77,7 @@ const Navigation: React.FC = () => {
           width={30}
           height={30}
           unoptimized
-          className='w-[30px] h-[30px] fixed top-[3rem] right-[1.5rem] z-30 cursor-pointer drop-shadow-lg'
+          className='top-12 right-6 z-30 fixed drop-shadow-lg w-[30px] h-[30px] cursor-pointer'
           onClick={() => setIsOpen(false)}
         />
 

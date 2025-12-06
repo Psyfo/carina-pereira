@@ -17,7 +17,8 @@ export const metadata = {
   },
   openGraph: {
     title: 'Carina Pereira | Masterclass',
-    description: 'Join our Masterclass to elevate your makeup skills with expert guidance.',
+    description:
+      'Join our Masterclass to elevate your makeup skills with expert guidance.',
     url: 'https://carinapereira.com/masterclass',
     images: [
       {

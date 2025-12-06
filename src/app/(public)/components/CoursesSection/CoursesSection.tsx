@@ -55,7 +55,7 @@ const CoursesSection: React.FC = () => {
           </motion.p>
 
           <Link href='/courses/pro-makeup'>
-            <button className='bg-cpPink px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'>
+            <button className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
               explore
             </button>
           </Link>
@@ -101,7 +101,7 @@ const CoursesSection: React.FC = () => {
           </motion.p>
 
           <Link href='/courses/express-makeup'>
-            <button className='bg-cpPink px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'>
+            <button className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
               explore
             </button>
           </Link>
@@ -137,7 +137,7 @@ const CoursesSection: React.FC = () => {
           </motion.p>
 
           <Link href='/courses/express-online'>
-            <button className='bg-cpPink px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'>
+            <button className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
               explore
             </button>
           </Link>

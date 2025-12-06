@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button className='inline-block bg-cpPink mt-4 px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'>
+            <button className='inline-block bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm mt-4 px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
               get directions
             </button>
           </a>

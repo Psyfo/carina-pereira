@@ -112,7 +112,7 @@ const CoursesSection: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className='inline-block bg-cpPink mx-4 mt-4 px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'
+                  className='inline-block bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm mx-4 mt-4 px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'
                 >
                   explore
                 </motion.button>

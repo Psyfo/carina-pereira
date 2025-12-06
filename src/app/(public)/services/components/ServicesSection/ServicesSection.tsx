@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React from "react";
-import { Variants, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import Link from 'next/link';
+import React from 'react';
+import { Variants, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -29,7 +29,7 @@ const ServicesSection: React.FC = () => {
 
       {/* Animated Service Items */}
       <motion.div
-        className='flex flex-col md:flex-row flex-wrap gap-[40px] md:gap-4 mt-[30px] lg:w-[900px]'
+        className='flex md:flex-row flex-col flex-wrap gap-[40px] md:gap-4 mt-[30px] lg:w-[900px]'
         initial='hidden'
         animate={inView ? 'visible' : 'hidden'}
         variants={{
@@ -51,7 +51,7 @@ const ServicesSection: React.FC = () => {
           <motion.div
             key={service}
             variants={fadeInVariants}
-            className='text-center font-inclusive text-[17.75px] leading-[1.5] px-[15px] py-[12px] border border-black rounded-full mt-4 md:mt-2'
+            className='mt-4 md:mt-2 px-[15px] py-[12px] border border-black rounded-full font-inclusive text-[17.75px] text-center leading-[1.5]'
           >
             {service}
           </motion.div>
@@ -60,7 +60,7 @@ const ServicesSection: React.FC = () => {
         {/* Animated Button */}
         <motion.div variants={fadeInVariants}>
           <Link href='/#contact'>
-            <button className='w-full bg-cpPink font-inclusive text-[17.75px] leading-[1.5] px-[35px] py-[12px] border border-black rounded-full mt-4 md:mt-2'>
+            <button className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm mt-4 md:mt-2 px-[35px] py-[12px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 w-full font-inclusive text-[17.75px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
               book carina
             </button>
           </Link>

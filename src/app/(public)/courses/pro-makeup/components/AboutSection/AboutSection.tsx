@@ -2,7 +2,6 @@
 
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
-import PromotionalPrice from '@/components/PromotionalPrice/PromotionalPrice';
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -86,9 +85,7 @@ const AboutSection: React.FC = () => {
         variants={fadeInUpVariants}
         className='mx-auto mt-[84px] lg:mt-0 px-[20px] lg:px-[45px] py-[30px] border border-black rounded-2xl lg:w-[450px] font-inclusive text-[15px] leading-[1.5]'
       >
-        <motion.p variants={fadeInUpVariants}>
-          <PromotionalPrice priceSize='text-[15px]' />
-        </motion.p>
+        <motion.p variants={fadeInUpVariants}>Cost: R15 000</motion.p>
         <motion.p variants={fadeInUpVariants} className='mt-8'>
           Duration of this course: 2 months Full time & 4 months Part time
         </motion.p>

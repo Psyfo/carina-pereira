@@ -1,7 +1,6 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import { isProMakeupPromotionActive } from '@/lib/promotions';
 
 import {
   Listbox,
@@ -11,18 +10,12 @@ import {
 } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-// Programs list with pricing - dynamically updated with promotion
-const getPrograms = () => {
-  const showPromotion = isProMakeupPromotionActive();
-  return [
-    showPromotion
-      ? 'Pro Makeup Course - R7 500 (50% OFF)'
-      : 'Pro Makeup Course - R15 000',
-    'Express Makeup Course - R5 500',
-    'Hairstyling Course - R3 000',
-    'Online Express Makeup Course - R4 800',
-  ];
-};
+const programs = [
+  'Pro Makeup Course - R15 000',
+  'Express Makeup Course - R5 500',
+  'Hairstyling Course - R3 000',
+  'Online Express Makeup Course - R4 800',
+];
 
 const paymentMethods = [
   'Full Amount Upfront',
@@ -37,7 +30,6 @@ export default function EnrollmentFormModal({
   isOpen: boolean;
   onClose: () => void;
 }>) {
-  const programs = getPrograms();
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
   const [selectedPayment, setSelectedPayment] = useState(paymentMethods[0]);
 

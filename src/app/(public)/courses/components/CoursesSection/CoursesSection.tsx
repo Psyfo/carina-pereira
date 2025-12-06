@@ -4,10 +4,8 @@ import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { isProMakeupPromotionActive } from '@/lib/promotions';
 
 const CoursesSection: React.FC = () => {
-  const showPromotion = isProMakeupPromotionActive();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -77,24 +75,12 @@ const CoursesSection: React.FC = () => {
             link: '/courses/hairstyling',
           },
         ].map((course, index) => {
-          const isProMakeup = course.title === 'pro makeup course';
-          const displayPrice =
-            isProMakeup && showPromotion
-              ? 'R7 500'
-              : course.price.replace('R', 'R ');
-          const originalPrice = isProMakeup && showPromotion ? 'R15 000' : null;
-
           return (
             <motion.div
               key={index}
-              className='relative bg-white p-[14px] border border-black rounded-2xl'
+              className='bg-white p-[14px] border border-black rounded-2xl'
               variants={cardVariants}
             >
-              {isProMakeup && showPromotion && (
-                <div className='top-[20px] right-[20px] z-10 absolute bg-cpOrange px-[12px] py-[6px] rounded-full font-inter font-bold text-[10px] text-white'>
-                  LIMITED TIME
-                </div>
-              )}
               <Image
                 src={course.image}
                 alt='Course Image'
@@ -109,19 +95,9 @@ const CoursesSection: React.FC = () => {
               </h1>
 
               <div className='mx-4 font-inclusive'>
-                {originalPrice && (
-                  <div className='flex items-center gap-2'>
-                    <h5 className='text-[20px] text-gray-500 line-through'>
-                      {originalPrice}
-                    </h5>
-                    <h5 className='font-bold text-[20px] text-cpMagenta'>
-                      {displayPrice}
-                    </h5>
-                  </div>
-                )}
-                {!originalPrice && (
-                  <h5 className='text-[20px] leading-[1.5]'>{displayPrice}</h5>
-                )}
+                <h5 className='text-[20px] leading-[1.5]'>
+                  {course.price.replace('R', 'R ')}
+                </h5>
               </div>
               {course.duration.map((line, i) => (
                 <p

@@ -1,0 +1,51 @@
+/* Custom Utility Classes (Tailwind CSS v4) */
+
+/* ========================================
+   SCROLLBAR UTILITIES
+   ======================================== */
+
+@utility scrollbar-hidden {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+}
+
+@utility scrollbar-thin {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@utility scrollbar-track-transparent {
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+@utility scrollbar-thumb-gray-400 {
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(156 163 175);
+        border-radius: 4px;
+    }
+}
+
+/* ========================================
+   FONT UTILITIES
+   ======================================== */
+
+@utility font-inclusive {
+    font-family: var(--font-inclusive);
+}
+
+@utility font-inter {
+    font-family: var(--font-inter);
+}
+
+@utility font-tan-ashford {
+    font-family: var(--font-tan-ashford);
+}

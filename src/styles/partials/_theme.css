@@ -1,0 +1,122 @@
+/* Tailwind CSS v4 Theme Configuration */
+@theme {
+    /* ========================================
+       CP BRAND COLORS - FULL PALETTE
+       ======================================== */
+
+    /* CP Cream - Neutral light scale (background color)
+       Base: #FFFEF3 (100) - Warm cream background */
+    --color-cpCream-50: #FFFFF9;
+    --color-cpCream-100: #FFFEF3;
+    --color-cpCream-200: #FFFBE5;
+    --color-cpCream-300: #FFF8D7;
+    --color-cpCream-400: #FFF5C9;
+    --color-cpCream-500: #FFF2BB;
+    --color-cpCream-600: #E6D9A8;
+    --color-cpCream-700: #CCC095;
+    --color-cpCream-800: #B3A782;
+    --color-cpCream-900: #998E6F;
+    --color-cpCream: var(--color-cpCream-100);
+
+    /* CP Orange - Primary brand color
+       Base: #FA7E39 (500) - Vibrant primary CTA color */
+    --color-cpOrange-50: #FFF4ED;
+    --color-cpOrange-100: #FFE4D1;
+    --color-cpOrange-200: #FFC9A3;
+    --color-cpOrange-300: #FFA66E;
+    --color-cpOrange-400: #FC9152;
+    --color-cpOrange-500: #FA7E39;
+    --color-cpOrange-600: #E86820;
+    --color-cpOrange-700: #C75316;
+    --color-cpOrange-800: #A04213;
+    --color-cpOrange-900: #7D3310;
+    --color-cpOrange: var(--color-cpOrange-500);
+
+    /* CP Pink - Secondary highlight color
+       Base: #F1A0C5 (400) - Soft secondary accent */
+    --color-cpPink-50: #FEF5FA;
+    --color-cpPink-100: #FCE5F0;
+    --color-cpPink-200: #F9CCE1;
+    --color-cpPink-300: #F5B3D3;
+    --color-cpPink-400: #F1A0C5;
+    --color-cpPink-500: #ED8DB7;
+    --color-cpPink-600: #E26FA1;
+    --color-cpPink-700: #D44E84;
+    --color-cpPink-800: #B3386B;
+    --color-cpPink-900: #8F2A54;
+    --color-cpPink: var(--color-cpPink-400);
+
+    /* CP Magenta - Accent/interaction color
+       Base: #E62E6B (500) - Bold accent for links/highlights */
+    --color-cpMagenta-50: #FEF0F5;
+    --color-cpMagenta-100: #FDD9E6;
+    --color-cpMagenta-200: #FCB3CD;
+    --color-cpMagenta-300: #F88DB4;
+    --color-cpMagenta-400: #F25E8F;
+    --color-cpMagenta-500: #E62E6B;
+    --color-cpMagenta-600: #D01756;
+    --color-cpMagenta-700: #AD1247;
+    --color-cpMagenta-800: #8A0E39;
+    --color-cpMagenta-900: #6B0A2C;
+    --color-cpMagenta: var(--color-cpMagenta-500);
+
+    /* ========================================
+       SHADCN/UI DESIGN TOKENS
+       ======================================== */
+
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(240 10% 3.9%);
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(240 10% 3.9%);
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(240 10% 3.9%);
+    --color-primary: hsl(240 5.9% 10%);
+    --color-primary-foreground: hsl(0 0% 98%);
+    --color-secondary: hsl(240 4.8% 95.9%);
+    --color-secondary-foreground: hsl(240 5.9% 10%);
+    --color-muted: hsl(240 4.8% 95.9%);
+    --color-muted-foreground: hsl(240 3.8% 46.1%);
+    --color-accent: hsl(240 4.8% 95.9%);
+    --color-accent-foreground: hsl(240 5.9% 10%);
+    --color-destructive: hsl(0 84.2% 60.2%);
+    --color-destructive-foreground: hsl(0 0% 98%);
+    --color-border: hsl(240 5.9% 90%);
+    --color-input: hsl(240 5.9% 90%);
+    --color-ring: hsl(240 10% 3.9%);
+    --color-chart-1: hsl(12 76% 61%);
+    --color-chart-2: hsl(173 58% 39%);
+    --color-chart-3: hsl(197 37% 24%);
+    --color-chart-4: hsl(43 74% 66%);
+    --color-chart-5: hsl(27 87% 67%);
+
+    /* ========================================
+       FONT FAMILIES
+       ======================================== */
+
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-inclusive: 'Inclusive Sans', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-tan-ashford: 'Tan Ashford', serif;
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+
+    --font-size-base: 16px;
+
+    /* ========================================
+       BORDER RADIUS
+       ======================================== */
+
+    --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    /* ========================================
+       EFFECTS
+       ======================================== */
+
+    /* Default ring width (preserve v3 behavior) */
+    --default-ring-width: 3px;
+}

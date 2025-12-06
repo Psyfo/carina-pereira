@@ -1,0 +1,59 @@
+/* Font Face Declarations */
+
+/* ========================================
+   INCLUSIVE SANS
+   ======================================== */
+
+/* Inclusive Sans Regular */
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('/fonts/InclusiveSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inclusive Sans Italic */
+@font-face {
+    font-family: 'Inclusive Sans';
+    src: url('/fonts/InclusiveSans-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ========================================
+   INTER
+   ======================================== */
+
+/* Inter Regular */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter Italic */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ========================================
+   TAN ASHFORD
+   ======================================== */
+
+/* Tan Ashford */
+@font-face {
+    font-family: 'Tan Ashford';
+    src: url('/fonts/TANASHFORD-BOLD.woff2') format('woff2'),
+        url('/fonts/TANASHFORD-BOLD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

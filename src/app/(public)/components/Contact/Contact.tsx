@@ -77,7 +77,7 @@ const ContactSection: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
       id='contact'
-      className='px-[30px] md:px-[60px] py-[50px] lg:flex'
+      className='lg:flex px-[30px] md:px-[60px] py-[50px]'
     >
       <div className='lg:w-[50%]'>
         <h1 className='font-tan-ashford font-bold text-[19px]'>get in touch</h1>
@@ -87,26 +87,27 @@ const ContactSection: React.FC = () => {
         animate={controls}
         className='lg:w-[50%]'
         onSubmit={handleSubmit}
+        noValidate
       >
-        <div className='lg:w-full lg:flex gap-8'>
-          <div className='form-group flex mt-8 lg:mt-0 flex-col flex-grow'>
+        <div className='lg:flex gap-8 lg:w-full'>
+          <div className='form-group flex flex-col flex-grow mt-8 lg:mt-0'>
             <label className='font-inclusive text-[1rem]' htmlFor='firstName'>
               First Name:
             </label>
             <input
-              className='border border-black rounded-full mt-4 px-4 py-2 bg-transparent'
+              className='bg-transparent autofill:bg-white disabled:bg-gray-50 focus:ring-opacity-50 mt-4 px-4 py-2 border border-black focus:border-cpPink disabled:border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cpPink text-black autofill:text-black disabled:text-gray-500 placeholder:text-gray-400 transition-colors duration-200 disabled:cursor-not-allowed'
               type='text'
               id='firstName'
               name='firstName'
               required
             />
           </div>
-          <div className='form-group flex flex-col mt-8 lg:mt-0 flex-grow'>
+          <div className='form-group flex flex-col flex-grow mt-8 lg:mt-0'>
             <label className='font-inclusive text-[1rem]' htmlFor='lastName'>
               Last Name:
             </label>
             <input
-              className='border border-black rounded-full mt-4 px-4 py-2 bg-transparent'
+              className='bg-transparent autofill:bg-white disabled:bg-gray-50 focus:ring-opacity-50 mt-4 px-4 py-2 border border-black focus:border-cpPink disabled:border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cpPink text-black autofill:text-black disabled:text-gray-500 placeholder:text-gray-400 transition-colors duration-200 disabled:cursor-not-allowed'
               type='text'
               id='lastName'
               name='lastName'
@@ -119,7 +120,7 @@ const ContactSection: React.FC = () => {
             Email:
           </label>
           <input
-            className='border border-black rounded-full mt-4 px-4 py-2 bg-transparent'
+            className='bg-transparent autofill:bg-white disabled:bg-gray-50 focus:ring-opacity-50 mt-4 px-4 py-2 border border-black focus:border-cpPink disabled:border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-cpPink text-black autofill:text-black disabled:text-gray-500 placeholder:text-gray-400 transition-colors duration-200 disabled:cursor-not-allowed'
             type='email'
             id='email'
             name='email'
@@ -131,7 +132,7 @@ const ContactSection: React.FC = () => {
             Message:
           </label>
           <textarea
-            className='h-[12rem] border border-black rounded-md mt-4 px-4 py-2 bg-transparent'
+            className='bg-transparent disabled:bg-gray-50 focus:ring-opacity-50 mt-4 px-4 py-2 border border-black focus:border-cpPink disabled:border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-cpPink h-[12rem] text-black disabled:text-gray-500 placeholder:text-gray-400 transition-colors duration-200 resize-none disabled:cursor-not-allowed'
             id='message'
             name='message'
             required
@@ -139,7 +140,7 @@ const ContactSection: React.FC = () => {
         </div>
         <motion.button
           type='submit'
-          className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full mt-12'
+          className='bg-cpPink mt-12 mb-[80px] px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           disabled={isSubmitting} // Disable button while submitting

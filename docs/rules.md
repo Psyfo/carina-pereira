@@ -162,58 +162,58 @@
 
    ```typescript
    // ✅ CORRECT: Get docs before implementing
-   
+
    // Next.js (App Router, Image, Link)
    // Always check for Next.js 15 specific patterns
-   mcp_context7_resolve_library_id({ libraryName: "next" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/vercel/next.js",
-     topic: "app router server components"
-   })
+   mcp_context7_resolve_library_id({ libraryName: 'next' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/vercel/next.js',
+     topic: 'app router server components',
+   });
 
    // React 19 (hooks, types)
-   mcp_context7_resolve_library_id({ libraryName: "react" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/facebook/react",
-     topic: "useState TypeScript types"
-   })
+   mcp_context7_resolve_library_id({ libraryName: 'react' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/facebook/react',
+     topic: 'useState TypeScript types',
+   });
 
    // Framer Motion (animations)
-   mcp_context7_resolve_library_id({ libraryName: "framer-motion" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/framer/motion",
-     topic: "variants and transitions"
-   })
+   mcp_context7_resolve_library_id({ libraryName: 'framer-motion' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/framer/motion',
+     topic: 'variants and transitions',
+   });
 
    // Radix UI (dialog, tabs, toast)
-   mcp_context7_resolve_library_id({ libraryName: "@radix-ui/react-dialog" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/radix-ui/primitives",
-     topic: "dialog component"
-   })
+   mcp_context7_resolve_library_id({ libraryName: '@radix-ui/react-dialog' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/radix-ui/primitives',
+     topic: 'dialog component',
+   });
 
    // Tailwind CSS
-   mcp_context7_resolve_library_id({ libraryName: "tailwindcss" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/tailwindlabs/tailwindcss",
-     topic: "responsive design utilities"
-   })
+   mcp_context7_resolve_library_id({ libraryName: 'tailwindcss' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/tailwindlabs/tailwindcss',
+     topic: 'responsive design utilities',
+   });
 
    // Lucide React (icons)
-   mcp_context7_resolve_library_id({ libraryName: "lucide-react" })
-   
+   mcp_context7_resolve_library_id({ libraryName: 'lucide-react' });
+
    // Swiper (carousels)
-   mcp_context7_resolve_library_id({ libraryName: "swiper" })
+   mcp_context7_resolve_library_id({ libraryName: 'swiper' });
 
    // Mongoose (database)
-   mcp_context7_resolve_library_id({ libraryName: "mongoose" })
-   mcp_context7_get_library_docs({ 
-     context7CompatibleLibraryID: "/mongodb/docs",
-     topic: "schema types"
-   })
+   mcp_context7_resolve_library_id({ libraryName: 'mongoose' });
+   mcp_context7_get_library_docs({
+     context7CompatibleLibraryID: '/mongodb/docs',
+     topic: 'schema types',
+   });
 
    // NextAuth.js (authentication)
-   mcp_context7_resolve_library_id({ libraryName: "next-auth" })
+   mcp_context7_resolve_library_id({ libraryName: 'next-auth' });
    ```
 
 4. **TypeScript Type Safety with Context7**
@@ -255,17 +255,17 @@
 
    ```typescript
    // ✅ CORRECT: Workflow for implementing library features
-   
+
    // Step 1: Resolve library ID
-   mcp_context7_resolve_library_id({ libraryName: "library-name" })
-   
+   mcp_context7_resolve_library_id({ libraryName: 'library-name' });
+
    // Step 2: Get focused documentation
    mcp_context7_get_library_docs({
-     context7CompatibleLibraryID: "/org/library",
-     topic: "specific feature you need",
-     tokens: 15000  // More tokens for complex features
-   })
-   
+     context7CompatibleLibraryID: '/org/library',
+     topic: 'specific feature you need',
+     tokens: 15000, // More tokens for complex features
+   });
+
    // Step 3: Implement using exact patterns from docs
    // Step 4: Use correct TypeScript types from docs
    ```
@@ -274,18 +274,18 @@
 
    ```typescript
    // ✅ CORRECT: Use Context7 to verify correct usage
-   
+
    // If getting TypeScript errors with a library:
    mcp_context7_get_library_docs({
-     context7CompatibleLibraryID: "/org/library",
-     topic: "component props interface"
-   })
-   
+     context7CompatibleLibraryID: '/org/library',
+     topic: 'component props interface',
+   });
+
    // If getting runtime errors:
    mcp_context7_get_library_docs({
-     context7CompatibleLibraryID: "/org/library",
-     topic: "common issues and troubleshooting"
-   })
+     context7CompatibleLibraryID: '/org/library',
+     topic: 'common issues and troubleshooting',
+   });
    ```
 
 ### ❌ Never Do
@@ -302,12 +302,14 @@
 > **Principle**: Better to spend 30 seconds checking Context7 than 30 minutes debugging outdated code.
 
 **If you're about to:**
+
 - Import a library component
 - Use a library hook
 - Define TypeScript types for library props
 - Implement a library pattern
 
 **Then FIRST:**
+
 1. ✅ Resolve the library ID with Context7
 2. ✅ Get documentation for that specific feature
 3. ✅ Use the exact pattern from the documentation
@@ -336,12 +338,12 @@
      duration: string;
    }
 
-   export function CourseCard({ 
-     title, 
-     description, 
-     price, 
+   export function CourseCard({
+     title,
+     description,
+     price,
      imageUrl,
-     duration 
+     duration,
    }: CourseCardProps) {
      // Hooks first
      const [isHovered, setIsHovered] = useState(false);
@@ -352,28 +354,28 @@
 
      // Render
      return (
-       <div 
-         className="course-card bg-cpCream rounded-lg overflow-hidden"
+       <div
+         className='course-card bg-cpCream rounded-lg overflow-hidden'
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave}
        >
-         <Image 
-           src={imageUrl} 
-           alt={title} 
-           width={400} 
+         <Image
+           src={imageUrl}
+           alt={title}
+           width={400}
            height={300}
-           className="w-full h-48 object-cover"
+           className='w-full h-48 object-cover'
          />
-         <div className="p-6">
-           <h3 className="font-tan-ashford text-2xl text-cpMagenta lowercase">
+         <div className='p-6'>
+           <h3 className='font-tan-ashford text-2xl text-cpMagenta lowercase'>
              {title}
            </h3>
-           <p className="font-inclusive text-base mt-2">{description}</p>
-           <div className="flex justify-between items-center mt-4">
-             <span className="font-inter text-cpOrange font-bold">
+           <p className='font-inclusive text-base mt-2'>{description}</p>
+           <div className='flex justify-between items-center mt-4'>
+             <span className='font-inter text-cpOrange font-bold'>
                R{price}
              </span>
-             <span className="font-inter text-sm text-gray-600">
+             <span className='font-inter text-sm text-gray-600'>
                {duration}
              </span>
            </div>
@@ -404,14 +406,12 @@
    export async function CoursesSection() {
      // Can fetch data server-side if needed
      return (
-       <section className="py-16 bg-cpCream">
-         {/* Static content */}
-       </section>
+       <section className='py-16 bg-cpCream'>{/* Static content */}</section>
      );
    }
 
    // ✅ Client Component (needs interactivity)
-   'use client';
+   ('use client');
 
    export function EnrollmentFormModal() {
      const [isOpen, setIsOpen] = useState(false);
@@ -475,10 +475,10 @@
    ">
 
    // ❌ WRONG: Inline styles
-   <div style={{ 
-     display: 'flex', 
-     padding: '24px', 
-     backgroundColor: '#FFFEF3' 
+   <div style={{
+     display: 'flex',
+     padding: '24px',
+     backgroundColor: '#FFFEF3'
    }}>
    ```
 
@@ -538,26 +538,28 @@
 
    **Sticky Element Offset Reference:**
 
-   | Element Type     | Offset (`top-*`) | Z-Index | Notes                |
-   | ---------------- | ---------------- | ------- | -------------------- |
-   | Navbar           | `top-0`          | `z-30`  | Fixed, always at top |
-   | Sticky Filters   | `top-24`         | `z-20`  | Below navbar         |
-   | Sticky Sidebar   | `top-24`         | `z-20`  | Below navbar         |
-   | Sticky CTA       | `top-24`         | `z-20`  | Below navbar         |
-   | Mobile Overlay   | `top-0`          | `z-40`  | Above navbar         |
+   | Element Type   | Offset (`top-*`) | Z-Index | Notes                |
+   | -------------- | ---------------- | ------- | -------------------- |
+   | Navbar         | `top-0`          | `z-30`  | Fixed, always at top |
+   | Sticky Filters | `top-24`         | `z-20`  | Below navbar         |
+   | Sticky Sidebar | `top-24`         | `z-20`  | Below navbar         |
+   | Sticky CTA     | `top-24`         | `z-20`  | Below navbar         |
+   | Mobile Overlay | `top-0`          | `z-40`  | Above navbar         |
 
 4. **Responsive Design**
 
    ```tsx
    // ✅ CORRECT: Mobile-first responsive
-   <div className="
+   <div
+     className='
      grid grid-cols-1           /* Mobile */
      md:grid-cols-2             /* Tablet */
      lg:grid-cols-3             /* Desktop */
      xl:grid-cols-4             /* Large Desktop */
      gap-4 md:gap-6 lg:gap-8
-   ">
-     {courses.map(course => (
+   '
+   >
+     {courses.map((course) => (
        <CourseCard key={course.id} {...course} />
      ))}
    </div>
@@ -567,10 +569,18 @@
 
    ```tsx
    // Use Tailwind spacing scale consistently
-   <section className="py-16 px-4 lg:px-12">    {/* Vertical sections */}
-     <div className="space-y-8">                 {/* Stack spacing */}
-       <div className="p-6">                     {/* Card padding */}
-         <h2 className="mb-4">                   {/* Heading margin */}
+   <section className='py-16 px-4 lg:px-12'>
+     {' '}
+     {/* Vertical sections */}
+     <div className='space-y-8'>
+       {' '}
+       {/* Stack spacing */}
+       <div className='p-6'>
+         {' '}
+         {/* Card padding */}
+         <h2 className='mb-4'>
+           {' '}
+           {/* Heading margin */}
            Course Title
          </h2>
        </div>
@@ -590,10 +600,10 @@
    ">
      <div className="text-center">
        <h1 className="
-         font-tan-ashford 
-         text-5xl md:text-7xl 
-         text-cpMagenta 
-         lowercase 
+         font-tan-ashford
+         text-5xl md:text-7xl
+         text-cpMagenta
+         lowercase
          tracking-tight
          drop-shadow-lg
        ">
@@ -604,8 +614,8 @@
 
    // ✅ CORRECT: Card pattern with brand colors
    <div className="
-     bg-cpCream 
-     rounded-lg 
+     bg-cpCream
+     rounded-lg
      overflow-hidden
      border border-cpPink/20
      hover:border-cpMagenta/40
@@ -659,7 +669,7 @@
      const [submitSuccess, setSubmitSuccess] = useState(false);
 
      const validateField = (
-       name: keyof EnrollmentFormData, 
+       name: keyof EnrollmentFormData,
        value: string
      ): string => {
        let error = '';
@@ -667,7 +677,7 @@
        switch (name) {
          case 'fullName':
            if (!value.trim()) error = 'Name is required';
-           else if (value.trim().length < 2) 
+           else if (value.trim().length < 2)
              error = 'Name must be at least 2 characters';
            break;
          case 'email':
@@ -689,11 +699,11 @@
        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
      ) => {
        const { name, value } = e.target;
-       setFormData(prev => ({ ...prev, [name]: value }));
+       setFormData((prev) => ({ ...prev, [name]: value }));
 
        // Real-time validation
        const error = validateField(name as keyof EnrollmentFormData, value);
-       setErrors(prev => ({ ...prev, [name]: error }));
+       setErrors((prev) => ({ ...prev, [name]: error }));
      };
 
      const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -701,12 +711,15 @@
 
        // Validate all fields
        const newErrors: Partial<EnrollmentFormData> = {};
-       (Object.keys(formData) as Array<keyof EnrollmentFormData>).forEach(key => {
-         if (key !== 'message') {  // message is optional
-           const error = validateField(key, formData[key] || '');
-           if (error) newErrors[key] = error;
+       (Object.keys(formData) as Array<keyof EnrollmentFormData>).forEach(
+         (key) => {
+           if (key !== 'message') {
+             // message is optional
+             const error = validateField(key, formData[key] || '');
+             if (error) newErrors[key] = error;
+           }
          }
-       });
+       );
 
        if (Object.keys(newErrors).length > 0) {
          setErrors(newErrors);
@@ -747,19 +760,19 @@
      };
 
      return (
-       <form onSubmit={handleSubmit} className="space-y-6">
+       <form onSubmit={handleSubmit} className='space-y-6'>
          {/* Full Name Field */}
          <div>
-           <label 
-             htmlFor="fullName"
-             className="block font-inclusive font-medium text-gray-800 mb-2"
+           <label
+             htmlFor='fullName'
+             className='block font-inclusive font-medium text-gray-800 mb-2'
            >
              Full Name *
            </label>
            <input
-             id="fullName"
-             name="fullName"
-             type="text"
+             id='fullName'
+             name='fullName'
+             type='text'
              value={formData.fullName}
              onChange={handleChange}
              className={`
@@ -771,7 +784,7 @@
              `}
            />
            {errors.fullName && (
-             <span className="text-red-500 text-sm mt-1 block">
+             <span className='text-red-500 text-sm mt-1 block'>
                {errors.fullName}
              </span>
            )}
@@ -779,9 +792,9 @@
 
          {/* Submit Button */}
          <button
-           type="submit"
+           type='submit'
            disabled={isSubmitting}
-           className="
+           className='
              w-full 
              bg-cpOrange 
              text-white 
@@ -794,15 +807,15 @@
              transition-opacity 
              disabled:opacity-50 
              disabled:cursor-not-allowed
-           "
+           '
          >
            {isSubmitting ? 'submitting...' : 'enroll now'}
          </button>
 
          {/* Success Message */}
          {submitSuccess && (
-           <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-             <p className="font-inclusive">
+           <div className='bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg'>
+             <p className='font-inclusive'>
                Thank you! We'll contact you soon to confirm your enrollment.
              </p>
            </div>
@@ -831,7 +844,9 @@
          setSubmitSuccess(true);
        } catch (error: unknown) {
          if (error instanceof Error) {
-           setSubmitError(error.message || 'Failed to submit. Please try again.');
+           setSubmitError(
+             error.message || 'Failed to submit. Please try again.'
+           );
          }
        } finally {
          setIsSubmitting(false);
@@ -841,7 +856,7 @@
      return (
        <form onSubmit={onSubmit}>
          {/* Form fields */}
-         <button disabled={isSubmitting} className="bg-cpOrange text-white">
+         <button disabled={isSubmitting} className='bg-cpOrange text-white'>
            {isSubmitting ? 'submitting...' : 'submit'}
          </button>
          {submitSuccess && <SuccessMessage />}
@@ -858,23 +873,25 @@
    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
      const { name, value } = e.target;
      const error = validateField(name as keyof FormData, value);
-     setErrors(prev => ({ ...prev, [name]: error }));
+     setErrors((prev) => ({ ...prev, [name]: error }));
    };
 
    <input
-     name="email"
+     name='email'
      value={formData.email}
      onChange={handleChange}
-     onBlur={handleBlur}  // Validate on blur
+     onBlur={handleBlur} // Validate on blur
      className={errors.email ? 'border-red-500' : 'border-gray-300'}
      aria-invalid={errors.email ? 'true' : 'false'}
      aria-describedby={errors.email ? 'email-error' : undefined}
-   />
-   {errors.email && (
-     <span id="email-error" className="text-red-500 text-sm">
-       {errors.email}
-     </span>
-   )}
+   />;
+   {
+     errors.email && (
+       <span id='email-error' className='text-red-500 text-sm'>
+         {errors.email}
+       </span>
+     );
+   }
    ```
 
 ### ❌ Never Do
@@ -946,23 +963,25 @@
 
    export function ErrorMessage({ message, onDismiss }: ErrorMessageProps) {
      return (
-       <div className="
+       <div
+         className='
          bg-red-50 
          border border-red-200 
          text-red-700 
          px-4 py-3 
          rounded-lg 
          flex items-start justify-between
-       ">
+       '
+       >
          <div>
-           <p className="font-inclusive font-semibold">Error</p>
-           <p className="font-inclusive text-sm mt-1">{message}</p>
+           <p className='font-inclusive font-semibold'>Error</p>
+           <p className='font-inclusive text-sm mt-1'>{message}</p>
          </div>
          {onDismiss && (
            <button
              onClick={onDismiss}
-             className="text-red-700 hover:text-red-900 ml-4"
-             aria-label="Dismiss error"
+             className='text-red-700 hover:text-red-900 ml-4'
+             aria-label='Dismiss error'
            >
              ×
            </button>
@@ -1081,25 +1100,25 @@
 1. **Components**: PascalCase
 
    ```tsx
-   CourseCard.tsx
-   EnrollmentFormModal.tsx
-   HeroSection.tsx
-   Navigation.tsx
+   CourseCard.tsx;
+   EnrollmentFormModal.tsx;
+   HeroSection.tsx;
+   Navigation.tsx;
    ```
 
 2. **Hooks**: camelCase with 'use' prefix
 
    ```tsx
-   useTrackPageView.ts
-   use-toast.ts  // Exception: kebab-case when from shadcn/ui
+   useTrackPageView.ts;
+   use - toast.ts; // Exception: kebab-case when from shadcn/ui
    ```
 
 3. **Utilities**: camelCase or kebab-case
 
    ```tsx
-   utils.ts
-   analytics.tsx
-   logger.ts
+   utils.ts;
+   analytics.tsx;
+   logger.ts;
    ```
 
 4. **Constants**: UPPER_SNAKE_CASE
@@ -1133,14 +1152,15 @@
 
    ```css
    /* Brand-specific classes if needed */
-   .course-card {}
-   .hero-section {}
-   .enrollment-form {}
+   .course-card {
+   }
+   .hero-section {
+   }
+   .enrollment-form {
+   }
 
    /* Prefer Tailwind utilities */
-   .bg-cpCream 
-   .text-cpMagenta
-   .font-tan-ashford
+   .bg-cpCream .text-cpMagenta .font-tan-ashford;
    ```
 
 ### ❌ Never Do for Naming
@@ -1221,14 +1241,14 @@
      () => import('@/components/courses/CourseGallery'),
      {
        loading: () => <GallerySkeleton />,
-       ssr: false,  // If component needs client-side only
+       ssr: false, // If component needs client-side only
      }
    );
 
    const EnrollmentFormModal = dynamic(
      () => import('@/components/EnrollmentFormModal/EnrollmentFormModal'),
      {
-       loading: () => <div className="animate-pulse">Loading...</div>,
+       loading: () => <div className='animate-pulse'>Loading...</div>,
      }
    );
 
@@ -1248,12 +1268,12 @@
      }, [courses]);
 
      const featuredCourses = useMemo(() => {
-       return sortedCourses.filter(c => c.featured);
+       return sortedCourses.filter((c) => c.featured);
      }, [sortedCourses]);
 
      return (
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-         {featuredCourses.map(course => (
+       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+         {featuredCourses.map((course) => (
            <CourseCard key={course.id} course={course} />
          ))}
        </div>
@@ -1267,7 +1287,7 @@
      async (courseId: string) => {
        await enrollInCourse(courseId);
      },
-     []  // Empty deps if no external dependencies
+     [] // Empty deps if no external dependencies
    );
    ```
 
@@ -1281,7 +1301,7 @@
    import * as Icons from 'lucide-react';
 
    // ✅ CORRECT: Tree-shakeable imports
-   import { motion } from 'framer-motion';  // Only motion, not entire library
+   import { motion } from 'framer-motion'; // Only motion, not entire library
 
    // ✅ CORRECT: For Swiper
    import { Swiper, SwiperSlide } from 'swiper/react';
@@ -1298,8 +1318,8 @@
    // Server Component with fetch caching
    export async function CoursesPage() {
      const courses = await fetch('https://api.example.com/courses', {
-       next: { revalidate: 3600 }  // Revalidate every hour
-     }).then(res => res.json());
+       next: { revalidate: 3600 }, // Revalidate every hour
+     }).then((res) => res.json());
 
      return <CourseGrid courses={courses} />;
    }
@@ -1307,7 +1327,7 @@
    // ✅ CORRECT: Static generation for course pages
    export async function generateStaticParams() {
      const courses = await getCourses();
-     return courses.map(course => ({
+     return courses.map((course) => ({
        slug: course.slug,
      }));
    }
@@ -1442,11 +1462,11 @@
    <a
      href="#main-content"
      className="
-       sr-only 
-       focus:not-sr-only 
-       focus:absolute 
-       focus:top-4 
-       focus:left-4 
+       sr-only
+       focus:not-sr-only
+       focus:absolute
+       focus:top-4
+       focus:left-4
        focus:z-50
        focus:bg-cpOrange
        focus:text-white
@@ -1464,7 +1484,7 @@
    ```tsx
    // ✅ CORRECT: Visible focus indicators
    <button
-     className="
+     className='
        bg-cpOrange 
        text-white 
        px-6 py-3 
@@ -1475,10 +1495,10 @@
        focus:ring-offset-2
        font-tan-ashford
        lowercase
-     "
+     '
    >
      enroll now
-   </button>
+   </button>;
 
    // ✅ CORRECT: Focus trap in modal
    import { useEffect, useRef } from 'react';
@@ -1492,7 +1512,9 @@
            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
          );
          const firstElement = focusableElements[0] as HTMLElement;
-         const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+         const lastElement = focusableElements[
+           focusableElements.length - 1
+         ] as HTMLElement;
 
          firstElement?.focus();
 
@@ -1516,13 +1538,13 @@
      if (!isOpen) return null;
 
      return (
-       <div 
-         ref={modalRef} 
-         role="dialog" 
-         aria-modal="true"
-         aria-labelledby="modal-title"
+       <div
+         ref={modalRef}
+         role='dialog'
+         aria-modal='true'
+         aria-labelledby='modal-title'
        >
-         <h2 id="modal-title">Course Enrollment</h2>
+         <h2 id='modal-title'>Course Enrollment</h2>
          {/* Modal content */}
        </div>
      );
@@ -1557,24 +1579,24 @@
    // ✅ CORRECT: Accessible form elements
    <form>
      <div>
-       <label htmlFor="fullName" className="block mb-2 font-inclusive">
+       <label htmlFor='fullName' className='block mb-2 font-inclusive'>
          Full Name *
        </label>
        <input
-         id="fullName"
-         type="text"
-         name="fullName"
+         id='fullName'
+         type='text'
+         name='fullName'
          required
-         aria-required="true"
+         aria-required='true'
          aria-invalid={!!errors.fullName}
          aria-describedby={errors.fullName ? 'fullName-error' : undefined}
-         className="w-full px-4 py-2 border rounded"
+         className='w-full px-4 py-2 border rounded'
        />
        {errors.fullName && (
-         <span 
-           id="fullName-error" 
-           role="alert" 
-           className="text-red-500 text-sm"
+         <span
+           id='fullName-error'
+           role='alert'
+           className='text-red-500 text-sm'
          >
            {errors.fullName}
          </span>
@@ -1582,29 +1604,29 @@
      </div>
 
      <fieldset>
-       <legend className="font-tan-ashford text-xl mb-3 lowercase">
+       <legend className='font-tan-ashford text-xl mb-3 lowercase'>
          course type
        </legend>
-       <div className="space-y-2">
+       <div className='space-y-2'>
          <div>
-           <input 
-             type="radio" 
-             id="full-time" 
-             name="courseType" 
-             value="full-time" 
+           <input
+             type='radio'
+             id='full-time'
+             name='courseType'
+             value='full-time'
            />
-           <label htmlFor="full-time" className="ml-2">
+           <label htmlFor='full-time' className='ml-2'>
              Full-time
            </label>
          </div>
          <div>
-           <input 
-             type="radio" 
-             id="part-time" 
-             name="courseType" 
-             value="part-time" 
+           <input
+             type='radio'
+             id='part-time'
+             name='courseType'
+             value='part-time'
            />
-           <label htmlFor="part-time" className="ml-2">
+           <label htmlFor='part-time' className='ml-2'>
              Part-time
            </label>
          </div>
@@ -1642,8 +1664,8 @@
        height={600}
      />
      <figcaption id="curriculum-description">
-       The curriculum includes: Foundation techniques, Color theory, 
-       Contouring and highlighting, Special effects, Bridal makeup, 
+       The curriculum includes: Foundation techniques, Color theory,
+       Contouring and highlighting, Special effects, Bridal makeup,
        Editorial makeup, and more.
      </figcaption>
    </figure>
@@ -1736,10 +1758,10 @@
      className?: string;
    }
 
-   export default function Section({ 
-     children, 
-     title, 
-     className 
+   export default function Section({
+     children,
+     title,
+     className,
    }: SectionProps) {
      return (
        <section className={className}>
@@ -1756,7 +1778,7 @@
    // ❌ WRONG: Untyped API calls
    async function fetchCourses() {
      const response = await fetch('/api/courses');
-     return response.json();  // Return type is 'any'
+     return response.json(); // Return type is 'any'
    }
 
    // ✅ CORRECT: Define response types
@@ -1827,7 +1849,7 @@
        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
      ) => {
        const { name, value } = e.target;
-       setFormData(prev => ({ ...prev, [name]: value }));
+       setFormData((prev) => ({ ...prev, [name]: value }));
      };
 
      const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -1844,8 +1866,8 @@
 
    ```typescript
    // ❌ WRONG: Implicit any in useState
-   const [course, setCourse] = useState(null);  // Type: null
-   const [courses, setCourses] = useState([]);  // Type: never[]
+   const [course, setCourse] = useState(null); // Type: null
+   const [courses, setCourses] = useState([]); // Type: never[]
 
    // ✅ CORRECT: Explicit state types
    import { useState } from 'react';
@@ -1860,12 +1882,7 @@
 6. **Event Handler Types**
 
    ```typescript
-   import { 
-     MouseEvent, 
-     KeyboardEvent, 
-     ChangeEvent, 
-     FocusEvent 
-   } from 'react';
+   import { MouseEvent, KeyboardEvent, ChangeEvent, FocusEvent } from 'react';
 
    // ✅ CORRECT: Typed event handlers
    const handleEnrollClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -1894,7 +1911,7 @@
    ```typescript
    // ❌ WRONG: Unsafe property access
    function getCourseName(course: any) {
-     return course.details.name;  // No type checking
+     return course.details.name; // No type checking
    }
 
    // ❌ WRONG: Using 'as any' to bypass type checking
@@ -1962,29 +1979,32 @@
      findBySlug(slug: string): Promise<ICourseDocument | null>;
    }
 
-   const courseSchema = new Schema<ICourseDocument, ICourseModel>({
-     title: { type: String, required: true },
-     slug: { type: String, required: true, unique: true },
-     description: { type: String, required: true },
-     price: { type: Number, required: true },
-     duration: { type: String, required: true },
-     level: { 
-       type: String, 
-       enum: ['beginner', 'intermediate', 'advanced'],
-       required: true 
+   const courseSchema = new Schema<ICourseDocument, ICourseModel>(
+     {
+       title: { type: String, required: true },
+       slug: { type: String, required: true, unique: true },
+       description: { type: String, required: true },
+       price: { type: Number, required: true },
+       duration: { type: String, required: true },
+       level: {
+         type: String,
+         enum: ['beginner', 'intermediate', 'advanced'],
+         required: true,
+       },
+       featured: { type: Boolean, default: false },
+       imageUrl: { type: String, required: true },
+       modules: [{ type: String }],
      },
-     featured: { type: Boolean, default: false },
-     imageUrl: { type: String, required: true },
-     modules: [{ type: String }],
-   }, { timestamps: true });
+     { timestamps: true }
+   );
 
    // Static method
-   courseSchema.statics.findBySlug = function(slug: string) {
+   courseSchema.statics.findBySlug = function (slug: string) {
      return this.findOne({ slug });
    };
 
    export const Course = model<ICourseDocument, ICourseModel>(
-     'Course', 
+     'Course',
      courseSchema
    );
    ```
@@ -2029,7 +2049,9 @@
    type CourseById = Record<string, Course>;
 
    // Return type of function
-   async function getCourse(): Promise<Course> { /* ... */ }
+   async function getCourse(): Promise<Course> {
+     /* ... */
+   }
    type CourseResult = Awaited<ReturnType<typeof getCourse>>;
    ```
 
@@ -2048,7 +2070,7 @@
       ADVANCED: 'advanced',
     } as const;
 
-    export type CourseLevel = typeof CourseLevel[keyof typeof CourseLevel];
+    export type CourseLevel = (typeof CourseLevel)[keyof typeof CourseLevel];
 
     function setCourseLevel(level: CourseLevel): void {
       // Type-safe
@@ -2074,8 +2096,8 @@
 
     ```typescript
     // ❌ WRONG: Untyped arrays
-    const courses = [];  // Type: never[]
-    courses.push(someCourse);  // Error
+    const courses = []; // Type: never[]
+    courses.push(someCourse); // Error
 
     // ✅ CORRECT: Type arrays explicitly
     const courseIds: string[] = [];
@@ -2095,7 +2117,7 @@
     const coursePrices: Record<string, number> = {
       'pro-makeup': 15000,
       'express-makeup': 8000,
-      'hairstyling': 12000,
+      hairstyling: 12000,
     };
     ```
 
@@ -2227,8 +2249,8 @@ Before creating any new component or page, ask yourself:
 // Pattern 1: Inline loading spinner
 if (isLoading) {
   return (
-    <div className="flex items-center justify-center py-12">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cpOrange" />
+    <div className='flex items-center justify-center py-12'>
+      <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-cpOrange' />
     </div>
   );
 }
@@ -2239,10 +2261,10 @@ if (isLoading) {
 }
 
 // Pattern 3: Shimmer effect
-<div className="animate-pulse bg-cpCream rounded-lg p-6">
-  <div className="h-4 bg-gray-300 rounded w-3/4 mb-4" />
-  <div className="h-4 bg-gray-300 rounded w-1/2" />
-</div>
+<div className='animate-pulse bg-cpCream rounded-lg p-6'>
+  <div className='h-4 bg-gray-300 rounded w-3/4 mb-4' />
+  <div className='h-4 bg-gray-300 rounded w-1/2' />
+</div>;
 ```
 
 ### Error States
@@ -2251,9 +2273,9 @@ if (isLoading) {
 // Pattern 1: Inline error message
 if (error) {
   return (
-    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-      <p className="font-inclusive font-semibold">Error</p>
-      <p className="font-inclusive text-sm">{error.message}</p>
+    <div className='bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg'>
+      <p className='font-inclusive font-semibold'>Error</p>
+      <p className='font-inclusive text-sm'>{error.message}</p>
     </div>
   );
 }
@@ -2269,11 +2291,11 @@ if (error) {
 ```tsx
 if (courses.length === 0) {
   return (
-    <div className="text-center py-12 bg-cpCream rounded-lg">
-      <p className="font-tan-ashford text-2xl text-cpMagenta lowercase mb-2">
+    <div className='text-center py-12 bg-cpCream rounded-lg'>
+      <p className='font-tan-ashford text-2xl text-cpMagenta lowercase mb-2'>
         no courses found
       </p>
-      <p className="font-inclusive text-gray-600">
+      <p className='font-inclusive text-gray-600'>
         Check back soon for new course offerings
       </p>
     </div>
@@ -2334,11 +2356,11 @@ const validateField = (name: string, value: string): string => {
 
 const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
-  setFormData(prev => ({ ...prev, [name]: value }));
+  setFormData((prev) => ({ ...prev, [name]: value }));
 
   // Real-time validation on change
   const error = validateField(name, value);
-  setErrors(prev => ({ ...prev, [name]: error }));
+  setErrors((prev) => ({ ...prev, [name]: error }));
 };
 ```
 
@@ -2346,21 +2368,21 @@ const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 
 ```tsx
 // ✅ CORRECT: Sticky course details sidebar
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
   {/* Main Content */}
-  <div className="lg:col-span-2">
+  <div className='lg:col-span-2'>
     <CourseDetails course={course} />
   </div>
 
   {/* Sticky Enrollment CTA - ALWAYS with navigation offset */}
-  <div className="lg:col-span-1">
+  <div className='lg:col-span-1'>
     <div
-      className="
+      className='
         sticky 
         top-24                        /* Navigation offset */
         z-20                          /* Below navbar (z-30) */
         max-h-[calc(100vh-6rem)]     /* Prevent overflow */
-      "
+      '
     >
       <EnrollmentCard course={course} />
     </div>
@@ -2448,4 +2470,4 @@ Always account for navigation when creating sticky elements (use `top-24`)!
 
 ---
 
-*End of Frontend Design & Development Rules*
+_End of Frontend Design & Development Rules_

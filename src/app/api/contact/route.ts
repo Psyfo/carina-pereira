@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { SendMailClient } from 'zeptomail';
 
 import logger from '@/lib/logger';
 
@@ -16,31 +16,57 @@ export async function POST(req: Request) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST, // xneelo mail server
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+    // Initialize ZeptoMail client
+    const url =
+      process.env.ZEPTOMAIL_API_URL || 'https://api.zeptomail.com/v1.1/email';
+    const token = process.env.ZEPTOMAIL_SEND_MAIL_TOKEN;
+
+    if (!token) {
+      logger.error('ZeptoMail API token is not configured');
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Email service is not configured properly.',
+        },
+        { status: 500 }
+      );
+    }
+
+    const client = new SendMailClient({ url, token });
+
+    // Prepare email content
+    const emailContent = `You have received a new contact form submission:
+
+First Name: ${firstName}
+Last Name: ${lastName}
+Email: ${email}
+Message: ${message}`;
+
+    // Send email using ZeptoMail
+    await client.sendMail({
+      from: {
+        address:
+          process.env.ZEPTOMAIL_FROM_EMAIL || 'no-reply@carinapereira.com',
+        name: process.env.ZEPTOMAIL_FROM_NAME || 'Carina Pereira International',
       },
+      to: [
+        {
+          email_address: {
+            address:
+              process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com',
+            name: 'Carina Pereira',
+          },
+        },
+      ],
+      reply_to: [
+        {
+          address: email,
+          name: `${firstName} ${lastName}`,
+        },
+      ],
+      subject: 'Carina Pereira Contact Form Submission',
+      textbody: emailContent,
     });
-
-    // Define the email options
-    const mailOptions = {
-      from: process.env.EMAIL_USER, // Sender address
-      to: process.env.EMAIL_USER, // Your email address (where you want to receive the message)
-      replyTo: email, // Reply to the sender's email address
-      subject: 'Carina Pereira Contact Form Submission', // Subject line
-      text: `You have received a new contact form submission:\n\n
-             First Name: ${firstName}\n
-             Last Name: ${lastName}\n
-             Email: ${email}\n
-             Message: ${message}\n`,
-    };
-
-    // Send the email
-    await transporter.sendMail(mailOptions);
 
     logger.info('Received form data:', { firstName, lastName, email, message });
 

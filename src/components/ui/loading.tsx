@@ -1,10 +1,10 @@
-// app/(admin)/dashboard/loading.tsx
+// Generic loading component
 import { Spinner } from '@/components/ui/spinner';
 
 export default function Loading() {
   return (
-    <div className='flex items-center justify-center min-h-[70vh]'>
-      <Spinner className='h-12 w-12' />
+    <div className='flex justify-center items-center min-h-[70vh]'>
+      <Spinner className='w-12 h-12' />
     </div>
   );
 }

@@ -45,7 +45,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
-  pages: {
-    signIn: '/login',
-  },
+  // pages: {
+  //   signIn: '/login', // Commented out - will be recreated when admin dashboard is rebuilt
+  // },
 };

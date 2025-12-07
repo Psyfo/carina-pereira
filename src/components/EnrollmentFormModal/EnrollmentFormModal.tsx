@@ -30,13 +30,15 @@ interface ValidationErrors {
   address?: string;
 }
 
+interface EnrollmentFormModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
 export default function EnrollmentFormModal({
   isOpen,
   onClose,
-}: Readonly<{
-  isOpen: boolean;
-  onClose: () => void;
-}>) {
+}: Readonly<EnrollmentFormModalProps>) {
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
   const [selectedPayment, setSelectedPayment] = useState(paymentMethods[0]);
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>(

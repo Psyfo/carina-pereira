@@ -49,7 +49,6 @@ const CTASectionSchema = new Schema(
     text: String,
     buttonLabel: String,
     link: String,
-    formType: String,
   },
   { _id: false }
 );

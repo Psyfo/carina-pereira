@@ -13,27 +13,25 @@ interface CTAProps {
   heading?: string;
   text?: string;
   buttonLabel?: string;
-  formType?: string;
 }
 
 const CTA: React.FC<CTAProps> = ({
   heading = 'ready to take the first step?',
   text = 'Your dream career as a professional makeup artist starts here...',
   buttonLabel,
-  formType = 'regular',
 }) => {
   return (
     <motion.div
       variants={fadeInUpVariants}
       initial='hidden'
       animate='visible'
-      className='flex flex-col gap-8 items-center justify-center bg-cpPink rounded-[35px] px-4 py-[60px] lg:py-[70px]'
+      className='flex flex-col justify-center items-center gap-8 bg-cpPink px-4 py-[60px] lg:py-[70px] rounded-[35px]'
     >
       <h2 className='font-tan-ashford font-bold text-4'>{heading}</h2>
-      <p className='font-inclusive text-[15px] text-center leading-[1.5] w-full max-w-[666px]'>
+      <p className='w-full max-w-[666px] font-inclusive text-[15px] text-center leading-[1.5]'>
         {text}
       </p>
-      <EnrollmentButton label={buttonLabel} formType={formType} />
+      <EnrollmentButton label={buttonLabel} />
     </motion.div>
   );
 };

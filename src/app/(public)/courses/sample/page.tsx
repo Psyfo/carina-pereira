@@ -82,7 +82,6 @@ const sampleCourseData = {
     text: 'Join now and take the first step towards mastering new skills!',
     buttonLabel: 'Enroll Now',
     link: '/enroll/sample',
-    formType: 'regular',
   },
 };
 

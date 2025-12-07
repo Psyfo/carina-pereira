@@ -9,13 +9,7 @@ import { CTASectionData } from '@/types/CoursePageProps';
 
 interface Props extends CTASectionData {}
 
-const CTASection: React.FC<Props> = ({
-  link,
-  heading,
-  text,
-  buttonLabel,
-  formType,
-}) => {
+const CTASection: React.FC<Props> = ({ link, heading, text, buttonLabel }) => {
   return (
     <motion.section
       initial='hidden'
@@ -35,7 +29,6 @@ const CTASection: React.FC<Props> = ({
         heading={heading}
         text={text}
         buttonLabel={buttonLabel}
-        formType={formType}
       />
     </motion.section>
   );

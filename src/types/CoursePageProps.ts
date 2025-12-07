@@ -24,7 +24,6 @@ export interface CTASectionData {
   text?: string;
   buttonLabel?: string;
   link?: string;
-  formType?: string;
 }
 
 export interface CoursePageProps {

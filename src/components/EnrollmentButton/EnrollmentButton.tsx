@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import EnrollmentFormModal from '@/components/EnrollmentFormModal/EnrollmentFormModal';
 
-interface EnrollmentButtonProps {
+export interface EnrollmentButtonProps {
   label?: string;
 }
 

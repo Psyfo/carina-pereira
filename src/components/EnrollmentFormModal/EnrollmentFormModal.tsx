@@ -139,7 +139,7 @@ export default function EnrollmentFormModal({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className='relative bg-cpMagenta px-8 md:px-12 py-10 md:py-12 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto'
+            className='relative bg-cpMagenta px-8 md:px-12 py-10 md:py-12 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-cp-modal'
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -302,7 +302,7 @@ export default function EnrollmentFormModal({
                     {selectedProgram}
                     <ChevronUpDownIcon className='ml-2 w-5 h-5 text-gray-500' />
                   </ListboxButton>
-                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black scrollbar-cp-modal'>
                     {programs.map((program) => (
                       <ListboxOption
                         key={program}
@@ -345,7 +345,7 @@ export default function EnrollmentFormModal({
                     {selectedPayment}
                     <ChevronUpDownIcon className='ml-2 w-5 h-5 text-gray-500' />
                   </ListboxButton>
-                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black scrollbar-cp-modal'>
                     {paymentMethods.map((method) => (
                       <ListboxOption
                         key={method}

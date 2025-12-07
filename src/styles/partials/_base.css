@@ -7,12 +7,46 @@
 
     html {
         font-family: var(--font-sans);
+
+        /* Global scrollbar styling - sophisticated CP brand aesthetic */
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-cpPink-400) transparent;
     }
 
     body {
         font-family: var(--font-inter);
         background: #FFFEF3;
         /* cpCream background */
+    }
+
+    /* Webkit scrollbar styling for all scrollable elements */
+    * {
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-cpPink-400);
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--color-cpPink-600);
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: var(--color-cpMagenta-500);
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
     }
 
     /* ========================================

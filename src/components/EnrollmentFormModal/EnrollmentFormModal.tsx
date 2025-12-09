@@ -11,10 +11,10 @@ import {
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 const programs = [
-  'Pro Makeup Course - R15 000',
-  'Express Makeup Course - R5 500',
-  'Hairstyling Course - R3 000',
-  'Online Express Makeup Course - R4 800',
+  { name: 'Pro Makeup Course', price: 'R15 000' },
+  { name: 'Express Makeup Course', price: 'R5 500' },
+  { name: 'Hairstyling Course', price: 'R3 000' },
+  { name: 'Online Express Makeup Course', price: 'R4 800' },
 ];
 
 const paymentMethods = [
@@ -139,7 +139,7 @@ export default function EnrollmentFormModal({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className='relative bg-cpMagenta px-8 md:px-12 py-10 md:py-12 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-cp-modal'
+            className='relative bg-cpMagenta px-6 xs:px-8 md:px-12 py-8 xs:py-10 md:py-12 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-cp-modal'
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -150,14 +150,14 @@ export default function EnrollmentFormModal({
             >
               &times;
             </button>
-            <h2 className='mb-6 pb-8 border-white/20 border-b font-tan-ashford font-bold text-[24px] text-white md:text-[28px] lowercase'>
+            <h2 className='mb-4 xs:mb-6 pb-6 xs:pb-8 border-white/20 border-b font-tan-ashford font-bold text-[20px] text-white xs:text-[24px] md:text-[28px] lowercase'>
               Enrollment Form
             </h2>
             <form onSubmit={handleSubmit} noValidate>
               {/* Full Name */}
               <label
                 htmlFor='fullName'
-                className='block ml-2 font-inclusive font-medium text-[14px] text-white'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
               >
                 Full Name *
               </label>
@@ -168,7 +168,7 @@ export default function EnrollmentFormModal({
                 placeholder='Enter your full name'
                 required
                 onBlur={handleBlur}
-                className={`mt-2 mb-1 px-5 py-3.5 border-2 rounded-full w-full font-inclusive text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
+                className={`mt-2 mb-1 px-4 xs:px-5 py-3 xs:py-3.5 border-2 rounded-full w-full font-inclusive text-[13px] xs:text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
                   validationErrors.fullName
                     ? 'border-cpOrange focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
                     : 'border-gray-200 focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
@@ -184,7 +184,7 @@ export default function EnrollmentFormModal({
               {/* Email */}
               <label
                 htmlFor='email'
-                className='block ml-2 font-inclusive font-medium text-[14px] text-white'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
               >
                 Email *
               </label>
@@ -195,7 +195,7 @@ export default function EnrollmentFormModal({
                 placeholder='your.email@example.com'
                 required
                 onBlur={handleBlur}
-                className={`mt-2 mb-1 px-5 py-3.5 border-2 rounded-full w-full font-inclusive text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
+                className={`mt-2 mb-1 px-4 xs:px-5 py-3 xs:py-3.5 border-2 rounded-full w-full font-inclusive text-[13px] xs:text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
                   validationErrors.email
                     ? 'border-cpOrange focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
                     : 'border-gray-200 focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
@@ -209,63 +209,50 @@ export default function EnrollmentFormModal({
               {!validationErrors.email && <div className='mb-4' />}
 
               {/* Phone */}
-              <div className='flex gap-2'>
-                <div className='w-1/3'>
-                  <label
-                    htmlFor='countryCode'
-                    className='block ml-[10px] font-inclusive text-[12px] text-white'
-                  >
-                    Country Code
-                  </label>
-                  <input
-                    id='countryCode'
-                    name='countryCode'
-                    type='text'
-                    value='+27'
-                    readOnly
-                    required
-                    className='bg-white disabled:bg-gray-50 shadow-sm mt-[7px] mb-[18px] px-4 py-2 border-2 border-gray-200 focus:border-cpOrange rounded-l-[30.42px] focus:outline-none focus:ring-2 focus:ring-cpOrange/50 w-full font-inclusive text-[10px] text-black disabled:text-gray-500 transition-all duration-200 disabled:cursor-not-allowed'
-                  />
+              <label
+                htmlFor='cellphone'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
+              >
+                Cellphone *
+              </label>
+              <div className='relative mt-2 mb-4'>
+                <div className='left-0 absolute inset-y-0 flex items-center pl-4 xs:pl-5 pointer-events-none'>
+                  <span className='font-inclusive text-[13px] text-gray-500 xs:text-[14px]'>
+                    +27
+                  </span>
                 </div>
-                <div className='w-2/3'>
-                  <label
-                    htmlFor='cellphone'
-                    className='block ml-[10px] font-inclusive text-[12px] text-white'
-                  >
-                    Cellphone
-                  </label>
-                  <input
-                    id='cellphone'
-                    name='cellphone'
-                    type='tel'
-                    pattern='[0-9]{10}'
-                    inputMode='numeric'
-                    maxLength={10}
-                    required
-                    className='bg-white autofill:bg-white disabled:bg-gray-50 shadow-sm mt-[7px] mb-[18px] px-4 py-2 border-2 border-gray-200 focus:border-cpOrange rounded-r-[30.42px] focus:outline-none focus:ring-2 focus:ring-cpOrange/50 w-full font-inclusive text-[10px] text-black autofill:text-black disabled:text-gray-500 placeholder:text-gray-400 transition-all duration-200 disabled:cursor-not-allowed'
-                    placeholder='Enter 10-digit number'
-                    onKeyDown={(e) => {
-                      if (
-                        !/\d/.test(e.key) &&
-                        e.key !== 'Backspace' &&
-                        e.key !== 'Tab' &&
-                        e.key !== 'ArrowLeft' &&
-                        e.key !== 'ArrowRight'
-                      ) {
-                        e.preventDefault();
-                      }
-                    }}
-                    onChange={(e) => {
-                      e.target.value = e.target.value.replace(/\D/g, '');
-                    }}
-                  />
-                </div>
+                <input
+                  id='cellphone'
+                  name='cellphone'
+                  type='tel'
+                  pattern='[0-9]{10}'
+                  inputMode='numeric'
+                  maxLength={10}
+                  required
+                  className='bg-white autofill:bg-white disabled:bg-gray-50 shadow-sm px-4 xs:px-5 py-3 xs:py-3.5 pl-14 xs:pl-16 border-2 border-gray-200 focus:border-cpOrange rounded-full focus:outline-none focus:ring-2 focus:ring-cpOrange/50 w-full font-inclusive text-[13px] text-black autofill:text-black xs:text-[14px] disabled:text-gray-500 placeholder:text-gray-400 transition-all duration-200 disabled:cursor-not-allowed'
+                  placeholder='Enter 10-digit number'
+                  onKeyDown={(e) => {
+                    if (
+                      !/\d/.test(e.key) &&
+                      e.key !== 'Backspace' &&
+                      e.key !== 'Tab' &&
+                      e.key !== 'ArrowLeft' &&
+                      e.key !== 'ArrowRight'
+                    ) {
+                      e.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.target.value = e.target.value.replace(/\D/g, '');
+                  }}
+                />
+                <input type='hidden' name='countryCode' value='+27' />
               </div>
 
               {/* Address */}
               <label
                 htmlFor='address'
-                className='block ml-2 font-inclusive font-medium text-[14px] text-white'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
               >
                 Address *
               </label>
@@ -276,7 +263,7 @@ export default function EnrollmentFormModal({
                 placeholder='Street address, city, province'
                 required
                 onBlur={handleBlur}
-                className={`mt-2 mb-1 px-5 py-3.5 border-2 rounded-full w-full font-inclusive text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
+                className={`mt-2 mb-1 px-4 xs:px-5 py-3 xs:py-3.5 border-2 rounded-full w-full font-inclusive text-[13px] xs:text-[14px] text-black bg-white placeholder:text-gray-400 shadow-sm focus:outline-none transition-all duration-200 ${
                   validationErrors.address
                     ? 'border-cpOrange focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
                     : 'border-gray-200 focus:border-cpOrange focus:ring-2 focus:ring-cpOrange/50'
@@ -292,36 +279,53 @@ export default function EnrollmentFormModal({
               {/* Program Dropdown */}
               <label
                 htmlFor='program'
-                className='block ml-2 font-inclusive font-medium text-[14px] text-white'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
               >
                 Which program are you enrolling in? *
               </label>
               <div className='relative mt-2 mb-4'>
                 <Listbox value={selectedProgram} onChange={setSelectedProgram}>
-                  <ListboxButton className='flex justify-between items-center bg-white shadow-sm px-5 py-3.5 border-2 border-gray-200 hover:border-cpPink rounded-full w-full font-inclusive text-[14px] text-black transition-all duration-200'>
-                    {selectedProgram}
-                    <ChevronUpDownIcon className='ml-2 w-5 h-5 text-gray-500' />
+                  <ListboxButton className='flex justify-between items-center gap-2 bg-white shadow-sm px-4 xs:px-5 py-3 xs:py-3.5 border-2 border-gray-200 hover:border-cpPink rounded-full w-full font-inclusive text-[13px] text-black xs:text-[14px] transition-all duration-200'>
+                    <span className='flex-1 min-w-0 text-left'>
+                      {selectedProgram.name}
+                      <span className='text-gray-600'>
+                        {' '}
+                        - {selectedProgram.price}
+                      </span>
+                    </span>
+                    <ChevronUpDownIcon className='flex-shrink-0 w-5 h-5 text-gray-500' />
                   </ListboxButton>
-                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black scrollbar-cp-modal'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[13px] text-black xs:text-[14px] scrollbar-cp-modal'>
                     {programs.map((program) => (
                       <ListboxOption
-                        key={program}
+                        key={program.name}
                         value={program}
                         className={({ active }) =>
-                          `cursor-pointer select-none px-5 py-3 transition-colors ${
+                          `cursor-pointer select-none px-4 xs:px-5 py-2.5 xs:py-3 transition-colors ${
                             active ? 'bg-cpPink text-white' : 'text-black'
                           }`
                         }
                       >
-                        {({ selected }) => (
-                          <div className='flex justify-between items-center'>
-                            <span
-                              className={selected ? 'font-bold' : 'font-normal'}
-                            >
-                              {program}
+                        {({ selected, active }) => (
+                          <div className='flex justify-between items-start gap-3'>
+                            <span className='flex-1 min-w-0'>
+                              <span
+                                className={`block ${
+                                  selected ? 'font-bold' : 'font-normal'
+                                }`}
+                              >
+                                {program.name}
+                              </span>
+                              <span
+                                className={`block text-[12px] xs:text-[13px] mt-0.5 ${
+                                  active ? 'text-white/90' : 'text-gray-600'
+                                }`}
+                              >
+                                {program.price}
+                              </span>
                             </span>
                             {selected && (
-                              <CheckIcon className='w-5 h-5 text-cpPink' />
+                              <CheckIcon className='flex-shrink-0 w-5 h-5 text-cpPink' />
                             )}
                           </div>
                         )}
@@ -329,29 +333,33 @@ export default function EnrollmentFormModal({
                     ))}
                   </ListboxOptions>
                 </Listbox>
-                <input type='hidden' name='program' value={selectedProgram} />
+                <input
+                  type='hidden'
+                  name='program'
+                  value={`${selectedProgram.name} - ${selectedProgram.price}`}
+                />
               </div>
 
               {/* Payment Dropdown */}
               <label
                 htmlFor='paymentMethod'
-                className='block ml-2 font-inclusive font-medium text-[14px] text-white'
+                className='block ml-2 font-inclusive font-medium text-[13px] text-white xs:text-[14px]'
               >
                 How would you like to make payment? *
               </label>
               <div className='relative mt-2 mb-6'>
                 <Listbox value={selectedPayment} onChange={setSelectedPayment}>
-                  <ListboxButton className='flex justify-between items-center bg-white shadow-sm px-5 py-3.5 border-2 border-gray-200 hover:border-cpPink rounded-full w-full font-inclusive text-[14px] text-black transition-all duration-200'>
+                  <ListboxButton className='flex justify-between items-center bg-white shadow-sm px-4 xs:px-5 py-3 xs:py-3.5 border-2 border-gray-200 hover:border-cpPink rounded-full w-full font-inclusive text-[13px] text-black xs:text-[14px] transition-all duration-200'>
                     {selectedPayment}
                     <ChevronUpDownIcon className='ml-2 w-5 h-5 text-gray-500' />
                   </ListboxButton>
-                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[14px] text-black scrollbar-cp-modal'>
+                  <ListboxOptions className='z-10 absolute bg-white shadow-xl mt-2 border border-gray-200 rounded-2xl w-full max-h-60 overflow-auto font-inclusive text-[13px] text-black xs:text-[14px] scrollbar-cp-modal'>
                     {paymentMethods.map((method) => (
                       <ListboxOption
                         key={method}
                         value={method}
                         className={({ active }) =>
-                          `cursor-pointer select-none px-5 py-3 transition-colors ${
+                          `cursor-pointer select-none px-4 xs:px-5 py-2.5 xs:py-3 transition-colors ${
                             active ? 'bg-cpPink text-white' : 'text-black'
                           }`
                         }
@@ -383,7 +391,7 @@ export default function EnrollmentFormModal({
               <button
                 type='submit'
                 disabled={isSubmitting}
-                className='flex justify-center items-center bg-cpOrange hover:bg-cpOrange/90 disabled:opacity-50 shadow-lg hover:shadow-xl px-8 py-4 rounded-full w-full font-tan-ashford font-bold text-[16px] text-white lowercase active:scale-95 disabled:hover:scale-100 transition-all duration-200 disabled:cursor-not-allowed'
+                className='flex justify-center items-center bg-cpOrange hover:bg-cpOrange/90 disabled:opacity-50 shadow-lg hover:shadow-xl px-6 xs:px-8 py-3.5 xs:py-4 rounded-full w-full font-tan-ashford font-bold text-[14px] text-white xs:text-[16px] lowercase active:scale-95 disabled:hover:scale-100 transition-all duration-200 disabled:cursor-not-allowed'
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Enrollment'}
               </button>

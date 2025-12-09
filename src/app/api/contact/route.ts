@@ -34,6 +34,39 @@ export async function POST(req: Request) {
 
     const client = new SendMailClient({ url, token });
 
+    // Determine recipients based on environment
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const recipients = [];
+
+    // Always add info@ email
+    const infoEmail =
+      process.env.ZEPTOMAIL_RECIPIENT_EMAIL_INFO || 'info@carinapereira.com';
+    recipients.push({
+      email_address: {
+        address: infoEmail,
+        name: 'Carina Pereira - Info',
+      },
+    });
+
+    // In production, also add makeup@ email
+    if (!isDevelopment) {
+      const makeupEmail =
+        process.env.ZEPTOMAIL_RECIPIENT_EMAIL_MAKEUP ||
+        'makeup@carinapereira.com';
+      recipients.push({
+        email_address: {
+          address: makeupEmail,
+          name: 'Carina Pereira - Makeup',
+        },
+      });
+    }
+
+    logger.info('Contact form - email recipients configured', {
+      environment: isDevelopment ? 'development' : 'production',
+      recipientCount: recipients.length,
+      recipients: recipients.map((r) => r.email_address.address),
+    });
+
     // Prepare email content
     const emailContent = `You have received a new contact form submission:
 
@@ -49,15 +82,7 @@ Message: ${message}`;
           process.env.ZEPTOMAIL_FROM_EMAIL || 'no-reply@carinapereira.com',
         name: process.env.ZEPTOMAIL_FROM_NAME || 'Carina Pereira International',
       },
-      to: [
-        {
-          email_address: {
-            address:
-              process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com',
-            name: 'Carina Pereira',
-          },
-        },
-      ],
+      to: recipients,
       reply_to: [
         {
           address: email,

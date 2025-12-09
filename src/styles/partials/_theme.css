@@ -99,6 +99,14 @@
     --font-tan-ashford: 'Tan Ashford', serif;
 
     /* ========================================
+       RESPONSIVE BREAKPOINTS
+       ======================================== */
+
+    /* Ultra-small phones (Galaxy S8+, iPhone SE, etc.) */
+    --breakpoint-xs: 22.5rem;
+    /* 360px */
+
+    /* ========================================
        TYPOGRAPHY
        ======================================== */
 

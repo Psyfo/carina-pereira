@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import NumberAnimation from '@/components/NumberAnimation/NumberAnimation';
@@ -13,12 +13,10 @@ const AchievementsSection: React.FC = () => {
     threshold: 0.5, // Trigger halfway into the section
     triggerOnce: true,
   });
-  const [startAnimation, setStartAnimation] = useState(false); // State to control number animation
 
   useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1, y: 0, transition: { duration: 0.8 } });
-      setStartAnimation(true); // Start the number animation
     }
   }, [inView, controls]);
 
@@ -27,18 +25,18 @@ const AchievementsSection: React.FC = () => {
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
-      className='flex flex-col items-center justify-center py-[64px] px-[25px] lg:px-[80px]'
+      className='flex flex-col justify-center items-center px-[25px] lg:px-[80px] py-[64px]'
     >
-      <h1 className='font-tan-ashford font-bold text-[19px] lowercase mb-[50px]'>
+      <h1 className='mb-[50px] font-tan-ashford font-bold text-[19px] lowercase'>
         our achievements
       </h1>
 
-      <p className='font-inclusive text-[15px] text-center lowercase mx-[45px] leading-[1.5] mb-[70px] max-w-[627px]'>
+      <p className='mx-[45px] mb-[70px] max-w-[627px] font-inclusive text-[15px] text-center lowercase leading-[1.5]'>
         After extensive studies, The founder & owner, Carina Pereira joined the
         ranks of top artists at MAC Cosmetics. This was a dream opportunity
       </p>
 
-      <div className='flex flex-col lg:flex-row bg-white items-center justify-center lg:justify-around gap-[80px] mx-[25px] w-full py-[95px] border border-black'>
+      <div className='flex lg:flex-row flex-col justify-center lg:justify-around items-center gap-[80px] bg-white mx-[25px] py-[95px] border border-black w-full'>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={controls}
@@ -46,12 +44,7 @@ const AchievementsSection: React.FC = () => {
         >
           <div className='flex font-tan-ashford font-bold text-[29px]'>
             +
-            <NumberAnimation
-              target={120}
-              duration={4000}
-              start={startAnimation}
-            />{' '}
-            {/* Pass the start state */}
+            <NumberAnimation target={120} duration={4000} start={inView} />
           </div>
           <p className='font-inclusive text-[22px]'>students</p>
         </motion.div>
@@ -71,12 +64,7 @@ const AchievementsSection: React.FC = () => {
         >
           <div className='flex font-tan-ashford font-bold text-[29px]'>
             +
-            <NumberAnimation
-              target={4}
-              duration={4000}
-              start={startAnimation}
-            />{' '}
-            {/* Pass the start state */}
+            <NumberAnimation target={4} duration={4000} start={inView} />
           </div>
           <p className='font-inclusive text-[22px]'>courses</p>
         </motion.div>
@@ -96,11 +84,7 @@ const AchievementsSection: React.FC = () => {
         >
           <div className='flex font-tan-ashford font-bold text-[29px]'>
             +
-            <NumberAnimation
-              target={13}
-              duration={4000}
-              start={startAnimation}
-            />{' '}
+            <NumberAnimation target={13} duration={4000} start={inView} />
             {/* Pass the start state */}
           </div>
           <p className='font-inclusive text-[22px]'>years experience</p>

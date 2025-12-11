@@ -84,10 +84,8 @@ export async function POST(req: Request) {
       },
     ];
 
-    logger.info('Email recipients configured', {
-      environment: isDevelopment ? 'development' : 'production',
-      recipientCount: recipients.length,
-      recipients: recipients.map((r) => r.email_address.address),
+    logger.info('Email recipient configured', {
+      recipient: recipientEmail,
     });
 
     // Prepare admin notification email content

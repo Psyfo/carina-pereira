@@ -72,32 +72,17 @@ export async function POST(req: Request) {
     logger.info('Initializing ZeptoMail client', { url });
     const client = new SendMailClient({ url, token });
 
-    // Determine recipients based on environment
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    const recipients = [];
-
-    // Always add info@ email
-    const infoEmail =
-      process.env.ZEPTOMAIL_RECIPIENT_EMAIL_INFO || 'info@carinapereira.com';
-    recipients.push({
-      email_address: {
-        address: infoEmail,
-        name: 'Carina Pereira - Info',
-      },
-    });
-
-    // In production, also add makeup@ email
-    if (!isDevelopment) {
-      const makeupEmail =
-        process.env.ZEPTOMAIL_RECIPIENT_EMAIL_MAKEUP ||
-        'makeup@carinapereira.com';
-      recipients.push({
+    // Determine recipient based on environment
+    const recipientEmail =
+      process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com';
+    const recipients = [
+      {
         email_address: {
-          address: makeupEmail,
-          name: 'Carina Pereira - Makeup',
+          address: recipientEmail,
+          name: 'Carina Pereira',
         },
-      });
-    }
+      },
+    ];
 
     logger.info('Email recipients configured', {
       environment: isDevelopment ? 'development' : 'production',

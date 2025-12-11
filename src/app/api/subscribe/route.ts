@@ -100,37 +100,20 @@ async function sendAdminNotification(fullName: string, email: string) {
 
     const client = new SendMailClient({ url: zeptoUrl, token });
 
-    // Determine recipients based on environment
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    const recipients = [];
-
-    // Always add info@ email
-    const infoEmail =
-      process.env.ZEPTOMAIL_RECIPIENT_EMAIL_INFO || 'info@carinapereira.com';
-    recipients.push({
-      email_address: {
-        address: infoEmail,
-        name: 'Carina Pereira - Info',
-      },
-    });
-
-    // In production, also add makeup@ email
-    if (!isDevelopment) {
-      const makeupEmail =
-        process.env.ZEPTOMAIL_RECIPIENT_EMAIL_MAKEUP ||
-        'makeup@carinapereira.com';
-      recipients.push({
+    // Determine recipient based on environment
+    const recipientEmail =
+      process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com';
+    const recipients = [
+      {
         email_address: {
-          address: makeupEmail,
-          name: 'Carina Pereira - Makeup',
+          address: recipientEmail,
+          name: 'Carina Pereira',
         },
-      });
-    }
+      },
+    ];
 
-    logger.info('Newsletter notification - email recipients configured', {
-      environment: isDevelopment ? 'development' : 'production',
-      recipientCount: recipients.length,
-      recipients: recipients.map((r) => r.email_address.address),
+    logger.info('Newsletter notification - email recipient configured', {
+      recipient: recipientEmail,
     });
 
     const emailContent = `New newsletter subscription received:

@@ -142,8 +142,7 @@ This subscriber has been added to your Mailchimp mailing list.`;
 
     await client.sendMail({
       from: {
-        address:
-          process.env.ZEPTOMAIL_FROM_EMAIL || 'no-reply@carinapereira.com',
+        address: process.env.ZEPTOMAIL_FROM_EMAIL || 'info@carinapereira.com',
         name: process.env.ZEPTOMAIL_FROM_NAME || 'Carina Pereira International',
       },
       to: recipients,

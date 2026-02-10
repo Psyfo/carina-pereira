@@ -3,10 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
-/* eslint-disable react/no-unescaped-entities */
-
 const AboutSection: React.FC = () => {
-  // Animation variants for fading in upwards
   const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -16,11 +13,11 @@ const AboutSection: React.FC = () => {
     <motion.section
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: true, amount: 0.3 }} // Trigger at 30% visibility
+      viewport={{ once: true, amount: 0.3 }}
       variants={{
         visible: {
           transition: {
-            staggerChildren: 0.2, // Stagger the children animations
+            staggerChildren: 0.2,
           },
         },
       }}
@@ -32,57 +29,69 @@ const AboutSection: React.FC = () => {
         className='flex flex-col items-start lg:w-[600px]'
       >
         <h1 className='font-tan-ashford font-bold text-[19px] lowercase tracking-wider'>
-          make-up made easy with Carina
+          valentine&apos;s day makeup masterclass
         </h1>
 
-        <h4 className='mt-8 font-inclusive text-[20px] leading-[1.5]'>
-          Your All-In-One Masterclass
+        <motion.p
+          variants={fadeInUpVariants}
+          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
+        >
+          Join me for an intimate Valentine&apos;s Day makeup masterclass
+          designed to inspire, elevate, and treat you.
+        </motion.p>
+
+        <motion.p
+          variants={fadeInUpVariants}
+          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
+        >
+          Perfect for beauty lovers, makeup artists, or anyone wanting to refine
+          their skills.
+        </motion.p>
+
+        <h4 className='mt-10 font-inclusive font-bold text-[20px] leading-[1.5]'>
+          What&apos;s Included
         </h4>
 
-        <motion.p
+        <motion.div
           variants={fadeInUpVariants}
-          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
+          className='space-y-6 mt-6 font-inclusive text-[15px] leading-[1.5]'
         >
-          Ready to level up your makeup game once and for all? Whether you're a
-          beginner or beauty-obsessed, this is the masterclass you’ve been
-          waiting for. Join Carina this Women’s Day for an immersive makeup
-          masterclass designed to teach you the essentials.
-        </motion.p>
-        <motion.p
-          variants={fadeInUpVariants}
-          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
-        >
-          From colour correcting to the perfect winged liner, natural day looks,
-          sultry night glam, contour and blush, brush basics, and finding your
-          flawless foundation match—you’ll walk away with skills you’ll use
-          every single day.
-        </motion.p>
+          <div>
+            <p className='font-bold'>💄 Curated Make-Up Goodie Bags</p>
+            <p className='mt-1'>
+              Take home a selection of beauty must-haves — including a special
+              Silki surprise to continue the experience long after the class.
+            </p>
+          </div>
 
-        <h4 className='mt-8 font-inclusive text-[20px] leading-[1.5]'>
-          What You’ll Get with Your Ticket
-        </h4>
+          <div>
+            <p className='font-bold'>🍰 Sweet Treats &amp; Refreshments</p>
+            <p className='mt-1'>
+              Enjoy a selection of delicious sweet treats and refreshments to
+              indulge in throughout the session.
+            </p>
+          </div>
 
-        <motion.p
-          variants={fadeInUpVariants}
-          className='mt-8 font-inclusive text-[15px] leading-[1.5]'
-        >
-          This isn’t just a masterclass—it’s a full beauty experience. Here’s
-          what’s included:
-        </motion.p>
-        <motion.ul
-          variants={fadeInUpVariants}
-          className='pl-[20px] font-inclusive text-[15px] leading-[1.7] list-disc'
-        >
-          <li>Tooth gems applied on the day by Gemini Lux</li>
-          <li>A Swiitch Beauty goodie bag (trust us, it’s cute)</li>
-          <li>Delicious handcrafted pastries from Weirddough</li>
-          <li>A voucher from The Piercery to jewel out your ear stack</li>
-          <li>A room full of fellow makeup lovers to connect and vibe with</li>
-          <li>
-            1:1 time with Carina — ask questions, get personal advice, and learn
-            her techniques up close
-          </li>
-        </motion.ul>
+          <div>
+            <p className='font-bold'>
+              🛍 Shop New Designs from The Shopaholic
+            </p>
+            <p className='mt-1'>
+              Be the first to browse and shop exclusive new pieces available on
+              the day.
+            </p>
+          </div>
+
+          <div>
+            <p className='font-bold'>
+              💬 1:1 Time With Me — Up Close &amp; Personal
+            </p>
+            <p className='mt-1'>
+              Ask questions, get tailored advice, and learn my professional
+              techniques in an intimate setting where nothing is off limits.
+            </p>
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* Right Column */}

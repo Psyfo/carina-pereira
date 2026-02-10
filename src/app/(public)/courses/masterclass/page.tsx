@@ -31,7 +31,7 @@ export const metadata = {
     url: 'https://carinapereira.com/masterclass',
     images: [
       {
-        url: 'https://carinapereira.com/images/courses/masterclass/hero.png',
+        url: 'https://carinapereira.com/images/courses/valentines/hero.png',
         alt: 'Masterclass Hero Image',
       },
     ],

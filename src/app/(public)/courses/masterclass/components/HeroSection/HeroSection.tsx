@@ -4,14 +4,32 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import {
+  Heart,
+  Sparkles,
+  Star,
+  Gift,
+  Gem,
+  Cherry,
+  Flower2,
+} from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
-/*  Decorative hearts & sparkles – scattered like a cute wallpaper    */
+/*  Decoration types using Lucide icons                                */
 /* ------------------------------------------------------------------ */
+
+type DecoIcon =
+  | 'heart'
+  | 'sparkles'
+  | 'star'
+  | 'gift'
+  | 'gem'
+  | 'cherry'
+  | 'flower';
 
 interface Decoration {
   id: number;
-  type: 'heart' | 'sparkle' | 'star';
+  icon: DecoIcon;
   top: string;
   left: string;
   size: number;
@@ -19,481 +37,121 @@ interface Decoration {
   opacity: number;
   color: string;
   delay: number;
+  filled?: boolean;
 }
 
-const COLORS = {
-  pinkSoft: '#FCB3CD', // cpPink-200
-  pinkMid: '#F5B3D3', // cpPink-300
-  pinkBold: '#F1A0C5', // cpPink-400
+const C = {
   white: '#FFFFFF',
-  blush: '#FDD9E6', // cpMagenta-100
-  peach: '#FFE4D1', // cpOrange-100
+  cream: '#FFFEF3',
+  pinkSoft: '#FCB3CD',
+  pinkMid: '#F5B3D3',
+  pinkBold: '#F1A0C5',
+  blush: '#FDD9E6',
+  peach: '#FFE4D1',
+  magenta: '#E62E6B',
+  magentaLight: '#F25E8F',
+  orange: '#FA7E39',
 };
 
+/* ------------------------------------------------------------------ */
+/*  Decorations – Lucide icons scattered like wallpaper               */
+/* ------------------------------------------------------------------ */
+
 const decorations: Decoration[] = [
-  // Hearts – edges & scattered
-  {
-    id: 1,
-    type: 'heart',
-    top: '5%',
-    left: '3%',
-    size: 24,
-    rotation: -15,
-    opacity: 0.4,
-    color: COLORS.white,
-    delay: 0.2,
-  },
-  {
-    id: 2,
-    type: 'heart',
-    top: '11%',
-    left: '89%',
-    size: 32,
-    rotation: 20,
-    opacity: 0.35,
-    color: COLORS.pinkSoft,
-    delay: 0.5,
-  },
-  {
-    id: 3,
-    type: 'heart',
-    top: '26%',
-    left: '93%',
-    size: 18,
-    rotation: -30,
-    opacity: 0.3,
-    color: COLORS.white,
-    delay: 0.8,
-  },
-  {
-    id: 4,
-    type: 'heart',
-    top: '44%',
-    left: '2%',
-    size: 28,
-    rotation: 10,
-    opacity: 0.35,
-    color: COLORS.blush,
-    delay: 0.3,
-  },
-  {
-    id: 5,
-    type: 'heart',
-    top: '54%',
-    left: '95%',
-    size: 22,
-    rotation: -20,
-    opacity: 0.4,
-    color: COLORS.pinkMid,
-    delay: 0.6,
-  },
-  {
-    id: 6,
-    type: 'heart',
-    top: '70%',
-    left: '5%',
-    size: 18,
-    rotation: 25,
-    opacity: 0.3,
-    color: COLORS.white,
-    delay: 1.0,
-  },
-  {
-    id: 7,
-    type: 'heart',
-    top: '84%',
-    left: '91%',
-    size: 26,
-    rotation: -10,
-    opacity: 0.35,
-    color: COLORS.pinkSoft,
-    delay: 0.4,
-  },
-  {
-    id: 8,
-    type: 'heart',
-    top: '17%',
-    left: '6%',
-    size: 15,
-    rotation: 35,
-    opacity: 0.25,
-    color: COLORS.peach,
-    delay: 0.7,
-  },
-  {
-    id: 9,
-    type: 'heart',
-    top: '37%',
-    left: '97%',
-    size: 14,
-    rotation: -25,
-    opacity: 0.3,
-    color: COLORS.pinkBold,
-    delay: 0.9,
-  },
-  {
-    id: 10,
-    type: 'heart',
-    top: '64%',
-    left: '1%',
-    size: 22,
-    rotation: 15,
-    opacity: 0.3,
-    color: COLORS.blush,
-    delay: 1.1,
-  },
-  {
-    id: 11,
-    type: 'heart',
-    top: '91%',
-    left: '7%',
-    size: 30,
-    rotation: -5,
-    opacity: 0.25,
-    color: COLORS.white,
-    delay: 0.3,
-  },
-  {
-    id: 12,
-    type: 'heart',
-    top: '3%',
-    left: '48%',
-    size: 16,
-    rotation: 40,
-    opacity: 0.2,
-    color: COLORS.pinkSoft,
-    delay: 0.6,
-  },
-  {
-    id: 13,
-    type: 'heart',
-    top: '93%',
-    left: '55%',
-    size: 20,
-    rotation: -12,
-    opacity: 0.25,
-    color: COLORS.pinkMid,
-    delay: 0.8,
-  },
-  // Large translucent background hearts – different sizes, behind everything
-  {
-    id: 50,
-    type: 'heart',
-    top: '5%',
-    left: '2%',
-    size: 140,
-    rotation: -20,
-    opacity: 0.12,
-    color: COLORS.white,
-    delay: 0.2,
-  },
-  {
-    id: 51,
-    type: 'heart',
-    top: '50%',
-    left: '78%',
-    size: 180,
-    rotation: 15,
-    opacity: 0.1,
-    color: COLORS.pinkSoft,
-    delay: 0.5,
-  },
-  {
-    id: 52,
-    type: 'heart',
-    top: '25%',
-    left: '0%',
-    size: 100,
-    rotation: 30,
-    opacity: 0.14,
-    color: COLORS.blush,
-    delay: 0.8,
-  },
-  {
-    id: 53,
-    type: 'heart',
-    top: '65%',
-    left: '82%',
-    size: 120,
-    rotation: -10,
-    opacity: 0.1,
-    color: COLORS.white,
-    delay: 0.4,
-  },
-  {
-    id: 54,
-    type: 'heart',
-    top: '2%',
-    left: '70%',
-    size: 200,
-    rotation: 25,
-    opacity: 0.08,
-    color: COLORS.pinkMid,
-    delay: 0.6,
-  },
-  {
-    id: 55,
-    type: 'heart',
-    top: '72%',
-    left: '1%',
-    size: 160,
-    rotation: -35,
-    opacity: 0.12,
-    color: COLORS.white,
-    delay: 1.0,
-  },
-  {
-    id: 56,
-    type: 'heart',
-    top: '38%',
-    left: '68%',
-    size: 90,
-    rotation: 45,
-    opacity: 0.1,
-    color: COLORS.pinkSoft,
-    delay: 0.7,
-  },
-  {
-    id: 57,
-    type: 'heart',
-    top: '12%',
-    left: '22%',
-    size: 110,
-    rotation: -8,
-    opacity: 0.1,
-    color: COLORS.blush,
-    delay: 0.9,
-  },
-  // Stars – glistening background accents
-  {
-    id: 14,
-    type: 'star',
-    top: '8%',
-    left: '20%',
-    size: 6,
-    rotation: 0,
-    opacity: 0.5,
-    color: COLORS.white,
-    delay: 0.3,
-  },
-  {
-    id: 15,
-    type: 'star',
-    top: '15%',
-    left: '78%',
-    size: 5,
-    rotation: 0,
-    opacity: 0.4,
-    color: COLORS.pinkSoft,
-    delay: 0.6,
-  },
-  {
-    id: 16,
-    type: 'star',
-    top: '25%',
-    left: '12%',
-    size: 4,
-    rotation: 0,
-    opacity: 0.35,
-    color: COLORS.white,
-    delay: 0.9,
-  },
-  {
-    id: 17,
-    type: 'star',
-    top: '32%',
-    left: '85%',
-    size: 7,
-    rotation: 0,
-    opacity: 0.45,
-    color: COLORS.blush,
-    delay: 0.4,
-  },
-  {
-    id: 18,
-    type: 'star',
-    top: '48%',
-    left: '8%',
-    size: 5,
-    rotation: 0,
-    opacity: 0.4,
-    color: COLORS.white,
-    delay: 0.7,
-  },
-  {
-    id: 19,
-    type: 'star',
-    top: '56%',
-    left: '92%',
-    size: 6,
-    rotation: 0,
-    opacity: 0.35,
-    color: COLORS.pinkSoft,
-    delay: 1.0,
-  },
-  {
-    id: 20,
-    type: 'star',
-    top: '68%',
-    left: '15%',
-    size: 4,
-    rotation: 0,
-    opacity: 0.3,
-    color: COLORS.white,
-    delay: 0.5,
-  },
-  {
-    id: 21,
-    type: 'star',
-    top: '76%',
-    left: '88%',
-    size: 5,
-    rotation: 0,
-    opacity: 0.45,
-    color: COLORS.blush,
-    delay: 0.8,
-  },
-  {
-    id: 22,
-    type: 'star',
-    top: '42%',
-    left: '18%',
-    size: 3,
-    rotation: 0,
-    opacity: 0.3,
-    color: COLORS.white,
-    delay: 1.1,
-  },
-  {
-    id: 23,
-    type: 'star',
-    top: '82%',
-    left: '22%',
-    size: 6,
-    rotation: 0,
-    opacity: 0.4,
-    color: COLORS.pinkMid,
-    delay: 0.6,
-  },
-  {
-    id: 24,
-    type: 'star',
-    top: '20%',
-    left: '60%',
-    size: 4,
-    rotation: 0,
-    opacity: 0.3,
-    color: COLORS.white,
-    delay: 0.9,
-  },
-  {
-    id: 25,
-    type: 'star',
-    top: '88%',
-    left: '72%',
-    size: 5,
-    rotation: 0,
-    opacity: 0.35,
-    color: COLORS.white,
-    delay: 0.4,
-  },
-  // Sparkles – 4-point stars
-  {
-    id: 26,
-    type: 'sparkle',
-    top: '9%',
-    left: '95%',
-    size: 16,
-    rotation: 0,
-    opacity: 0.45,
-    color: COLORS.white,
-    delay: 0.4,
-  },
-  {
-    id: 27,
-    type: 'sparkle',
-    top: '34%',
-    left: '1%',
-    size: 14,
-    rotation: 45,
-    opacity: 0.35,
-    color: COLORS.pinkSoft,
-    delay: 0.7,
-  },
-  {
-    id: 28,
-    type: 'sparkle',
-    top: '59%',
-    left: '97%',
-    size: 12,
-    rotation: 20,
-    opacity: 0.4,
-    color: COLORS.white,
-    delay: 1.0,
-  },
-  {
-    id: 29,
-    type: 'sparkle',
-    top: '78%',
-    left: '3%',
-    size: 10,
-    rotation: -15,
-    opacity: 0.3,
-    color: COLORS.blush,
-    delay: 0.5,
-  },
-  {
-    id: 30,
-    type: 'sparkle',
-    top: '50%',
-    left: '5%',
-    size: 18,
-    rotation: 30,
-    opacity: 0.35,
-    color: COLORS.white,
-    delay: 0.8,
-  },
+  // ♥ Filled hearts – various sizes, scattered edges
+  { id: 1, icon: 'heart', top: '4%', left: '3%', size: 28, rotation: -15, opacity: 0.3, color: C.white, delay: 0.2, filled: true },
+  { id: 2, icon: 'heart', top: '10%', left: '88%', size: 36, rotation: 20, opacity: 0.25, color: C.pinkSoft, delay: 0.5, filled: true },
+  { id: 3, icon: 'heart', top: '28%', left: '92%', size: 20, rotation: -30, opacity: 0.22, color: C.white, delay: 0.8, filled: true },
+  { id: 4, icon: 'heart', top: '45%', left: '2%', size: 32, rotation: 10, opacity: 0.28, color: C.blush, delay: 0.3, filled: true },
+  { id: 5, icon: 'heart', top: '55%', left: '94%', size: 24, rotation: -20, opacity: 0.3, color: C.pinkMid, delay: 0.6, filled: true },
+  { id: 6, icon: 'heart', top: '72%', left: '4%', size: 20, rotation: 25, opacity: 0.25, color: C.white, delay: 1.0, filled: true },
+  { id: 7, icon: 'heart', top: '85%', left: '90%', size: 30, rotation: -10, opacity: 0.28, color: C.pinkSoft, delay: 0.4, filled: true },
+  { id: 8, icon: 'heart', top: '18%', left: '7%', size: 16, rotation: 35, opacity: 0.2, color: C.peach, delay: 0.7, filled: true },
+  { id: 9, icon: 'heart', top: '38%', left: '96%', size: 15, rotation: -25, opacity: 0.22, color: C.pinkBold, delay: 0.9, filled: true },
+  { id: 10, icon: 'heart', top: '65%', left: '1%', size: 24, rotation: 15, opacity: 0.25, color: C.blush, delay: 1.1, filled: true },
+  { id: 11, icon: 'heart', top: '92%', left: '8%', size: 34, rotation: -5, opacity: 0.2, color: C.white, delay: 0.3, filled: true },
+  { id: 12, icon: 'heart', top: '2%', left: '48%', size: 18, rotation: 40, opacity: 0.18, color: C.pinkSoft, delay: 0.6, filled: true },
+  { id: 13, icon: 'heart', top: '94%', left: '54%', size: 22, rotation: -12, opacity: 0.2, color: C.pinkMid, delay: 0.8, filled: true },
+
+  // ♡ Outline hearts – lighter, elegant feel
+  { id: 14, icon: 'heart', top: '15%', left: '15%', size: 22, rotation: 12, opacity: 0.18, color: C.white, delay: 0.4, filled: false },
+  { id: 15, icon: 'heart', top: '60%', left: '88%', size: 26, rotation: -18, opacity: 0.15, color: C.pinkSoft, delay: 0.7, filled: false },
+  { id: 16, icon: 'heart', top: '80%', left: '18%', size: 18, rotation: 8, opacity: 0.15, color: C.blush, delay: 0.5, filled: false },
+
+  // Large translucent background hearts – dreamy depth
+  { id: 50, icon: 'heart', top: '5%', left: '2%', size: 140, rotation: -20, opacity: 0.08, color: C.white, delay: 0.2, filled: true },
+  { id: 51, icon: 'heart', top: '50%', left: '78%', size: 180, rotation: 15, opacity: 0.06, color: C.pinkSoft, delay: 0.5, filled: true },
+  { id: 52, icon: 'heart', top: '25%', left: '0%', size: 100, rotation: 30, opacity: 0.1, color: C.blush, delay: 0.8, filled: true },
+  { id: 53, icon: 'heart', top: '65%', left: '82%', size: 120, rotation: -10, opacity: 0.07, color: C.white, delay: 0.4, filled: true },
+  { id: 54, icon: 'heart', top: '2%', left: '70%', size: 200, rotation: 25, opacity: 0.05, color: C.pinkMid, delay: 0.6, filled: true },
+  { id: 55, icon: 'heart', top: '72%', left: '1%', size: 160, rotation: -35, opacity: 0.08, color: C.white, delay: 1.0, filled: true },
+
+  // ✦ Sparkles – Lucide sparkles icon, scattered
+  { id: 26, icon: 'sparkles', top: '9%', left: '94%', size: 18, rotation: 0, opacity: 0.4, color: C.white, delay: 0.4 },
+  { id: 27, icon: 'sparkles', top: '34%', left: '2%', size: 16, rotation: 45, opacity: 0.3, color: C.pinkSoft, delay: 0.7 },
+  { id: 28, icon: 'sparkles', top: '58%', left: '96%', size: 14, rotation: 20, opacity: 0.35, color: C.white, delay: 1.0 },
+  { id: 29, icon: 'sparkles', top: '78%', left: '3%', size: 12, rotation: -15, opacity: 0.25, color: C.blush, delay: 0.5 },
+  { id: 30, icon: 'sparkles', top: '22%', left: '80%', size: 20, rotation: 30, opacity: 0.3, color: C.cream, delay: 0.8 },
+
+  // ★ Stars – twinkling dots
+  { id: 40, icon: 'star', top: '8%', left: '22%', size: 10, rotation: 0, opacity: 0.4, color: C.white, delay: 0.3 },
+  { id: 41, icon: 'star', top: '32%', left: '84%', size: 8, rotation: 0, opacity: 0.35, color: C.pinkSoft, delay: 0.6 },
+  { id: 42, icon: 'star', top: '48%', left: '9%', size: 9, rotation: 0, opacity: 0.3, color: C.white, delay: 0.9 },
+  { id: 43, icon: 'star', top: '76%', left: '87%', size: 10, rotation: 0, opacity: 0.35, color: C.blush, delay: 0.4 },
+  { id: 44, icon: 'star', top: '88%', left: '72%', size: 7, rotation: 0, opacity: 0.3, color: C.white, delay: 0.7 },
+  { id: 45, icon: 'star', top: '20%', left: '62%', size: 8, rotation: 0, opacity: 0.25, color: C.cream, delay: 1.0 },
+
+  // 🎁 Gifts – subtle Valentine accents
+  { id: 60, icon: 'gift', top: '88%', left: '4%', size: 22, rotation: -8, opacity: 0.2, color: C.white, delay: 0.6 },
+  { id: 61, icon: 'gift', top: '6%', left: '78%', size: 18, rotation: 12, opacity: 0.18, color: C.pinkSoft, delay: 0.9 },
+
+  // 💎 Gems – luxe sparkle
+  { id: 70, icon: 'gem', top: '42%', left: '95%', size: 16, rotation: 15, opacity: 0.25, color: C.white, delay: 0.5 },
+  { id: 71, icon: 'gem', top: '73%', left: '10%', size: 14, rotation: -20, opacity: 0.2, color: C.pinkMid, delay: 0.8 },
+
+  // 🍒 Cherries – playful
+  { id: 80, icon: 'cherry', top: '13%', left: '93%', size: 20, rotation: 10, opacity: 0.18, color: C.peach, delay: 0.7 },
+  { id: 81, icon: 'cherry', top: '82%', left: '2%', size: 18, rotation: -15, opacity: 0.18, color: C.pinkSoft, delay: 1.0 },
+
+  // 🌸 Flowers – feminine touch
+  { id: 90, icon: 'flower', top: '30%', left: '4%', size: 22, rotation: 20, opacity: 0.2, color: C.white, delay: 0.6 },
+  { id: 91, icon: 'flower', top: '68%', left: '93%', size: 20, rotation: -25, opacity: 0.18, color: C.pinkSoft, delay: 0.9 },
 ];
 
-/* -- SVG components ------------------------------------------------ */
+/* ---- Icon lookup ------------------------------------------------- */
 
-const Heart = ({ size, color }: { size: number; color: string }) => (
-  <svg width={size} height={size} viewBox='0 0 24 24' fill={color}>
-    <path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' />
-  </svg>
-);
+const ICON_MAP: Record<
+  DecoIcon,
+  React.FC<{ size?: number; color?: string; fill?: string; strokeWidth?: number }>
+> = {
+  heart: Heart,
+  sparkles: Sparkles,
+  star: Star,
+  gift: Gift,
+  gem: Gem,
+  cherry: Cherry,
+  flower: Flower2,
+};
 
-const SparkleIcon = ({ size, color }: { size: number; color: string }) => (
-  <svg width={size} height={size} viewBox='0 0 24 24' fill={color}>
-    <path d='M12 0L14.59 8.41L23 12L14.59 15.59L12 24L9.41 15.59L1 12L9.41 8.41L12 0Z' />
-  </svg>
-);
+/* ---- Animation variants ----------------------------------------- */
 
-const Star = ({ size, color }: { size: number; color: string }) => (
-  <svg width={size} height={size} viewBox='0 0 10 10'>
-    <circle cx='5' cy='5' r='4' fill={color} />
-  </svg>
-);
-
-/* -- Gentle float animation for hearts ----------------------------- */
 const floatVariants = {
   animate: (i: number) => ({
-    y: [0, -6, 0, 5, 0],
-    rotate: [0, i % 2 === 0 ? 3 : -3, 0, i % 2 === 0 ? -2 : 2, 0],
+    y: [0, -8, 0, 6, 0],
+    rotate: [0, i % 2 === 0 ? 4 : -4, 0, i % 2 === 0 ? -3 : 3, 0],
     transition: {
-      duration: 4 + (i % 3),
+      duration: 5 + (i % 4),
       repeat: Infinity,
       ease: 'easeInOut',
-      delay: (i % 5) * 0.4,
+      delay: (i % 5) * 0.3,
     },
   }),
 };
 
-/* -- Shimmer/twinkle for stars ------------------------------------- */
 const twinkleVariants = {
   animate: (i: number) => ({
-    opacity: [0.15, 0.5, 0.15],
-    scale: [0.8, 1.2, 0.8],
+    opacity: [0.15, 0.55, 0.15],
+    scale: [0.8, 1.3, 0.8],
     transition: {
       duration: 2 + (i % 3),
       repeat: Infinity,
@@ -503,20 +161,51 @@ const twinkleVariants = {
   }),
 };
 
-/* -- Sparkle pulse ------------------------------------------------- */
 const sparkleVariants = {
   animate: (i: number) => ({
-    scale: [1, 1.3, 1],
-    opacity: [0.3, 0.55, 0.3],
-    rotate: [0, 15, 0],
+    scale: [1, 1.4, 1],
+    opacity: [0.25, 0.6, 0.25],
+    rotate: [0, 20, 0],
     transition: {
       duration: 3 + (i % 2),
       repeat: Infinity,
       ease: 'easeInOut',
-      delay: (i % 4) * 0.5,
+      delay: (i % 4) * 0.4,
     },
   }),
 };
+
+const gemVariants = {
+  animate: (i: number) => ({
+    scale: [1, 1.15, 1],
+    opacity: [0.2, 0.4, 0.2],
+    rotate: [0, 10, -10, 0],
+    transition: {
+      duration: 4 + (i % 3),
+      repeat: Infinity,
+      ease: 'easeInOut',
+      delay: (i % 5) * 0.3,
+    },
+  }),
+};
+
+/* ---- Variant picker --------------------------------------------- */
+
+function getVariants(icon: DecoIcon) {
+  switch (icon) {
+    case 'heart':
+    case 'cherry':
+    case 'flower':
+      return floatVariants;
+    case 'star':
+      return twinkleVariants;
+    case 'sparkles':
+      return sparkleVariants;
+    case 'gift':
+    case 'gem':
+      return gemVariants;
+  }
+}
 
 /* ------------------------------------------------------------------ */
 
@@ -526,20 +215,35 @@ const HeroSection: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className='relative flex justify-center items-center py-10 md:py-16 w-full min-h-[100vh] overflow-hidden hero-section'
+      className='relative flex justify-center items-center py-10 md:py-16 w-full min-h-screen overflow-hidden hero-section'
       style={{
-        background:
-          'linear-gradient(135deg, #F25E8F 0%, #E62E6B 25%, #D01756 50%, #F25E8F 75%, #F88DB4 100%)',
+        background: `
+          radial-gradient(ellipse 80% 60% at 20% 20%, rgba(252,179,205,0.5) 0%, transparent 60%),
+          radial-gradient(ellipse 70% 50% at 80% 30%, rgba(255,228,209,0.45) 0%, transparent 55%),
+          radial-gradient(ellipse 90% 70% at 50% 80%, rgba(245,179,211,0.4) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 40% at 75% 70%, rgba(253,217,230,0.35) 0%, transparent 50%),
+          linear-gradient(135deg, #F25E8F 0%, #F77FAA 25%, #FA9EBF 50%, #F88DA0 75%, #F25E8F 100%)
+        `,
       }}
     >
-      {/* Soft light wash overlays for depth */}
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.15)_0%,_transparent_50%)]' />
-      <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(255,255,255,0.1)_0%,_transparent_50%)]' />
+      {/* ── Subtle animated shimmer overlay ────────────────────── */}
+      <motion.div
+        className='absolute inset-0 pointer-events-none'
+        animate={{
+          background: [
+            'radial-gradient(ellipse 50% 40% at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse 50% 40% at 70% 60%, rgba(255,255,255,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse 50% 40% at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 70%)',
+          ],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
 
-      {/* Decorative wallpaper elements */}
+      {/* Decorative Lucide icon wallpaper */}
       {decorations.map((d) => {
-        const isHeart = d.type === 'heart';
-        const isStar = d.type === 'star';
+        const Icon = ICON_MAP[d.icon];
+        const isHeart = d.icon === 'heart';
+        const isFilled = d.filled;
 
         return (
           <motion.div
@@ -547,13 +251,7 @@ const HeroSection: React.FC = () => {
             custom={d.id}
             initial={{ opacity: 0, scale: 0 }}
             animate='animate'
-            variants={
-              isHeart
-                ? floatVariants
-                : isStar
-                  ? twinkleVariants
-                  : sparkleVariants
-            }
+            variants={getVariants(d.icon)}
             className='absolute pointer-events-none'
             style={{
               top: d.top,
@@ -562,17 +260,18 @@ const HeroSection: React.FC = () => {
               transform: `rotate(${d.rotation}deg)`,
             }}
           >
-            {d.type === 'heart' && <Heart size={d.size} color={d.color} />}
-            {d.type === 'sparkle' && (
-              <SparkleIcon size={d.size} color={d.color} />
-            )}
-            {d.type === 'star' && <Star size={d.size} color={d.color} />}
+            <Icon
+              size={d.size}
+              color={d.color}
+              fill={isHeart && isFilled ? d.color : 'none'}
+              strokeWidth={isHeart && !isFilled ? 1.5 : 1.2}
+            />
           </motion.div>
         );
       })}
 
       {/* Logo */}
-      <Link href='/' className='top-[2rem] left-[1.5rem] z-20 absolute'>
+      <Link href='/' className='top-8 left-6 z-20 absolute'>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -584,7 +283,7 @@ const HeroSection: React.FC = () => {
             width={100}
             height={100}
             unoptimized
-            className='w-[160px] lg:w-[220px]'
+            className='w-40 lg:w-55'
           />
         </motion.div>
       </Link>
@@ -594,7 +293,7 @@ const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-        className='z-10 relative shadow-[0_25px_80px_rgba(0,0,0,0.25),_0_0_50px_rgba(252,179,205,0.25)] rounded-xl w-[92%] max-w-[400px] sm:max-w-[440px] md:max-w-[520px] lg:max-w-[580px] 2xl:max-w-[660px] xl:max-w-[620px] overflow-hidden'
+        className='z-10 relative shadow-[0_25px_80px_rgba(0,0,0,0.25),0_0_50px_rgba(252,179,205,0.25)] rounded-xl w-[92%] max-w-100 sm:max-w-110 md:max-w-130 lg:max-w-145 2xl:max-w-165 xl:max-w-155 overflow-hidden'
       >
         <Image
           src='/images/courses/valentines/hero.png'

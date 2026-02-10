@@ -10,7 +10,7 @@ export default function NotFoundClient() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className='mx-auto max-w-[800px] text-center'
+        className='mx-auto max-w-200 text-center'
       >
         {/* 404 Number - Large and decorative */}
         <motion.div
@@ -39,11 +39,11 @@ export default function NotFoundClient() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className='mx-auto mb-12 max-w-[600px] font-inclusive text-[15px] text-cpCream-900 md:text-[16.5px] leading-[1.7]'
+          className='mx-auto mb-12 max-w-150 font-inclusive text-[15px] text-cpCream-900 md:text-[16.5px] leading-[1.7]'
         >
-          Don't worry, you're not lost—sometimes the best discoveries happen
-          when we take a different path. Let's get you back to where the magic
-          happens.
+          Don&apos;t worry, you&apos;re not lost—sometimes the best discoveries
+          happen when we take a different path. Let&apos;s get you back to where
+          the magic happens.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -58,7 +58,7 @@ export default function NotFoundClient() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='bg-cpOrange hover:bg-cpOrange-600 active:bg-cpOrange-700 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[12px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpOrange/30 font-inclusive font-semibold text-[16.5px] text-white leading-[1.5] transition-all duration-200 ease-out cursor-pointer'
+              className='bg-cpOrange hover:bg-cpOrange-600 active:bg-cpOrange-700 shadow-md hover:shadow-lg active:shadow-sm px-8.75 py-3 border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpOrange/30 font-inclusive font-semibold text-[16.5px] text-white leading-normal transition-all duration-200 ease-out cursor-pointer'
             >
               go home
             </motion.button>
@@ -69,7 +69,7 @@ export default function NotFoundClient() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[12px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive font-semibold text-[16.5px] text-black leading-[1.5] transition-all duration-200 ease-out cursor-pointer'
+              className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-8.75 py-3 border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive font-semibold text-[16.5px] text-black leading-normal transition-all duration-200 ease-out cursor-pointer'
             >
               explore courses
             </motion.button>
@@ -112,7 +112,7 @@ export default function NotFoundClient() {
           transition={{ duration: 1.5, delay: 1.2 }}
           className='mt-16'
         >
-          <div className='bg-gradient-to-r from-cpPink via-cpMagenta to-cpOrange opacity-50 mx-auto rounded-full w-24 h-1' />
+          <div className='bg-linear-to-r from-cpPink via-cpMagenta to-cpOrange opacity-50 mx-auto rounded-full w-24 h-1' />
         </motion.div>
       </motion.div>
     </div>

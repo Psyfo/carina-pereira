@@ -297,7 +297,7 @@ export function enrollmentAdminTemplate(data: {
       ['Payment', data.paymentMethod],
     ])}
 
-    ${button('View Dashboard', `${BRAND.siteUrl}/admin`)}
+    ${button('Visit Website', BRAND.siteUrl)}
   `;
 
   return baseLayout(

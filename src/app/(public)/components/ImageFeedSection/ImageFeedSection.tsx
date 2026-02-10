@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 type InstagramMedia = {
   id: string;
@@ -20,6 +22,10 @@ const ImageFeedSection: React.FC = () => {
   const [media, setMedia] = useState<InstagramMedia[]>([]);
   const [loading, setLoading] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     async function fetchFeed() {
@@ -52,9 +58,35 @@ const ImageFeedSection: React.FC = () => {
     });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   if (loading) {
     return (
-      <section className='w-full h-[300px] flex items-center justify-center text-gray-500'>
+      <section className='flex justify-center items-center w-full h-[300px] text-gray-500'>
         Loading Instagram feed...
       </section>
     );
@@ -62,24 +94,31 @@ const ImageFeedSection: React.FC = () => {
 
   if (!media.length) {
     return (
-      <section className='w-full h-[300px] flex items-center justify-center text-gray-500'>
+      <section className='flex justify-center items-center w-full h-[300px] text-gray-500'>
         No Instagram posts found.
       </section>
     );
   }
 
   return (
-    <section aria-label='Instagram Feed' className='relative w-full'>
+    <motion.section
+      ref={ref}
+      aria-label='Instagram Feed'
+      className='relative w-full'
+      variants={containerVariants}
+      initial='hidden'
+      animate={inView ? 'visible' : 'hidden'}
+    >
       {/* Left Arrow - hidden on mobile */}
       <button
         onClick={scrollLeft}
         aria-label='Scroll Left'
-        className='hidden md:flex items-center justify-center absolute left-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white shadow-md hover:bg-gray-100 transition'
+        className='hidden top-1/2 left-2 z-10 absolute md:flex justify-center items-center bg-white hover:bg-gray-100 shadow-md rounded-full w-10 h-10 transition -translate-y-1/2'
         style={{ userSelect: 'none' }}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6 text-gray-700'
+          className='w-6 h-6 text-gray-700'
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
@@ -106,31 +145,32 @@ const ImageFeedSection: React.FC = () => {
           {media.map((post) => {
             const imageUrl =
               post.media_type === 'VIDEO'
-                ? post.thumbnail_url ?? post.media_url
+                ? (post.thumbnail_url ?? post.media_url)
                 : post.media_url;
 
             return (
-              <a
+              <motion.a
                 key={post.id}
                 href={post.permalink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex-shrink-0 w-64 h-64 rounded-lg overflow-hidden shadow-md transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl'
+                className='flex-shrink-0 shadow-md hover:shadow-xl rounded-lg w-64 h-64 overflow-hidden hover:scale-110 transition-transform duration-300 ease-in-out transform'
                 style={{ scrollSnapAlign: 'start' }}
                 aria-label={
                   post.caption ? post.caption.slice(0, 100) : 'Instagram post'
                 }
+                variants={itemVariants}
               >
                 <Image
                   src={imageUrl}
                   alt={post.caption ?? 'Instagram post image'}
                   width={256}
                   height={256}
-                  className='object-cover w-full h-full'
+                  className='w-full h-full object-cover'
                   priority={false}
                   unoptimized
                 />
-              </a>
+              </motion.a>
             );
           })}
         </div>
@@ -140,12 +180,12 @@ const ImageFeedSection: React.FC = () => {
       <button
         onClick={scrollRight}
         aria-label='Scroll Right'
-        className='hidden md:flex items-center justify-center absolute right-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white shadow-md hover:bg-gray-100 transition'
+        className='hidden top-1/2 right-2 z-10 absolute md:flex justify-center items-center bg-white hover:bg-gray-100 shadow-md rounded-full w-10 h-10 transition -translate-y-1/2'
         style={{ userSelect: 'none' }}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6 text-gray-700'
+          className='w-6 h-6 text-gray-700'
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
@@ -154,7 +194,7 @@ const ImageFeedSection: React.FC = () => {
           <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
         </svg>
       </button>
-    </section>
+    </motion.section>
   );
 };
 

@@ -29,6 +29,26 @@ const HeroSection: React.FC = () => {
           />
         </motion.div>
       </Link>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        className='bottom-[100px] md:bottom-[120px] left-[40px] absolute'
+      >
+        <div className='mb-[20px] font-tan-ashford text-[25px] text-white md:text-[47px] lowercase tracking-wider'>
+          valentine&apos;s day <br /> makeup masterclass
+        </div>
+        <Link href='/courses/masterclass'>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className='bg-cpPink hover:bg-cpPink/90 shadow-md hover:shadow-lg px-[35px] py-[10px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'
+          >
+            Book Now
+          </motion.button>
+        </Link>
+      </motion.div>
     </motion.div>
   );
 };

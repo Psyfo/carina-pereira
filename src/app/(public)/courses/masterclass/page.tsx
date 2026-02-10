@@ -1,12 +1,21 @@
-import { notFound } from 'next/navigation';
 import React from 'react';
+
+import AboutSection from './components/AboutSection/AboutSection';
+import CTASection from './components/CTASection/CTASection';
+import HeroSection from './components/HeroSection/HeroSection';
 
 // metadata for the Masterclass page
 export const metadata = {
-  title: 'Carina Pereira | Masterclass',
+  title: "Carina Pereira | Valentine's Day Makeup Masterclass",
   description:
-    'Join our Masterclass to elevate your makeup skills with expert guidance.',
-  keywords: ['makeup', 'masterclass', 'Carina Pereira', 'makeup course'],
+    "Join Carina for an intimate Valentine's Day makeup masterclass designed to inspire, elevate, and treat you.",
+  keywords: [
+    'makeup',
+    'masterclass',
+    'Carina Pereira',
+    'valentines day',
+    'makeup course',
+  ],
   authors: [{ name: 'Carina Pereira', url: 'https://carinapereira.com' }],
   address: {
     street: '13 Drama Street, Somerset West',
@@ -16,9 +25,9 @@ export const metadata = {
     country: 'South Africa',
   },
   openGraph: {
-    title: 'Carina Pereira | Masterclass',
+    title: "Carina Pereira | Valentine's Day Makeup Masterclass",
     description:
-      'Join our Masterclass to elevate your makeup skills with expert guidance.',
+      "Join Carina for an intimate Valentine's Day makeup masterclass designed to inspire, elevate, and treat you.",
     url: 'https://carinapereira.com/masterclass',
     images: [
       {
@@ -35,8 +44,13 @@ export const metadata = {
 };
 
 const MasterclassPage: React.FC = () => {
-  notFound();
-  return null;
+  return (
+    <div className='pb-[200px]'>
+      <HeroSection />
+      <AboutSection />
+      <CTASection />
+    </div>
+  );
 };
 
 export default MasterclassPage;

@@ -1,4 +1,5 @@
 import MailingListModal from '@/components/MailingListModal/MailingListModal';
+import Announcement from '@/components/Announcement/Announcement';
 
 import AboutSection from './components/AboutSection/AboutSection';
 import AchievementsSection from './components/AchievementsSection/AchievementsSection';
@@ -62,6 +63,7 @@ export default function Home() {
   return (
     <div>
       <MailingListModal />
+      <Announcement />
       <HeroSection />
       <BrandSection />
       <AboutSection />
@@ -71,8 +73,8 @@ export default function Home() {
       <TestimonialSection />
       <PromotionSection />
       <ContactSection />
-      <section className='flex items-center justify-center mb-4 px-4 text-center md:text-left'>
-        <h2 className='text-xl font-semibold font-tan-ashford tracking-[0.04em] lowercase'>
+      <section className='flex justify-center items-center mb-4 px-4 md:text-left text-center'>
+        <h2 className='font-tan-ashford font-semibold text-xl lowercase tracking-[0.04em]'>
           Follow us on Instagram
         </h2>
       </section>

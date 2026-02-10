@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import { SendMailClient } from 'zeptomail';
 
+import { getZeptoMailClient } from '@/lib/email/client';
+import { subscribeAdminTemplate } from '@/lib/email/templates';
 import logger from '@/lib/logger';
 
 // app/api/subscribe/route.ts
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
     logger.error('Mailchimp environment variables not configured');
     return NextResponse.json(
       { message: 'Missing Mailchimp env vars' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -67,13 +68,13 @@ export async function POST(req: Request) {
       });
       return NextResponse.json(
         { message: "You're already subscribed." },
-        { status: 200 }
+        { status: 200 },
       );
     } else {
       logger.error('Mailchimp error', { error: json });
       return NextResponse.json(
         { message: json.detail ?? 'Mailchimp error' },
-        { status: 500 }
+        { status: 500 },
       );
     }
   } catch (err) {
@@ -87,22 +88,8 @@ export async function POST(req: Request) {
 
 async function sendAdminNotification(fullName: string, email: string) {
   try {
-    const zeptoUrl =
-      process.env.ZEPTOMAIL_API_URL || 'https://api.zeptomail.com/v1.1/email';
-    const token = process.env.ZEPTOMAIL_SEND_MAIL_TOKEN;
+    const { client, from, recipientEmail } = getZeptoMailClient();
 
-    if (!token) {
-      logger.warn(
-        'ZeptoMail token not configured - skipping admin notification'
-      );
-      return;
-    }
-
-    const client = new SendMailClient({ url: zeptoUrl, token });
-
-    // Determine recipient based on environment
-    const recipientEmail =
-      process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com';
     const recipients = [
       {
         email_address: {
@@ -116,29 +103,26 @@ async function sendAdminNotification(fullName: string, email: string) {
       recipient: recipientEmail,
     });
 
-    const emailContent = `New newsletter subscription received:
+    const htmlbody = subscribeAdminTemplate({ fullName, email });
 
-Name: ${fullName}
-Email: ${email}
-
-This subscriber has been added to your Mailchimp mailing list.`;
+    const textbody = `New newsletter subscription received:\n\nName: ${fullName}\nEmail: ${email}\n\nThis subscriber has been added to your Mailchimp mailing list.`;
 
     await client.sendMail({
-      from: {
-        address: process.env.ZEPTOMAIL_FROM_EMAIL || 'info@carinapereira.com',
-        name: process.env.ZEPTOMAIL_FROM_NAME || 'Carina Pereira International',
-      },
+      from,
       to: recipients,
-      subject: 'New Newsletter Subscription',
-      textbody: emailContent,
+      subject: 'New Newsletter Subscriber',
+      htmlbody,
+      textbody,
     });
 
     logger.info('Newsletter admin notification sent successfully', {
       subscriber: email,
     });
   } catch (error) {
+    const errMsg =
+      error instanceof Error ? error.message : JSON.stringify(error, null, 2);
     logger.error('Failed to send newsletter admin notification', {
-      error: error instanceof Error ? error.message : String(error),
+      error: errMsg,
       stack: error instanceof Error ? error.stack : undefined,
       subscriber: email,
     });

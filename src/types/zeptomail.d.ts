@@ -32,6 +32,10 @@ declare module 'zeptomail' {
     cc?: ToRecipient[];
     bcc?: ToRecipient[];
     reply_to?: ReplyTo[];
+    track_clicks?: boolean;
+    track_opens?: boolean;
+    client_reference?: string;
+    mime_headers?: Record<string, string>;
     attachments?: Array<{
       name: string;
       content: string;

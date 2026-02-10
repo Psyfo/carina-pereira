@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 type InstagramMedia = {
@@ -58,20 +58,19 @@ const ImageFeedSection: React.FC = () => {
     });
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
         staggerChildren: 0.1,
       },
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: {
       opacity: 1,
@@ -79,14 +78,13 @@ const ImageFeedSection: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: 'easeOut',
       },
     },
   };
 
   if (loading) {
     return (
-      <section className='flex justify-center items-center w-full h-[300px] text-gray-500'>
+      <section className='flex justify-center items-center w-full h-75 text-gray-500'>
         Loading Instagram feed...
       </section>
     );
@@ -94,7 +92,7 @@ const ImageFeedSection: React.FC = () => {
 
   if (!media.length) {
     return (
-      <section className='flex justify-center items-center w-full h-[300px] text-gray-500'>
+      <section className='flex justify-center items-center w-full h-75 text-gray-500'>
         No Instagram posts found.
       </section>
     );
@@ -154,7 +152,7 @@ const ImageFeedSection: React.FC = () => {
                 href={post.permalink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex-shrink-0 shadow-md hover:shadow-xl rounded-lg w-64 h-64 overflow-hidden hover:scale-110 transition-transform duration-300 ease-in-out transform'
+                className='shadow-md hover:shadow-xl rounded-lg w-64 h-64 overflow-hidden hover:scale-110 transition-transform duration-300 ease-in-out shrink-0 transform'
                 style={{ scrollSnapAlign: 'start' }}
                 aria-label={
                   post.caption ? post.caption.slice(0, 100) : 'Instagram post'

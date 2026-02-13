@@ -94,6 +94,9 @@ export async function POST(req: Request) {
         subject: 'New Enrollment Submission',
         htmlbody: adminHtml,
         textbody: adminText,
+        track_opens: false,
+        track_clicks: false,
+        client_reference: `enrollment_admin_${Date.now()}`,
       });
       logger.info('Admin notification email sent successfully');
     } catch (error) {
@@ -128,6 +131,9 @@ export async function POST(req: Request) {
         subject: `Welcome to the ${program} Course — Next Steps Inside`,
         htmlbody: studentHtml,
         textbody: studentText,
+        track_opens: false,
+        track_clicks: false,
+        client_reference: `enrollment_student_${Date.now()}`,
       });
       logger.info('Student confirmation email sent successfully', {
         studentEmail: email,

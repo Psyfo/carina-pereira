@@ -56,6 +56,9 @@ export async function POST(req: Request) {
       subject: 'New Contact Form Submission',
       htmlbody,
       textbody,
+      track_opens: false,
+      track_clicks: false,
+      client_reference: `contact_${Date.now()}`,
     });
 
     logger.info('Contact form email sent successfully', {

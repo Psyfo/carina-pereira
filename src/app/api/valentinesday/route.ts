@@ -53,6 +53,9 @@ export async function POST(req: Request) {
       subject: "New Valentine's Day Booking",
       htmlbody: adminHtml,
       textbody: adminText,
+      track_opens: false,
+      track_clicks: false,
+      client_reference: `valentines_admin_${Date.now()}`,
     });
 
     logger.info("Valentine's admin notification sent");
@@ -75,6 +78,9 @@ export async function POST(req: Request) {
       subject: "You're Booked — Valentine's Day Makeup Masterclass",
       htmlbody: userHtml,
       textbody: userText,
+      track_opens: false,
+      track_clicks: false,
+      client_reference: `valentines_user_${Date.now()}`,
     });
 
     logger.info("Valentine's user confirmation sent", { email });

@@ -1,0 +1,169 @@
+/* ========================================
+   MOBILE LANDSCAPE OVERRIDES
+   Targets landscape phones (max-height: 500px)
+   without affecting portrait mobile or desktop.
+   ======================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+    /* ----------------------------------------
+     HERO SECTIONS
+     All hero components use .hero-section
+     Problem: vh heights + md: breakpoint fires
+     on landscape phones (width > 768px), so
+     tablet/desktop styles apply in a ~390px
+     tall viewport. Don't force viewport height
+     — let content define the height.
+     ---------------------------------------- */
+    .hero-section {
+        height: auto !important;
+        min-height: 0 !important;
+        /* Ensure the background image still covers,
+       give a comfortable height for the hero photo */
+        aspect-ratio: 16 / 9;
+        max-height: 100svh;
+    }
+
+    /* Hero logo - reduce size and tighten top position */
+    .hero-section img[alt='Hero Image'],
+    .hero-section img[alt='Carina Pereira Logo'] {
+        top: 0.75rem !important;
+        width: 110px !important;
+    }
+
+    /* Hero CTA / title container - pull up from bottom */
+    .hero-section>div:last-child,
+    .hero-section>a~div:last-child {
+        bottom: 16px !important;
+    }
+
+    /* Hero heading text - scale down from md:47px / md:34px
+     to a comfortable size for a ~390px tall viewport.
+     22px in tan-ashford is still prominent but fits. */
+    .hero-section .font-tan-ashford {
+        font-size: 22px !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Hero CTA button - slightly smaller */
+    .hero-section .font-inclusive {
+        font-size: 14px !important;
+        padding: 6px 24px !important;
+    }
+
+    /* ----------------------------------------
+     MASTERCLASS HERO
+     Uses min-h-screen + poster image + bottom
+     text. The poster overlaps the text in short
+     viewports. Let it flow naturally.
+     ---------------------------------------- */
+
+    /* Bottom text bar (absolute, spans full width) */
+    .hero-section>.absolute.font-tan-ashford {
+        font-size: 16px !important;
+        bottom: 4px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Poster / flyer image - constrain width so
+     it doesn't crowd the bottom text */
+    .hero-section .max-w-100,
+    .hero-section .max-w-110,
+    .hero-section .max-w-130,
+    .hero-section .max-w-145,
+    .hero-section .max-w-155,
+    .hero-section .max-w-165,
+    .hero-section [class*='max-w-1'] {
+        max-width: min(70vw, 320px) !important;
+    }
+
+    /* ----------------------------------------
+     ANNOUNCEMENT BAR
+     Reduce vertical space
+     ---------------------------------------- */
+    .announcement-bar {
+        min-height: 22px !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    .announcement-bar .font-inter {
+        font-size: 10px !important;
+    }
+
+    /* ----------------------------------------
+     NAVIGATION
+     Fixed positioning in short viewport
+     ---------------------------------------- */
+
+    /* Nav bar - tighten vertical padding */
+    nav.fixed {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    /* Hamburger + nav links - lower top offset */
+    nav.fixed img[alt='Open Menu'],
+    nav.fixed img[alt='Close Menu'] {
+        top: 1.25rem !important;
+    }
+
+    nav.fixed ul.fixed {
+        top: 1.25rem !important;
+    }
+
+    /* Mobile nav overlay - scrollable, less top padding */
+    .nav-overlay {
+        padding-top: 60px !important;
+        overflow-y: auto !important;
+    }
+
+    .nav-overlay img[alt='Logo'] {
+        top: 1rem !important;
+    }
+
+    /* ----------------------------------------
+     ABOUT SECTION
+     Image panel uses h-[80vh] = ~310px in
+     landscape. Use aspect ratio instead.
+     ---------------------------------------- */
+    .about-image {
+        height: auto !important;
+        aspect-ratio: 16 / 10;
+        min-height: 220px;
+    }
+
+    /* ----------------------------------------
+     PROMOTION SECTION
+     h-[150vh] on mobile = absurdly tall.
+     Switch to auto height, let content flow.
+     ---------------------------------------- */
+    .promotion-section {
+        height: auto !important;
+    }
+
+    .promotion-section>div {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Promotion image panel */
+    .promotion-section>div:first-child {
+        aspect-ratio: 16 / 9;
+        min-height: 180px;
+    }
+
+    /* Promotion content */
+    .promotion-section>div:last-child {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .promotion-section .font-tan-ashford {
+        font-size: 16px !important;
+    }
+
+    .promotion-section .font-inclusive {
+        font-size: 13px !important;
+    }
+}

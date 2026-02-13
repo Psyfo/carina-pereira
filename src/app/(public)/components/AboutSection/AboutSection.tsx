@@ -9,20 +9,19 @@ const AboutSection: React.FC = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   return (
-    <section className='flex flex-col lg:flex-row items-center lg:gap-[60px] bg-cpCream lg:border-t-2 lg:border-b-2 lg:border-black'>
+    <section className='flex lg:flex-row flex-col items-center lg:gap-[60px] bg-cpCream lg:border-black lg:border-t-2 lg:border-b-2'>
       <div
-        className="w-[100vw] h-[80vh] lg:h-[100vh] bg-[url('/images/landing/about/about.png')] lg:bg-[url('/images/landing/about/about-lg.png')] bg-center
-        bg-cover bg-cpCream lg:border-r-2 border-black"
+        className="bg-[url('/images/landing/about/about.png')] bg-cpCream lg:bg-[url('/images/landing/about/about-lg.png')] bg-cover bg-center border-black lg:border-r-2 w-[100vw] h-[80vh] lg:h-[100vh] about-image"
       ></div>
       <div
         ref={ref}
-        className='px-[26px] lg:px-0 lg:pr-[200px] pt-[73px] lg:pt-[100px] pb-[80px]'
+        className='px-[26px] lg:px-0 pt-[73px] lg:pt-[100px] lg:pr-[200px] pb-[80px]'
       >
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className='font-tan-ashford font-bold text-[19px] tracking-[0.04rem] lowercase mb-[54px]'
+          className='mb-[54px] font-tan-ashford font-bold text-[19px] lowercase tracking-[0.04rem]'
         >
           about carina
         </motion.h1>
@@ -51,7 +50,7 @@ const AboutSection: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.2 }}
-            className='font-inclusive text-[15px] leading-[1.5] mb-[30px]'
+            className='mb-[30px] font-inclusive text-[15px] leading-[1.5]'
           >
             {text}
           </motion.p>
@@ -61,7 +60,7 @@ const AboutSection: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
-            className='bg-cpPink font-inclusive text-[16.5px] leading-[1.5] px-[35px] py-[8px] mb-[80px] border border-black rounded-full'
+            className='bg-cpPink mb-[80px] px-[35px] py-[8px] border border-black rounded-full font-inclusive text-[16.5px] leading-[1.5]'
           >
             view services
           </motion.button>

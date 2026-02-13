@@ -52,7 +52,7 @@ const Navigation: React.FC = () => {
 
       {/* Full-Screen Navigation Overlay (Mobile) */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-cpPink z-20 pt-[130px] pl-10 transition-opacity duration-300 ${
+        className={`nav-overlay fixed top-0 left-0 w-full h-full bg-cpPink z-20 pt-[130px] pl-10 transition-opacity duration-300 ${
           isOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'

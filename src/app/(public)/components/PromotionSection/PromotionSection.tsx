@@ -7,7 +7,7 @@ import React from 'react';
 
 const PromotionSection: React.FC = () => {
   return (
-    <section className='lg:flex h-[150vh] lg:h-[100vh]'>
+    <section className='lg:flex h-[150vh] lg:h-[100vh] promotion-section'>
       <div className='bg-[url("/images/landing/promotion/promo.png")] lg:bg-[url("/images/landing/promotion/promo-md.png")] bg-cover bg-center lg:w-[50%] h-[50%] lg:h-[100%]'></div>
       <div className='bg-cpOrange px-[30px] lg:px-[100px] py-[75px] lg:py-[155px] border-black lg:border-l-2 lg:w-[50%] h-[50%] lg:h-[100%]'>
         <div className='mt-auto font-tan-ashford font-bold text-[19px] lg:text-[25px] lowercase tracking-wider'>

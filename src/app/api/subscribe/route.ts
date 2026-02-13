@@ -113,6 +113,9 @@ async function sendAdminNotification(fullName: string, email: string) {
       subject: 'New Newsletter Subscriber',
       htmlbody,
       textbody,
+      track_opens: false,
+      track_clicks: false,
+      client_reference: `newsletter_sub_${Date.now()}`,
     });
 
     logger.info('Newsletter admin notification sent successfully', {

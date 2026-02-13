@@ -33,12 +33,12 @@ export function getZeptoMailClient(): ZeptoMailConfig {
   }
 
   const from = {
-    address: process.env.ZEPTOMAIL_FROM_EMAIL || 'no-reply@carinapereira.com',
+    address: process.env.ZEPTOMAIL_FROM_EMAIL || 'info@carinapereira.com',
     name: process.env.ZEPTOMAIL_FROM_NAME || 'Carina Pereira International',
   };
 
   const recipientEmail =
-    process.env.ZEPTOMAIL_RECIPIENT_EMAIL_INFO || 'info@carinapereira.com';
+    process.env.ZEPTOMAIL_RECIPIENT_EMAIL || 'info@carinapereira.com';
 
   const client = new SendMailClient({ url, token });
 

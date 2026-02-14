@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import NotFoundClient from './components/NotFoundClient';
 
 export const metadata: Metadata = {

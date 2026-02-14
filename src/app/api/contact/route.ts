@@ -47,12 +47,6 @@ export async function POST(req: Request) {
     await client.sendMail({
       from,
       to: recipients,
-      reply_to: [
-        {
-          address: email,
-          name: `${firstName} ${lastName}`,
-        },
-      ],
       subject: 'New Contact Form Submission',
       htmlbody,
       textbody,

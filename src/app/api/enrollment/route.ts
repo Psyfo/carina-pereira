@@ -90,7 +90,6 @@ export async function POST(req: Request) {
       await client.sendMail({
         from,
         to: recipients,
-        reply_to: [{ address: email, name: fullName }],
         subject: 'New Enrollment Submission',
         htmlbody: adminHtml,
         textbody: adminText,

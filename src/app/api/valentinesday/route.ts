@@ -49,7 +49,6 @@ export async function POST(req: Request) {
           },
         },
       ],
-      reply_to: [{ address: email, name: fullName }],
       subject: "New Valentine's Day Booking",
       htmlbody: adminHtml,
       textbody: adminText,

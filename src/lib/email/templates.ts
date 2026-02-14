@@ -252,9 +252,11 @@ export function contactAdminTemplate(data: {
       <p style="margin: 0; font-family: ${fontStack('body')}; font-size: 14px; color: ${BRAND.colors.textDark}; line-height: 22px; white-space: pre-wrap;">${data.message}</p>
     </div>
 
-    <p style="margin: 24px 0 0; font-family: ${fontStack('body')}; font-size: 13px; color: ${BRAND.colors.textLight};">
-      Reply directly to this person at <a href="mailto:${data.email}" style="color: ${BRAND.colors.magenta}; text-decoration: none;">${data.email}</a>
-    </p>
+    <div style="margin: 24px 0 0; text-align: center;">
+      <a href="mailto:${data.email}?subject=Re:%20Your%20inquiry" style="display: inline-block; padding: 14px 32px; background-color: ${BRAND.colors.magenta}; color: ${BRAND.colors.white}; text-decoration: none; border-radius: 8px; font-family: ${fontStack('body')}; font-size: 15px; font-weight: 600;">
+        ✉️ Reply to ${data.firstName}
+      </a>
+    </div>
   `;
 
   return baseLayout(
@@ -296,6 +298,12 @@ export function enrollmentAdminTemplate(data: {
       ['Program', data.program],
       ['Payment', data.paymentMethod],
     ])}
+
+    <div style="margin: 24px 0; text-align: center;">
+      <a href="mailto:${data.email}?subject=Re:%20${encodeURIComponent(data.program)}%20enrollment" style="display: inline-block; padding: 14px 32px; background-color: ${BRAND.colors.magenta}; color: ${BRAND.colors.white}; text-decoration: none; border-radius: 8px; font-family: ${fontStack('body')}; font-size: 15px; font-weight: 600;">
+        ✉️ Reply to ${data.fullName.split(' ')[0]}
+      </a>
+    </div>
 
     ${button('Visit Website', BRAND.siteUrl)}
   `;
@@ -453,6 +461,12 @@ export function valentinesAdminTemplate(data: {
       ['Phone', `${data.countryCode} ${data.cellphone}`],
       ['Address', data.address],
     ])}
+
+    <div style="margin: 24px 0 0; text-align: center;">
+      <a href="mailto:${data.email}?subject=Re:%20Valentine's%20Day%20booking" style="display: inline-block; padding: 14px 32px; background-color: ${BRAND.colors.magenta}; color: ${BRAND.colors.white}; text-decoration: none; border-radius: 8px; font-family: ${fontStack('body')}; font-size: 15px; font-weight: 600;">
+        ✉️ Reply to ${data.fullName.split(' ')[0]}
+      </a>
+    </div>
   `;
 
   return baseLayout(content, `Valentine's booking: ${data.fullName}`);

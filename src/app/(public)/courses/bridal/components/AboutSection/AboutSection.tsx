@@ -105,6 +105,7 @@ const AboutSection: React.FC = () => {
           What you'll get
         </motion.p>
         <motion.ul variants={fadeInUpVariants} className='pl-[20px] list-disc'>
+          <li>A premium set of Swiitchbeauty makeup brushes</li>
           <li>A professional-grade makeup training manual</li>
           <li>Hands-on practical training and expert mentorship</li>
           <li>Industry techniques used by professional makeup artists</li>

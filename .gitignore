@@ -45,6 +45,5 @@ logs/*
 /logs
 
 # auto-generated files
-package-lock.json
 public/sitemap.xml
 public/robots.txt

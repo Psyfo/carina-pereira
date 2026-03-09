@@ -50,7 +50,7 @@ const CoursesSection: React.FC = () => {
             title: 'bridal & beauty artistry course',
             price: 'R9500',
             duration: ['1 month full-time', 'in-person'],
-            image: '/images/courses/bridal/hero.jpg',
+            image: '/images/courses/bridal/hero-md.jpg',
             link: '/courses/bridal',
           },
           {
@@ -88,14 +88,15 @@ const CoursesSection: React.FC = () => {
               className='bg-white p-[14px] border border-black rounded-2xl'
               variants={cardVariants}
             >
-              <Image
-                src={course.image}
-                alt='Course Image'
-                width={500}
-                height={300}
-                unoptimized
-                className='rounded-lg'
-              />
+              <div className='relative w-full h-[300px]'>
+                <Image
+                  src={course.image}
+                  alt='Course Image'
+                  fill
+                  unoptimized
+                  className='rounded-lg object-cover'
+                />
+              </div>
 
               <h1 className='mt-4 mb-12 h-16 font-tan-ashford text-[21px] tracking-wider'>
                 {course.title}

@@ -1,14 +1,8 @@
-"use client";
-import { useEffect } from "react";
-import { useTrackPageView } from "@/hooks/useTrackPageView";
-import { initAnalytics } from "@/lib/analytics";
+'use client';
+import { useTrackPageView } from '@/hooks/useTrackPageView';
 
 export default function ClientProviders() {
-  useEffect(() => {
-    initAnalytics(); // Initialize Google Analytics
-  }, []);
-
-  useTrackPageView(); // Track page views correctly
+  useTrackPageView(); // Push route changes to GTM dataLayer
 
   return null; // No UI needed
 }

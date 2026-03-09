@@ -13,6 +13,9 @@ export const metadata = {
     'makeup course',
   ],
   authors: [{ name: 'Carina Pereira', url: 'https://carinapereira.com' }],
+  alternates: {
+    canonical: 'https://carinapereira.com/courses/masterclass',
+  },
   address: {
     street: '13 Drama Street, Somerset West',
     city: 'Cape Town',
@@ -32,10 +35,9 @@ export const metadata = {
       },
     ],
   },
-  instagram: {
-    handle: '@carinapereirainternational',
-    site: 'https://www.instagram.com/carinapereirainternational/',
-    cardType: 'summary_large_image',
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://carinapereira.com/images/courses/valentines/hero.png'],
   },
 };
 

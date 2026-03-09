@@ -30,6 +30,9 @@ export const metadata = {
     'Makeup Tutorials',
   ],
   authors: [{ name: 'Carina Pereira', url: 'https://carinapereira.com' }],
+  alternates: {
+    canonical: 'https://carinapereira.com',
+  },
   address: {
     street: '13 Drama Street, Somerset West',
     city: 'Cape Town',
@@ -51,10 +54,9 @@ export const metadata = {
       },
     ],
   },
-  instagram: {
-    handle: '@carinapereirainternational',
-    site: 'https://www.instagram.com/carinapereirainternational/',
-    cardType: 'summary_large_image',
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://carinapereira.com/images/landing/hero/hero.png'],
   },
 };
 

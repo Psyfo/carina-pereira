@@ -47,6 +47,13 @@ const CoursesSection: React.FC = () => {
       <div className='gap-[25px] grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(323px,1fr))]'>
         {[
           {
+            title: 'bridal & beauty artistry course',
+            price: 'R9500',
+            duration: ['1 month full-time', 'in-person'],
+            image: '/images/courses/bridal/hero.jpg',
+            link: '/courses/bridal',
+          },
+          {
             title: 'pro makeup course',
             price: 'R15000',
             duration: ['2 months full-time', '4 months part-time'],

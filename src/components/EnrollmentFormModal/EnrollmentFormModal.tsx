@@ -11,6 +11,7 @@ import {
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 const programs = [
+  { name: 'Bridal & Beauty Artistry Course', price: 'R9 500' },
   { name: 'Pro Makeup Course', price: 'R15 000' },
   { name: 'Express Makeup Course', price: 'R5 500' },
   { name: 'Hairstyling Course', price: 'R3 000' },
@@ -42,7 +43,7 @@ export default function EnrollmentFormModal({
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
   const [selectedPayment, setSelectedPayment] = useState(paymentMethods[0]);
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
-    {}
+    {},
   );
 
   const [submissionStatus, setSubmissionStatus] = useState<{

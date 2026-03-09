@@ -32,9 +32,36 @@ const CoursesSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            pro make-up <br /> course
+            bridal & beauty <br /> artistry course
           </motion.h1>
 
+          <motion.p
+            className='font-inclusive text-[15px] leading-[1.5]'
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            why choose this course?
+          </motion.p>
+          <motion.p
+            className='mb-[30px] font-inclusive text-[15px] leading-[1.5]'
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            Master flawless bridal and event makeup in just one month. Gain an
+            internationally recognised certificate, hands-on training, and the
+            confidence to start taking bridal and event bookings.
+          </motion.p>
+
+          <Link href='/courses/bridal'>
+            <button className='bg-cpPink hover:bg-cpPink/90 active:bg-cpPink/80 shadow-md hover:shadow-lg active:shadow-sm px-[35px] py-[8px] border border-black rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cpPink/30 font-inclusive text-[16.5px] leading-[1.5] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer'>
+              explore
+            </button>
+          </Link>
+        </div>
+
+        <div className='px-[30px] lg:px-0 py-[50px] lg:pr-[300px] lg:pl-[50px] border-black border-b-2'>
           <motion.p
             className='font-inclusive text-[15px] leading-[1.5]'
             whileInView={{ opacity: 1, x: 0 }}

@@ -9,7 +9,6 @@ import CoursesSection from './components/CoursesSection/CoursesSection';
 import HeroSection from './components/HeroSection/HeroSection';
 import ImageFeedSection from './components/ImageFeedSection/ImageFeedSection';
 import OfferingsSection from './components/OfferingsSection/OfferingsSection';
-import PromotionSection from './components/PromotionSection/PromotionSection';
 import TestimonialSection from './components/TestimonialSection/TestimonialSection';
 
 export const metadata = {
@@ -71,7 +70,6 @@ export default function Home() {
       <OfferingsSection />
       <AchievementsSection />
       <TestimonialSection />
-      <PromotionSection />
       <ContactSection />
       <section className='flex justify-center items-center mb-4 px-4 md:text-left text-center'>
         <h2 className='font-tan-ashford font-semibold text-xl lowercase tracking-[0.04em]'>

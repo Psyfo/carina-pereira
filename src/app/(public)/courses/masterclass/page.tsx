@@ -1,8 +1,4 @@
-import React from 'react';
-
-import AboutSection from './components/AboutSection/AboutSection';
-import CTASection from './components/CTASection/CTASection';
-import HeroSection from './components/HeroSection/HeroSection';
+import { redirect } from 'next/navigation';
 
 // metadata for the Masterclass page
 export const metadata = {
@@ -44,13 +40,7 @@ export const metadata = {
 };
 
 const MasterclassPage: React.FC = () => {
-  return (
-    <div className='pb-[200px]'>
-      <HeroSection />
-      <AboutSection />
-      <CTASection />
-    </div>
-  );
+  redirect('/courses');
 };
 
 export default MasterclassPage;
